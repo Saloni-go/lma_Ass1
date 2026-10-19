@@ -140,8 +140,7 @@ rag-assignment/
 │   ├── tables/                          # recall, outcomes, rank shifts, rescues, latency, answers side by side (§9)
 │   └── figures/                         # the 7 charts (§7-9)
 └── report/
-    ├── RAG_Report.pdf                   # the submitted report
-    └── RAG_Report.html                  # its source
+    └── RAG_Report.pdf                   # the submitted report
 ```
 
 ## Sources
