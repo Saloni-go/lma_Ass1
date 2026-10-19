@@ -1,0 +1,1201 @@
+{
+  "metadata": {
+    "created_utc": "2026-10-19T14:00:31+00:00",
+    "source_pdf": "document.pdf",
+    "corpus_fingerprint": "037b86edb2eec9674c3357fa9da058e7fca183abb480dd0f668b2218f6bb5a18",
+    "bi_encoder": "sentence-transformers/all-MiniLM-L6-v2",
+    "cross_encoder": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "definitions": "(relevance labels = relevant_chunk_ids from data/evaluation/questions.json)\n    Recall@3          |relevant ∩ top-3| / |relevant|\n    Recall@10         |relevant ∩ top-10| / |relevant|   (same for both pipelines)\n    MRR@10            1 / rank of the first relevant chunk in the 10-list (0 if none)\n    evidence_cov@3    fraction of the question's evidence quotes that occur in at least\n                      one top-3 chunk (a quote may occur in two overlapping chunks)\n    promoted          relevant chunk with baseline rank 4-10 and re-ranked rank 1-3\n    demoted           relevant chunk with baseline rank 1-3 and re-ranked rank 4-10\n    outcome           compares evidence_cov@3 first; if equal, the reciprocal rank:\n                      improved / unchanged / worsened\n    rescue            relevant evidence missing from the baseline top-3 (cov@3 < 1),\n                      present in the baseline top-10, and promoted into the re-ranked\n                      top-3 so that cov@3 increases\n    strict_rescue     rescue where the baseline top-3 contained NO relevant chunk",
+    "manual_review_note": "answer verdicts are a manual assessment against the verified reference answers and the exact prompt context"
+  },
+  "retrieval_overall": {
+    "n_questions": 33,
+    "baseline": {
+      "recall@3": 0.8182,
+      "hit@3": 0.8485,
+      "mrr@10": 0.8006,
+      "evidence_cov@3": 0.8364
+    },
+    "reranked": {
+      "recall@3": 0.8788,
+      "hit@3": 0.9091,
+      "mrr@10": 0.8634,
+      "evidence_cov@3": 0.8939
+    },
+    "recall@10": 0.9394,
+    "questions_with_no_relevant_in_top10": [
+      "C-04"
+    ],
+    "relevant_chunks_promoted_4to10_into_top3": 4,
+    "relevant_chunks_demoted_from_top3": 2,
+    "improved": [
+      "KT-02",
+      "EX-05",
+      "NG-02",
+      "NG-05",
+      "NG-06",
+      "DS-01",
+      "DS-02"
+    ],
+    "improved_top3_coverage": [
+      "KT-02",
+      "EX-05",
+      "NG-06",
+      "DS-02"
+    ],
+    "unchanged": [
+      "KT-01",
+      "KT-03",
+      "KT-04",
+      "KT-05",
+      "KT-06",
+      "EX-02",
+      "EX-03",
+      "EX-04",
+      "EX-06",
+      "NG-03",
+      "NG-04",
+      "SY-01",
+      "SY-02",
+      "SY-04",
+      "SY-05",
+      "SY-06",
+      "DS-03",
+      "DS-04",
+      "C-01",
+      "C-02",
+      "C-03",
+      "C-04"
+    ],
+    "unchanged_top3_coverage": [],
+    "worsened": [
+      "EX-01",
+      "NG-01",
+      "SY-03",
+      "DS-05"
+    ],
+    "worsened_top3_coverage": [
+      "SY-03",
+      "DS-05"
+    ],
+    "rescues": [
+      "KT-02",
+      "EX-05",
+      "NG-06",
+      "DS-02"
+    ],
+    "strict_rescues": [
+      "KT-02",
+      "NG-06",
+      "DS-02"
+    ]
+  },
+  "retrieval_by_category": {
+    "keyword_trap": {
+      "n_questions": 6,
+      "baseline": {
+        "recall@3": 0.8333,
+        "hit@3": 0.8333,
+        "mrr@10": 0.875,
+        "evidence_cov@3": 0.8333
+      },
+      "reranked": {
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0
+      },
+      "recall@10": 1.0,
+      "questions_with_no_relevant_in_top10": [],
+      "relevant_chunks_promoted_4to10_into_top3": 1,
+      "relevant_chunks_demoted_from_top3": 0,
+      "improved": [
+        "KT-02"
+      ],
+      "improved_top3_coverage": [
+        "KT-02"
+      ],
+      "unchanged": [
+        "KT-01",
+        "KT-03",
+        "KT-04",
+        "KT-05",
+        "KT-06"
+      ],
+      "unchanged_top3_coverage": [],
+      "worsened": [],
+      "worsened_top3_coverage": [],
+      "rescues": [
+        "KT-02"
+      ],
+      "strict_rescues": [
+        "KT-02"
+      ]
+    },
+    "exception": {
+      "n_questions": 6,
+      "baseline": {
+        "recall@3": 0.9167,
+        "hit@3": 1.0,
+        "mrr@10": 0.9167,
+        "evidence_cov@3": 0.9333
+      },
+      "reranked": {
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "mrr@10": 0.8889,
+        "evidence_cov@3": 1.0
+      },
+      "recall@10": 1.0,
+      "questions_with_no_relevant_in_top10": [],
+      "relevant_chunks_promoted_4to10_into_top3": 1,
+      "relevant_chunks_demoted_from_top3": 0,
+      "improved": [
+        "EX-05"
+      ],
+      "improved_top3_coverage": [
+        "EX-05"
+      ],
+      "unchanged": [
+        "EX-02",
+        "EX-03",
+        "EX-04",
+        "EX-06"
+      ],
+      "unchanged_top3_coverage": [],
+      "worsened": [
+        "EX-01"
+      ],
+      "worsened_top3_coverage": [],
+      "rescues": [
+        "EX-05"
+      ],
+      "strict_rescues": []
+    },
+    "negation_constraint": {
+      "n_questions": 6,
+      "baseline": {
+        "recall@3": 0.8333,
+        "hit@3": 0.8333,
+        "mrr@10": 0.6806,
+        "evidence_cov@3": 0.8333
+      },
+      "reranked": {
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "mrr@10": 0.9167,
+        "evidence_cov@3": 1.0
+      },
+      "recall@10": 1.0,
+      "questions_with_no_relevant_in_top10": [],
+      "relevant_chunks_promoted_4to10_into_top3": 1,
+      "relevant_chunks_demoted_from_top3": 0,
+      "improved": [
+        "NG-02",
+        "NG-05",
+        "NG-06"
+      ],
+      "improved_top3_coverage": [
+        "NG-06"
+      ],
+      "unchanged": [
+        "NG-03",
+        "NG-04"
+      ],
+      "unchanged_top3_coverage": [],
+      "worsened": [
+        "NG-01"
+      ],
+      "worsened_top3_coverage": [],
+      "rescues": [
+        "NG-06"
+      ],
+      "strict_rescues": [
+        "NG-06"
+      ]
+    },
+    "synonym_mismatch": {
+      "n_questions": 6,
+      "baseline": {
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0
+      },
+      "reranked": {
+        "recall@3": 0.9167,
+        "hit@3": 1.0,
+        "mrr@10": 0.8889,
+        "evidence_cov@3": 0.9167
+      },
+      "recall@10": 1.0,
+      "questions_with_no_relevant_in_top10": [],
+      "relevant_chunks_promoted_4to10_into_top3": 0,
+      "relevant_chunks_demoted_from_top3": 1,
+      "improved": [],
+      "improved_top3_coverage": [],
+      "unchanged": [
+        "SY-01",
+        "SY-02",
+        "SY-04",
+        "SY-05",
+        "SY-06"
+      ],
+      "unchanged_top3_coverage": [],
+      "worsened": [
+        "SY-03"
+      ],
+      "worsened_top3_coverage": [
+        "SY-03"
+      ],
+      "rescues": [],
+      "strict_rescues": []
+    },
+    "document_specific": {
+      "n_questions": 5,
+      "baseline": {
+        "recall@3": 0.5,
+        "hit@3": 0.6,
+        "mrr@10": 0.5175,
+        "evidence_cov@3": 0.6
+      },
+      "reranked": {
+        "recall@3": 0.5,
+        "hit@3": 0.6,
+        "mrr@10": 0.665,
+        "evidence_cov@3": 0.6
+      },
+      "recall@10": 0.8,
+      "questions_with_no_relevant_in_top10": [],
+      "relevant_chunks_promoted_4to10_into_top3": 1,
+      "relevant_chunks_demoted_from_top3": 1,
+      "improved": [
+        "DS-01",
+        "DS-02"
+      ],
+      "improved_top3_coverage": [
+        "DS-02"
+      ],
+      "unchanged": [
+        "DS-03",
+        "DS-04"
+      ],
+      "unchanged_top3_coverage": [],
+      "worsened": [
+        "DS-05"
+      ],
+      "worsened_top3_coverage": [
+        "DS-05"
+      ],
+      "rescues": [
+        "DS-02"
+      ],
+      "strict_rescues": [
+        "DS-02"
+      ]
+    },
+    "control": {
+      "n_questions": 4,
+      "baseline": {
+        "recall@3": 0.75,
+        "hit@3": 0.75,
+        "mrr@10": 0.75,
+        "evidence_cov@3": 0.75
+      },
+      "reranked": {
+        "recall@3": 0.75,
+        "hit@3": 0.75,
+        "mrr@10": 0.75,
+        "evidence_cov@3": 0.75
+      },
+      "recall@10": 0.75,
+      "questions_with_no_relevant_in_top10": [
+        "C-04"
+      ],
+      "relevant_chunks_promoted_4to10_into_top3": 0,
+      "relevant_chunks_demoted_from_top3": 0,
+      "improved": [],
+      "improved_top3_coverage": [],
+      "unchanged": [
+        "C-01",
+        "C-02",
+        "C-03",
+        "C-04"
+      ],
+      "unchanged_top3_coverage": [],
+      "worsened": [],
+      "worsened_top3_coverage": [],
+      "rescues": [],
+      "strict_rescues": []
+    }
+  },
+  "genuine_rescues_verified": [
+    "KT-02",
+    "EX-05",
+    "DS-02",
+    "NG-06"
+  ],
+  "answer_level_summary": {
+    "improved": [
+      "KT-02",
+      "EX-05",
+      "DS-02",
+      "NG-06"
+    ],
+    "worsened": [
+      "SY-03",
+      "DS-05"
+    ],
+    "unchanged": [],
+    "fabrications_found": 0
+  },
+  "generation_cases": [
+    {
+      "query_id": "KT-02",
+      "category": "keyword_trap",
+      "question": "What CGPA does a student need in order to opt for the B.Tech (Honours) programme, and when can they opt?",
+      "reference_answer": "A CGPA of 8.5 and above at the end of the third semester; the option is exercised during the fourth semester. The student must also have cleared all prescribed courses in the first attempt; students with a 'U' or 'W' grade in any course are not eligible.",
+      "evidence": [
+        {
+          "quote": "Students admitted to B.Tech Programme can opt for B.Tech (Honours) programme during the fourth semester.",
+          "pages": [
+            8
+          ],
+          "chunk_ids": [
+            21
+          ]
+        },
+        {
+          "quote": "The student should have a CGPA of 8.5 and above at the end of their third semester and should have cleared all the courses as prescribed in the curriculum in the first attempt.",
+          "pages": [
+            8
+          ],
+          "chunk_ids": [
+            21
+          ]
+        }
+      ],
+      "relevant_chunk_ids": [
+        21
+      ],
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 21,
+          "baseline_rank": 4,
+          "reranked_rank": 1
+        }
+      ],
+      "baseline_top3": [
+        78,
+        84,
+        33
+      ],
+      "reranked_top3": [
+        21,
+        12,
+        78
+      ],
+      "metrics": {
+        "baseline": {
+          "top3": [
+            78,
+            84,
+            33
+          ],
+          "recall@3": 0.0,
+          "hit@3": 0,
+          "mrr@10": 0.25,
+          "evidence_cov@3": 0.0,
+          "distractors_in_top3": [
+            84
+          ]
+        },
+        "reranked": {
+          "top3": [
+            21,
+            12,
+            78
+          ],
+          "recall@3": 1.0,
+          "hit@3": 1,
+          "mrr@10": 1.0,
+          "evidence_cov@3": 1.0,
+          "distractors_in_top3": []
+        }
+      },
+      "retrieval_outcome": "improved",
+      "rescue": true,
+      "strict_rescue": true,
+      "answer_1": "To be awarded the B.Tech (Honours) degree, students must maintain an average CGPA of 8.5 [Chunk 84, p. 25]. If this CGPA is not maintained, they will be awarded only a B.Tech Degree [Chunk 84, p. 25].\n\nThe provided context does not specify when a student can opt for the B.Tech (Honours) programme, nor does it state a CGPA requirement for *opting* into the programme itself, only for the *award* of the degree.",
+      "answer_1_error": null,
+      "answer_2": "A student needs a CGPA of 8.5 and above at the end of their third semester to opt for the B.Tech (Honours) programme [Chunk 21, p. 8]. They can opt for this programme during the fourth semester [Chunk 21, p. 8].\n\nAdditionally, to be eligible, students must have cleared all prescribed courses in the curriculum in the first attempt and must not have obtained a \"U\" or \"W\" grade in any course [Chunk 21, p. 8].",
+      "answer_2_error": null,
+      "llm_model": "gemini-2.5-flash",
+      "llm_backend": "Vertex AI (project=lma-ass1, location=global)",
+      "controls_passed": true,
+      "manual_review": {
+        "retrieval_change": "strict rescue: relevant chunk 21 (R.1.12) moved from baseline #4 to #1; the baseline top-3 [78, 84, 33] contained no relevant chunk, chunk 84 (R.30.1, the 'maintain CGPA 8.5 for award' distractor) was #2",
+        "answer_1_verdict": "insufficient_context",
+        "answer_1_notes": "Answered the distractor (average CGPA 8.5 to be AWARDED Honours, R.30.1) and stated that the context does not say when a student can opt, nor give a CGPA for opting. No fabrication, but the question is not answered.",
+        "answer_2_verdict": "correct",
+        "answer_2_notes": "8.5 and above at the end of the 3rd semester, opting during the 4th semester, first-attempt clearance and U/W ineligibility, all from chunk 21. Run 1 does not mention O.5 ('at the end of the fourth semester', chunk 12), which was also in the context; runs 2-3 do.",
+        "missing_clauses": {
+          "answer_1": [
+            "CGPA 8.5 at end of 3rd semester",
+            "opt during 4th semester",
+            "cleared all courses in first attempt"
+          ],
+          "answer_2": []
+        },
+        "unsupported_claims": {
+          "answer_1": [],
+          "answer_2": []
+        },
+        "citation_issues": {
+          "answer_1": [],
+          "answer_2": []
+        },
+        "answer_change": "improved"
+      }
+    },
+    {
+      "query_id": "EX-05",
+      "category": "exception",
+      "question": "Can attendance below 85% be condoned for a student who was hospitalised?",
+      "reference_answer": "Yes, for prolonged illness and/or hospitalisation with a medical certificate: the student must have more than 40% actual attendance, and the notional attendance (classes attended x 100 / (classes held in the semester minus classes held during the prolonged illness/hospitalisation)) must be at least 85%. Casual absenteeism and minor illnesses are not condoned.",
+      "evidence": [
+        {
+          "quote": "For calculation of attendance in case of prolonged illness and/or hospitalization with medical certificate:",
+          "pages": [
+            19
+          ],
+          "chunk_ids": [
+            61
+          ]
+        },
+        {
+          "quote": "A student should have more than 40% attendance calculated as per (a) above to be eligible for condonation.",
+          "pages": [
+            19
+          ],
+          "chunk_ids": [
+            61
+          ]
+        },
+        {
+          "quote": "which should be ≥ 85% for condonation",
+          "pages": [
+            19
+          ],
+          "chunk_ids": [
+            62
+          ]
+        },
+        {
+          "quote": "(Total no. of classes held in the semester) - (No. of classes held during the days of prolonged illness and or hospitalization)",
+          "pages": [
+            19
+          ],
+          "chunk_ids": [
+            62
+          ]
+        },
+        {
+          "quote": "Such cases will not come under the purview of condonation of attendance.",
+          "pages": [
+            19
+          ],
+          "chunk_ids": [
+            61
+          ]
+        }
+      ],
+      "relevant_chunk_ids": [
+        61,
+        62
+      ],
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 61,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        },
+        {
+          "chunk_id": 62,
+          "baseline_rank": 5,
+          "reranked_rank": 2
+        }
+      ],
+      "baseline_top3": [
+        61,
+        60,
+        58
+      ],
+      "reranked_top3": [
+        61,
+        62,
+        60
+      ],
+      "metrics": {
+        "baseline": {
+          "top3": [
+            61,
+            60,
+            58
+          ],
+          "recall@3": 0.5,
+          "hit@3": 1,
+          "mrr@10": 1.0,
+          "evidence_cov@3": 0.6,
+          "distractors_in_top3": []
+        },
+        "reranked": {
+          "top3": [
+            61,
+            62,
+            60
+          ],
+          "recall@3": 1.0,
+          "hit@3": 1,
+          "mrr@10": 1.0,
+          "evidence_cov@3": 1.0,
+          "distractors_in_top3": []
+        }
+      },
+      "retrieval_outcome": "improved",
+      "rescue": true,
+      "strict_rescue": false,
+      "answer_1": "Yes, attendance below 85% can be condoned for a student who was hospitalized, provided they meet a specific condition. A student must have more than 40% attendance (calculated as per normal cases) to be eligible for condonation in cases of prolonged illness and/or hospitalization with a medical certificate [Chunk 61, p. 19].\n\nThis is in contrast to cases of minor illnesses and casual absenteeism, for which condonation of attendance is not permissible [Chunk 60, p. 19; Chunk 61, p. 19].",
+      "answer_1_error": null,
+      "answer_2": "Yes, attendance below 85% can be condoned for a student who was hospitalized, provided they meet specific conditions.\n\nFor cases of prolonged illness and/or hospitalization with a medical certificate, a student must have more than 40% attendance, calculated based on the actual number of classes attended out of the total classes held till the date of compilation, to be eligible for condonation [Chunk 61, p. 19].\n\nIf eligible, a \"Notional % of attendance\" is calculated as:\n(Actual no. of classes attended x 100) / ((Total no. of classes held in the semester) - (No. of classes held during the days of prolonged illness and or hospitalization))\nThis notional percentage must be ≥ 85% for condonation to be granted [Chunk 62, p. 19].\n\nIt is important to note that condonation is not permissible for cases of casual absenteeism or minor illnesses if attendance is below 85% [Chunk 60, p. 19; Chunk 61, p. 19].",
+      "answer_2_error": null,
+      "llm_model": "gemini-2.5-flash",
+      "llm_backend": "Vertex AI (project=lma-ass1, location=global)",
+      "controls_passed": true,
+      "manual_review": {
+        "retrieval_change": "partial rescue: chunk 61 stayed #1, chunk 62 (notional-attendance formula and the >= 85% condition) moved from #5 to #2; evidence coverage of the top-3 rose from 3/5 to 5/5 quotes",
+        "answer_1_verdict": "partially_correct",
+        "answer_1_notes": "Correct 'yes' with the medical-certificate and >40% conditions, but omits the second, decisive condition that notional attendance must reach 85%; as written it implies >40% attendance alone suffices.",
+        "answer_2_verdict": "correct",
+        "answer_2_notes": "Gives both conditions (>40% actual attendance, then notional attendance >= 85%, with the formula) and the casual-absenteeism / minor-illness exclusion.",
+        "missing_clauses": {
+          "answer_1": [
+            "notional attendance must be >= 85% (formula excluding illness days)"
+          ],
+          "answer_2": []
+        },
+        "unsupported_claims": {
+          "answer_1": [],
+          "answer_2": []
+        },
+        "citation_issues": {
+          "answer_1": [],
+          "answer_2": []
+        },
+        "answer_change": "improved"
+      }
+    },
+    {
+      "query_id": "DS-02",
+      "category": "document_specific",
+      "question": "From the 2013 batch onwards, how many Humanities Pass/Fail (HPF) credits are required?",
+      "reference_answer": "4 non-CGPA credits under the Humanities Pass/Fail option (HPF) in the table for the 2013 batch onwards (the 2010 and 2011-2012 tables specify 2).",
+      "evidence": [
+        {
+          "quote": "(for 2013 batch onwards)",
+          "pages": [
+            12
+          ],
+          "chunk_ids": [
+            31
+          ]
+        },
+        {
+          "quote": "|  | Pass/Fail Option | HPF |  | 4 |  |",
+          "pages": [
+            12
+          ],
+          "chunk_ids": [
+            31
+          ]
+        }
+      ],
+      "relevant_chunk_ids": [
+        31
+      ],
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 31,
+          "baseline_rank": 7,
+          "reranked_rank": 1
+        }
+      ],
+      "baseline_top3": [
+        33,
+        30,
+        32
+      ],
+      "reranked_top3": [
+        31,
+        33,
+        29
+      ],
+      "metrics": {
+        "baseline": {
+          "top3": [
+            33,
+            30,
+            32
+          ],
+          "recall@3": 0.0,
+          "hit@3": 0,
+          "mrr@10": 0.14285714285714285,
+          "evidence_cov@3": 0.0,
+          "distractors_in_top3": []
+        },
+        "reranked": {
+          "top3": [
+            31,
+            33,
+            29
+          ],
+          "recall@3": 1.0,
+          "hit@3": 1,
+          "mrr@10": 1.0,
+          "evidence_cov@3": 1.0,
+          "distractors_in_top3": [
+            29
+          ]
+        }
+      },
+      "retrieval_outcome": "improved",
+      "rescue": true,
+      "strict_rescue": true,
+      "answer_1": "The provided context does not explicitly state the number of Humanities Pass/Fail (HPF) credits required for students from the 2013 batch onwards.\n\nThe context indicates that for the 2013 batch onwards, 7-13 credits of coursework done under the Pass/Fail option are not counted towards CGPA calculation [Chunk 33, p. 12]. Chunk 32, which applies to this batch, lists \"Pass/ Fail Electives\" (PPF) as 0-6 credits and \"Industrial Lecture (Pass/Fail)\" (PIL) as 1 credit under the Pass/Fail category [Chunk 32, p. 12]. However, \"Humanities Pass/Fail\" (HPF) is not mentioned.",
+      "answer_1_error": null,
+      "answer_2": "For the 2013 batch onwards, 4 Humanities Pass/Fail (HPF) credits are required, which are non-CGPA credits [Chunk 31, p. 12].",
+      "answer_2_error": null,
+      "llm_model": "gemini-2.5-flash",
+      "llm_backend": "Vertex AI (project=lma-ass1, location=global)",
+      "controls_passed": true,
+      "manual_review": {
+        "retrieval_change": "strict rescue: chunk 31 (2013-onwards table, contains the HPF row) moved from #7 to #1; the baseline top-3 [33, 30, 32] held only the text paragraph and the two table tails without the HPF row",
+        "answer_1_verdict": "insufficient_context",
+        "answer_1_notes": "Correctly reports that the given excerpts do not mention HPF; quotes the 7-13 Pass/Fail total and the PPF (0-6) / PIL (1) rows accurately. No fabrication.",
+        "answer_2_verdict": "correct",
+        "answer_2_notes": "4 non-CGPA HPF credits from the 2013-onwards table (chunk 31). Chunk 29 (2011-2012 table, HPF = 2) was also in the context and was not confused with it.",
+        "missing_clauses": {
+          "answer_1": [
+            "HPF = 4 credits"
+          ],
+          "answer_2": []
+        },
+        "unsupported_claims": {
+          "answer_1": [],
+          "answer_2": []
+        },
+        "citation_issues": {
+          "answer_1": [],
+          "answer_2": []
+        },
+        "answer_change": "improved"
+      }
+    },
+    {
+      "query_id": "NG-06",
+      "category": "negation_constraint",
+      "question": "Which courses is a student not allowed to repeat?",
+      "reference_answer": "A course that has been successfully completed cannot be repeated. Exception: from academic year 2014-15, students who have taken all core and elective courses but still fail to reach the minimum CGPA of 5 (and so are not eligible for the degree) may repeat core or elective courses to earn the minimum CGPA.",
+      "evidence": [
+        {
+          "quote": "A course successfully completed cannot be repeated.",
+          "pages": [
+            23
+          ],
+          "chunk_ids": [
+            76
+          ]
+        },
+        {
+          "quote": "However from academic year 2014-15 where students have taken all core and elective courses but still fail to get a minimum CGPA of 5 and they are not eligible to get degree, these students are permitted to repeat the core or elective courses to earn the minimum CGPA.",
+          "pages": [
+            23
+          ],
+          "chunk_ids": [
+            76
+          ]
+        }
+      ],
+      "relevant_chunk_ids": [
+        76
+      ],
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 76,
+          "baseline_rank": 4,
+          "reranked_rank": 1
+        }
+      ],
+      "baseline_top3": [
+        25,
+        75,
+        46
+      ],
+      "reranked_top3": [
+        76,
+        59,
+        75
+      ],
+      "metrics": {
+        "baseline": {
+          "top3": [
+            25,
+            75,
+            46
+          ],
+          "recall@3": 0.0,
+          "hit@3": 0,
+          "mrr@10": 0.25,
+          "evidence_cov@3": 0.0,
+          "distractors_in_top3": [
+            25
+          ]
+        },
+        "reranked": {
+          "top3": [
+            76,
+            59,
+            75
+          ],
+          "recall@3": 1.0,
+          "hit@3": 1,
+          "mrr@10": 1.0,
+          "evidence_cov@3": 1.0,
+          "distractors_in_top3": []
+        }
+      },
+      "retrieval_outcome": "improved",
+      "rescue": true,
+      "strict_rescue": true,
+      "answer_1": "The provided context does not state which courses a student is *not allowed* to repeat. It only specifies conditions under which courses *must* or *may* be repeated:\n*   A student who earns a U or W grade in a core course has to repeat it compulsorily when the course is offered next [Chunk 75, p. 22].\n*   A student securing a U or W grade in an elective course may repeat it if they desire to get a successful grade [Chunk 75, p. 22].\n\nTherefore, based on the provided information, there are no courses explicitly stated as non-repeatable.",
+      "answer_1_error": null,
+      "answer_2": "A student is generally not allowed to repeat a course that has been successfully completed [Chunk 76, p. 22].\n\nHowever, for students from the academic year 2014-15 onwards, if they have completed all core and elective courses but fail to achieve a minimum CGPA of 5 and are thus ineligible for a degree, they are permitted to repeat core or elective courses to meet the minimum CGPA requirement [Chunk 76, p. 22].",
+      "answer_2_error": null,
+      "llm_model": "gemini-2.5-flash",
+      "llm_backend": "Vertex AI (project=lma-ass1, location=global)",
+      "controls_passed": true,
+      "manual_review": {
+        "retrieval_change": "strict rescue: chunk 76 (R.25.1 tail, 'A course successfully completed cannot be repeated' + the 2014-15 exception) moved from #4 to #1; the baseline top-3 [25, 75, 46] held the 'No withdrawal ... will be allowed' registration clause (distractor), the U/W repetition rules and the n-4 registration rule",
+        "answer_1_verdict": "insufficient_context",
+        "answer_1_notes": "Lists only the U/W repetition rules from chunk 75 and concludes that 'there are no courses explicitly stated as non-repeatable'. True for its context and no fabrication, but a reader would take it to mean there is no restriction, which is the opposite of the rule.",
+        "answer_2_verdict": "correct",
+        "answer_2_notes": "Successfully completed courses cannot be repeated, plus the 2014-15 exception for students with all courses taken and CGPA below 5.",
+        "missing_clauses": {
+          "answer_1": [
+            "a successfully completed course cannot be repeated",
+            "2014-15 exception for CGPA below 5"
+          ],
+          "answer_2": []
+        },
+        "unsupported_claims": {
+          "answer_1": [],
+          "answer_2": []
+        },
+        "citation_issues": {
+          "answer_1": [],
+          "answer_2": [
+            "prohibition cited as [Chunk 76, p. 22]; the clause is on PDF page 23 (chunk 76 spans pp. 22-23)"
+          ]
+        },
+        "answer_change": "improved"
+      }
+    },
+    {
+      "query_id": "SY-03",
+      "category": "synonym_mismatch",
+      "question": "How much time does a student have to dispute a grade they think is unfair?",
+      "reference_answer": "The student can contact the teacher concerned within three weeks from the commencement of the semester immediately following the announcement of results; if the teacher finds the case genuine, he/she may re-examine and forward a revised grade to the Dean of Academic Courses through the Chairman of the Class Committee.",
+      "evidence": [
+        {
+          "quote": "In case any student feels aggrieved, he/she can contact the teacher concerned within three weeks from the commencement of the semester immediately following the announcement of the results.",
+          "pages": [
+            22
+          ],
+          "chunk_ids": [
+            74
+          ]
+        },
+        {
+          "quote": "If the teacher feels that the case is genuine, he/she may re-examine the case and forward a revised grade, if any, to the Dean of Academic Courses through the Chairman of the Class Committee",
+          "pages": [
+            22
+          ],
+          "chunk_ids": [
+            75
+          ]
+        }
+      ],
+      "relevant_chunk_ids": [
+        74,
+        75
+      ],
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 74,
+          "baseline_rank": 2,
+          "reranked_rank": 4
+        },
+        {
+          "chunk_id": 75,
+          "baseline_rank": 1,
+          "reranked_rank": 3
+        }
+      ],
+      "baseline_top3": [
+        75,
+        74,
+        59
+      ],
+      "reranked_top3": [
+        48,
+        72,
+        75
+      ],
+      "metrics": {
+        "baseline": {
+          "top3": [
+            75,
+            74,
+            59
+          ],
+          "recall@3": 1.0,
+          "hit@3": 1,
+          "mrr@10": 1.0,
+          "evidence_cov@3": 1.0,
+          "distractors_in_top3": []
+        },
+        "reranked": {
+          "top3": [
+            48,
+            72,
+            75
+          ],
+          "recall@3": 0.5,
+          "hit@3": 1,
+          "mrr@10": 0.3333333333333333,
+          "evidence_cov@3": 0.5,
+          "distractors_in_top3": []
+        }
+      },
+      "retrieval_outcome": "worsened",
+      "rescue": false,
+      "strict_rescue": false,
+      "answer_1": "A student has three weeks from the commencement of the semester immediately following the announcement of the results to contact the teacher concerned if they feel aggrieved about a grade [Chunk 74, p. 22]. The student can access their answer paper(s) in the end semester examination, which may be shown to them by the teachers [Chunk 75, p. 22]. If the teacher finds the case genuine, they may re-examine it and forward a revised grade, if any, to the Dean of Academic Courses through the Chairman of the Class Committee with justification [Chunk 75, p. 22].",
+      "answer_1_error": null,
+      "answer_2": "The provided context does not specify a time limit for a student to dispute a grade they think is unfair.\n\nThe ordinances state that a student shall have access to their end-semester examination answer paper(s) which may be shown by the teachers concerned. If the teacher deems the case genuine, they may re-examine it and forward a revised grade with justification [Chunk 75, p. 22]. However, no deadline for initiating this process is mentioned.",
+      "answer_2_error": null,
+      "llm_model": "gemini-2.5-flash",
+      "llm_backend": "Vertex AI (project=lma-ass1, location=global)",
+      "controls_passed": true,
+      "manual_review": {
+        "retrieval_change": "worsened: chunk 74 (the 'within three weeks' clause) fell from #2 to #4, out of the top-3; chunk 75 (re-examination procedure) went from #1 to #3; chunks 48 (dropping courses) and 72 (grade definitions) were promoted to #1 and #2",
+        "answer_1_verdict": "correct",
+        "answer_1_notes": "Three weeks from the commencement of the next semester after results (R.24.1), plus access to answer papers from chunk 75.",
+        "answer_2_verdict": "insufficient_context",
+        "answer_2_notes": "States that no time limit is given in the context and describes the answer-paper access and re-examination procedure from chunk 75; true for its context, but the answer to the question is lost. No fabrication.",
+        "missing_clauses": {
+          "answer_1": [],
+          "answer_2": [
+            "within three weeks from the commencement of the following semester"
+          ]
+        },
+        "unsupported_claims": {
+          "answer_1": [],
+          "answer_2": []
+        },
+        "citation_issues": {
+          "answer_1": [],
+          "answer_2": []
+        },
+        "answer_change": "worsened"
+      }
+    },
+    {
+      "query_id": "DS-05",
+      "category": "document_specific",
+      "question": "What attendance code does a student with 90% attendance in a course receive?",
+      "reference_answer": "'G' (Good), which covers attendance of 85 to 94%.",
+      "evidence": [
+        {
+          "quote": "| 85 to 94% | Good | G |",
+          "pages": [
+            18
+          ],
+          "chunk_ids": [
+            58
+          ]
+        }
+      ],
+      "relevant_chunk_ids": [
+        58
+      ],
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 58,
+          "baseline_rank": 3,
+          "reranked_rank": 5
+        }
+      ],
+      "baseline_top3": [
+        60,
+        61,
+        58
+      ],
+      "reranked_top3": [
+        60,
+        59,
+        61
+      ],
+      "metrics": {
+        "baseline": {
+          "top3": [
+            60,
+            61,
+            58
+          ],
+          "recall@3": 1.0,
+          "hit@3": 1,
+          "mrr@10": 0.3333333333333333,
+          "evidence_cov@3": 1.0,
+          "distractors_in_top3": []
+        },
+        "reranked": {
+          "top3": [
+            60,
+            59,
+            61
+          ],
+          "recall@3": 0.0,
+          "hit@3": 0,
+          "mrr@10": 0.2,
+          "evidence_cov@3": 0.0,
+          "distractors_in_top3": []
+        }
+      },
+      "retrieval_outcome": "worsened",
+      "rescue": false,
+      "strict_rescue": false,
+      "answer_1": "A student with 90% attendance in a course receives an attendance code of \"G\" [Chunk 58, p. 18].",
+      "answer_1_error": null,
+      "answer_2": "The provided context does not explicitly state what attendance code a student with 90% attendance in a course receives. The regulations only specify that if a student has less than 85% attendance, they should be assigned a \"W\" grade in that subject along with \"P\" as the attendance code [Chunk 60, p. 18]. For attendance not ≥ 85%, a \"W\" grade shall be awarded [Chunk 61, p. 19]. The context does not describe attendance codes for students meeting or exceeding the 85% minimum requirement.",
+      "answer_2_error": null,
+      "llm_model": "gemini-2.5-flash",
+      "llm_backend": "Vertex AI (project=lma-ass1, location=global)",
+      "controls_passed": true,
+      "manual_review": {
+        "retrieval_change": "worsened: chunk 58 (attendance-code table) fell from #3 to #5, out of the top-3; replaced by chunk 59 (R.14.2 shortfall rule)",
+        "answer_1_verdict": "correct",
+        "answer_1_notes": "'G' for 90% attendance, from the table in chunk 58.",
+        "answer_2_verdict": "insufficient_context",
+        "answer_2_notes": "Reports only the <85% case (W grade with code P) and says codes for students at or above 85% are not described; true for its context. No fabrication.",
+        "missing_clauses": {
+          "answer_1": [],
+          "answer_2": [
+            "85-94% -> G (Good)"
+          ]
+        },
+        "unsupported_claims": {
+          "answer_1": [],
+          "answer_2": []
+        },
+        "citation_issues": {
+          "answer_1": [],
+          "answer_2": []
+        },
+        "answer_change": "worsened"
+      }
+    }
+  ],
+  "limitations": [
+    "33 questions, one PDF, one retrieval run per pipeline: the counts are indicative, not statistically significant. NG-06 was added after a retrieval-only screen of 24 negation phrasings (results/stress_test/negation_screen.json); 1 of the 3 screen hits survived checking, so the negation rescue was searched for, not found by chance.",
+    "Answers were generated 5 times per pipeline for the six reviewed cases (60 Gemini calls, all on Vertex AI, the same backend as the latency benchmark). The verdict was the same in all 5 runs for every case; only the wording changed. Five runs show the pattern is stable, but cannot rule out rarer outcomes.",
+    "Earlier single-run answers from the Gemini Developer API are kept in archived_developer_api_generation_results.json for reference only; they showed the same verdict pattern and are not used in the results.",
+    "Answer verdicts are a single reviewer's judgement against the verified reference answers, not an independent annotation. The automatic key-fact check (regexes in src/stress_repeats.py) agreed with every verdict, but it only tests whether key facts are mentioned.",
+    "Relevance labels are the chunks containing the evidence quotes; a chunk that answers the question with different wording would not count as relevant.",
+    "C-04 (control) failed for both pipelines: the 12-credit rule is the last sentence of chunk 52, which is mostly about contact courses, and chunk 52 is not in the top-10. Re-ranking cannot recover chunks outside the candidate pool (a chunking issue, not a ranking issue).",
+    "DS-01 (free-elective credits, 2011-2012): the relevant table tail (chunk 30) stays at #8-#9; the table half without its batch caption is hard for both models. Recorded as 'improved (rank only)', which is not a meaningful gain."
+  ],
+  "further_evaluation": [
+    "Grow the question set (for example 2-3 paraphrases per question) so that improved / worsened counts per category become meaningful.",
+    "Have a second person review the answers independently and report agreement.",
+    "Measure the effect of the candidate-pool size (top-20 or top-30 before re-ranking) on misses like C-04 and DS-01, together with the extra Cross-Encoder latency.",
+    "Repeat table headers / batch captions in every table chunk, or chunk tables row-wise, and re-measure DS-01, DS-02 and DS-05."
+  ],
+  "repeat_runs": {
+    "description": "5 generations per pipeline per case on one backend; verdicts are manual, the key-fact check is automatic (src/stress_repeats.py)",
+    "key_facts": {
+      "KT-02": {
+        "CGPA 8.5": [
+          "8\\.5"
+        ],
+        "measured at the end of the 3rd semester": [
+          "(third|3rd) semester"
+        ],
+        "opt during the 4th semester": [
+          "(fourth|4th) semester"
+        ]
+      },
+      "EX-05": {
+        "actual attendance above 40%": [
+          "40\\s?%"
+        ],
+        "notional attendance must reach 85%": [
+          "notional"
+        ]
+      },
+      "DS-02": {
+        "HPF = 4 credits": [
+          "HPF[^.\\n]{0,120}?\\b(4|four)\\b",
+          "\\b(4|four)\\b[^.\\n]{0,60}HPF"
+        ]
+      },
+      "NG-06": {
+        "successfully completed courses cannot be repeated": [
+          "successfully completed"
+        ],
+        "2014-15 exception (CGPA below 5)": [
+          "2014"
+        ]
+      },
+      "SY-03": {
+        "within three weeks": [
+          "(three|3) weeks"
+        ]
+      },
+      "DS-05": {
+        "attendance code G": [
+          "[\\\"'“‘*]G[\\\"'”’*]",
+          "\\bG\\b\\s*\\(",
+          "\\(G\\)",
+          "code\\s+(is\\s+)?G\\b"
+        ]
+      }
+    },
+    "cases": [
+      {
+        "query_id": "KT-02",
+        "n_runs": 5,
+        "llm_backend": [
+          "Vertex AI (project=lma-ass1, location=global)"
+        ],
+        "controls_passed_all_runs": true,
+        "notes": "Answer 1 always answers the award rule (R.30.1) and says the opt-in rule is missing. Answer 2 always gives 8.5 / end of 3rd semester / during 4th semester; runs 2-3 also quote O.5 ('end of the fourth semester'), runs 1, 4 and 5 do not.",
+        "answer_1_verdicts": {
+          "insufficient_context": 5
+        },
+        "answer_1_all_key_facts": 0,
+        "answer_1_fact_check_agrees": true,
+        "answer_2_verdicts": {
+          "correct": 5
+        },
+        "answer_2_all_key_facts": 5,
+        "answer_2_fact_check_agrees": true
+      },
+      {
+        "query_id": "EX-05",
+        "n_runs": 5,
+        "llm_backend": [
+          "Vertex AI (project=lma-ass1, location=global)"
+        ],
+        "controls_passed_all_runs": true,
+        "notes": "Answer 1 never mentions the notional-attendance condition; Answer 2 always does (runs 1 and 5 also give the formulas).",
+        "answer_1_verdicts": {
+          "partially_correct": 5
+        },
+        "answer_1_all_key_facts": 0,
+        "answer_1_fact_check_agrees": true,
+        "answer_2_verdicts": {
+          "correct": 5
+        },
+        "answer_2_all_key_facts": 5,
+        "answer_2_fact_check_agrees": true
+      },
+      {
+        "query_id": "DS-02",
+        "n_runs": 5,
+        "llm_backend": [
+          "Vertex AI (project=lma-ass1, location=global)"
+        ],
+        "controls_passed_all_runs": true,
+        "notes": "Answer 1 always says HPF is not in the context; Answer 2 is always '4 HPF credits [Chunk 31]'.",
+        "answer_1_verdicts": {
+          "insufficient_context": 5
+        },
+        "answer_1_all_key_facts": 0,
+        "answer_1_fact_check_agrees": true,
+        "answer_2_verdicts": {
+          "correct": 5
+        },
+        "answer_2_all_key_facts": 5,
+        "answer_2_fact_check_agrees": true
+      },
+      {
+        "query_id": "NG-06",
+        "n_runs": 5,
+        "llm_backend": [
+          "Vertex AI (project=lma-ass1, location=global)"
+        ],
+        "controls_passed_all_runs": true,
+        "notes": "Answer 1 lists the U/W repetition rules every time; runs 1 and 3 add 'no courses explicitly stated as non-repeatable', run 5 says the evidence is insufficient. Answer 2 always gives the prohibition and the 2014-15 exception (run 4 cites pp. 22-23 correctly; the other runs cite p. 22 only).",
+        "answer_1_verdicts": {
+          "insufficient_context": 5
+        },
+        "answer_1_all_key_facts": 0,
+        "answer_1_fact_check_agrees": true,
+        "answer_2_verdicts": {
+          "correct": 5
+        },
+        "answer_2_all_key_facts": 5,
+        "answer_2_fact_check_agrees": true
+      },
+      {
+        "query_id": "SY-03",
+        "n_runs": 5,
+        "llm_backend": [
+          "Vertex AI (project=lma-ass1, location=global)"
+        ],
+        "controls_passed_all_runs": true,
+        "notes": "Answer 1 always gives 'within three weeks'; Answer 2 always says no time limit is given.",
+        "answer_1_verdicts": {
+          "correct": 5
+        },
+        "answer_1_all_key_facts": 5,
+        "answer_1_fact_check_agrees": true,
+        "answer_2_verdicts": {
+          "insufficient_context": 5
+        },
+        "answer_2_all_key_facts": 0,
+        "answer_2_fact_check_agrees": true
+      },
+      {
+        "query_id": "DS-05",
+        "n_runs": 5,
+        "llm_backend": [
+          "Vertex AI (project=lma-ass1, location=global)"
+        ],
+        "controls_passed_all_runs": true,
+        "notes": "Answer 1 always gives 'G'; Answer 2 always says the code for 90% is not specified.",
+        "answer_1_verdicts": {
+          "correct": 5
+        },
+        "answer_1_all_key_facts": 5,
+        "answer_1_fact_check_agrees": true,
+        "answer_2_verdicts": {
+          "insufficient_context": 5
+        },
+        "answer_2_all_key_facts": 0,
+        "answer_2_fact_check_agrees": true
+      }
+    ]
+  }
+}

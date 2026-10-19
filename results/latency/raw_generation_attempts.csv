@@ -1,0 +1,38 @@
+query_id,repeat,answer,backend,attempt,status,ms,error
+KT-02,1,1,"Vertex AI (project=lma-ass1, location=global)",1,ok,8034.4,
+KT-02,1,2,"Vertex AI (project=lma-ass1, location=global)",1,ok,3482.1,
+EX-05,1,1,"Vertex AI (project=lma-ass1, location=global)",1,ok,6094.1,
+EX-05,1,2,"Vertex AI (project=lma-ass1, location=global)",1,ok,4395.8,
+C-01,1,1,"Vertex AI (project=lma-ass1, location=global)",1,ok,3340.3,
+C-01,1,2,"Vertex AI (project=lma-ass1, location=global)",1,ok,1253.4,
+KT-02,2,1,"Vertex AI (project=lma-ass1, location=global)",1,ok,4927.0,
+KT-02,2,2,"Vertex AI (project=lma-ass1, location=global)",1,ok,3078.1,
+EX-05,2,1,"Vertex AI (project=lma-ass1, location=global)",1,ok,9211.4,
+EX-05,2,2,"Vertex AI (project=lma-ass1, location=global)",1,ok,13192.5,
+C-01,2,1,"Vertex AI (project=lma-ass1, location=global)",1,ok,4473.5,
+C-01,2,2,"Vertex AI (project=lma-ass1, location=global)",1,failed,207.4,"ClientError 429: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/gener"
+C-01,2,2,"Vertex AI (project=lma-ass1, location=global)",2,ok,9556.2,
+KT-02,3,1,"Vertex AI (project=lma-ass1, location=global)",1,ok,4734.7,
+KT-02,3,2,"Vertex AI (project=lma-ass1, location=global)",1,ok,2942.8,
+EX-05,3,1,"Vertex AI (project=lma-ass1, location=global)",1,ok,1843.2,
+EX-05,3,2,"Vertex AI (project=lma-ass1, location=global)",1,ok,1961.3,
+C-01,3,1,"Vertex AI (project=lma-ass1, location=global)",1,ok,2866.3,
+C-01,3,2,"Vertex AI (project=lma-ass1, location=global)",1,ok,1246.1,
+KT-02,4,1,"Vertex AI (project=lma-ass1, location=global)",1,ok,2305.5,
+KT-02,4,2,"Vertex AI (project=lma-ass1, location=global)",1,ok,4243.9,
+EX-05,4,1,"Vertex AI (project=lma-ass1, location=global)",1,ok,2138.3,
+EX-05,4,2,"Vertex AI (project=lma-ass1, location=global)",1,ok,2910.0,
+C-01,4,1,"Vertex AI (project=lma-ass1, location=global)",1,failed,211.5,"ClientError 429: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/gener"
+C-01,4,1,"Vertex AI (project=lma-ass1, location=global)",2,failed,147.7,"ClientError 429: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/gener"
+C-01,4,1,"Vertex AI (project=lma-ass1, location=global)",3,failed,10678.1,"ClientError 429: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/gener"
+C-01,4,2,"Vertex AI (project=lma-ass1, location=global)",1,failed,152.5,"ClientError 429: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/gener"
+C-01,4,2,"Vertex AI (project=lma-ass1, location=global)",2,ok,960.7,
+KT-02,5,1,"Vertex AI (project=lma-ass1, location=global)",1,failed,161.7,"ClientError 429: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/gener"
+KT-02,5,1,"Vertex AI (project=lma-ass1, location=global)",2,ok,6153.8,
+KT-02,5,2,"Vertex AI (project=lma-ass1, location=global)",1,ok,7194.1,
+EX-05,5,1,"Vertex AI (project=lma-ass1, location=global)",1,ok,3053.2,
+EX-05,5,2,"Vertex AI (project=lma-ass1, location=global)",1,ok,3256.3,
+C-01,5,1,"Vertex AI (project=lma-ass1, location=global)",1,ok,5380.1,
+C-01,5,2,"Vertex AI (project=lma-ass1, location=global)",1,ok,26325.8,
+C-01,4,1,"Vertex AI (project=lma-ass1, location=global)",1,ok,2422.4,
+C-01,4,2,"Vertex AI (project=lma-ass1, location=global)",1,ok,1148.3,

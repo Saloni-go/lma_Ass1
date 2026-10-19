@@ -1,0 +1,1227 @@
+{
+  "metadata": {
+    "source_pdf": "document.pdf",
+    "source_sha256": "3e9178fb705aefb95e2681b97337a61f0139ebd30fc4542205b9afcbdfa2436f",
+    "n_pages": 25,
+    "n_chunks": 85,
+    "chunk_size": 1000,
+    "chunk_overlap": 200,
+    "separators": [
+      "\n\n",
+      "\n",
+      ". ",
+      " ",
+      ""
+    ],
+    "splitter": "langchain_text_splitters.RecursiveCharacterTextSplitter",
+    "extract_tables": true,
+    "page_numbering": "1-based PDF page index (printed page number = PDF page - 1)",
+    "created_utc": "2026-10-19T13:59:50+00:00"
+  },
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "source": "document.pdf",
+      "page_start": 1,
+      "page_end": 2,
+      "pages": [
+        1,
+        2
+      ],
+      "text": "ORDINANCES AND REGULATIONS\n(applicable from 2010 batch to2014 batch)\nB.Tech / B.Tech (Honours)\nINDIAN INSTITUTE OF TECHNOLOGY MADRAS\nCHENNAI – 600 036\nCONTENTS\nORDINANCES 2\nREGULATIONS\nR.1.0 Admission 5\nR.2.0 Structure of the B.Tech/ B.Tech (Honours) Programme 7\nR.3.0 Faculty Adviser 12\nR.4.0 Class Committee 12\nR.5.0 Change of Branch 13\nR.6.0 Enrolment and Registration 14\nR.7.0 Registration Requirement 15\nR.8.0 Supplementary Examination 15\nR.9.0 Contact Courses 15\nR.10.0 Minimum Requirement to Continue the Programme 16\nR.11.0 Maximum Duration of the Programme 16\nR.12.0 Temporary withdrawal from the Programme 16\nR.13.0 Discipline 17\nR.14.0 Attendance 17\nR.15.0 Assessment Procedure – Tests and Examinations 18\nR.16.0 System of Tests 18\nR.17.0 End Semester Examination 18\nR.18.0 Project Evaluation 19\nR.19.0 Weightages 19\nR.20.0 Make-up Examination 19\nR.21.0 Subject-wise Grading of Students 20\nR.22.0 Method of Awarding Letter Grades 21\nR.23.0 Declaration of Results 21",
+      "char_count": 976,
+      "start_index": 0,
+      "end_index": 976,
+      "chunk_hash": "8f1654dd8d69"
+    },
+    {
+      "chunk_id": 1,
+      "source": "document.pdf",
+      "page_start": 2,
+      "page_end": 3,
+      "pages": [
+        2,
+        3
+      ],
+      "text": "R.18.0 Project Evaluation 19\nR.19.0 Weightages 19\nR.20.0 Make-up Examination 19\nR.21.0 Subject-wise Grading of Students 20\nR.22.0 Method of Awarding Letter Grades 21\nR.23.0 Declaration of Results 21\nR.24.0 Re-examination of Answer Papers 21\nR.25.0 Course Repetition 21\nR.26.0 Grade Card 22\nR.27.0 NCC / NSO / NSS Requirements 22\nR.28.0 Scholarships and Tuition Fee Exemption 23\nR.29.0 Eligibility for Award of the B.Tech Degree 23\nR.30.0 Eligibility for Award of the B.Tech (Honours) Degree 24\nR.31.0 Power to Modify 24\nORDINANCES AND REGULATIONS\nB. Tech / B.Tech (Honours)\nORDINANCES\nO.1 Candidates who have passed\n- Final examination of the 10+2 system, conducted by any recognized Central/ State Board, such as Central Board of Secondary Education, New Delhi; Council for Indian School Certificate Examination, New Delhi, etc. OR\n- Intermediate or two-year Pre-University Examination conducted by a recognized\nBoard/University OR",
+      "char_count": 932,
+      "start_index": 778,
+      "end_index": 1710,
+      "chunk_hash": "c7c70c23fb18"
+    },
+    {
+      "chunk_id": 2,
+      "source": "document.pdf",
+      "page_start": 3,
+      "page_end": 3,
+      "pages": [
+        3
+      ],
+      "text": "- Intermediate or two-year Pre-University Examination conducted by a recognized\nBoard/University OR\n- Final Examination of the two-year course of the Joint Services Wing of the National\nDefence Academy OR\n- General Certificate Education (GCE) Examination (London/Cambridge/Sri Lanka) at the\nAdvanced (A) Level OR\n- High School Certificate Examination of the Cambridge University or International\nBaccalaureate Diploma of the International Baccalaureate office, Geneva or\n- Any Public School/Board/University examination in India or in any foreign country recognized as equivalent to 10+2 system by the Association of Indian Universities (AIU) OR\n- H.S.C. Vocational Examination OR\n- Senior Secondary School Examination conducted by the National Open schooling with a minimum of five subjects OR\n- 3 or 4 year Diploma recognized by AICTE or a State Board of Technical Education and",
+      "char_count": 880,
+      "start_index": 1611,
+      "end_index": 2491,
+      "chunk_hash": "28aadc0c81ca"
+    },
+    {
+      "chunk_id": 3,
+      "source": "document.pdf",
+      "page_start": 3,
+      "page_end": 3,
+      "pages": [
+        3
+      ],
+      "text": "- Senior Secondary School Examination conducted by the National Open schooling with a minimum of five subjects OR\n- 3 or 4 year Diploma recognized by AICTE or a State Board of Technical Education and\n- In case the relevant qualifying examination is not a public examination, the candidate must have passed at least one public (Board or Pre-University) examination at an earlier level.",
+      "char_count": 384,
+      "start_index": 2292,
+      "end_index": 2676,
+      "chunk_hash": "5385008e16bf"
+    },
+    {
+      "chunk_id": 4,
+      "source": "document.pdf",
+      "page_start": 3,
+      "page_end": 3,
+      "pages": [
+        3
+      ],
+      "text": "AND\nFor 2010 – 2012 batches\n- Candidates belonging to GE, OBC and DS categories should have secured atleast 60%\nmarks in aggregate in their qualifying examination. Candidates belonging to SC, ST and Physically Disabled (PD) categories must secure a minimum of 55% marks in aggregate in qualifying examination. If any board awards only letter grades without providing an equivalent percentage of marks on the grade sheet, the candidate should obtain a certificate from the Board specifying equivalent marks, and submit it at the time of counseling. In case such a certificate is not provided by the candidate, the decision of the Joint Implementation Committee of JEE (Joint Entrance Examination) regarding his/her eligibility shall be held final.\n\nAND\n- Candidates who have been placed in the final merit list in the Joint Entrance Examination\n(JEE) administered jointly IITs are eligible to be considered for admission to the B.Tech/Dual Degree programme in the year in which the JEE is held.",
+      "char_count": 993,
+      "start_index": 2678,
+      "end_index": 3671,
+      "chunk_hash": "5404bf5ed18d"
+    },
+    {
+      "chunk_id": 5,
+      "source": "document.pdf",
+      "page_start": 4,
+      "page_end": 4,
+      "pages": [
+        4
+      ],
+      "text": "For 2013 batch\nThe candidate should be among the top 1,50,000 (all categories included) in JEE (Main) of the respective years and should be within the category-wise top 20 percentile of successful candidates in his / her respective class XII (or equivalent) board examination.\n\nFor 2014 batch onwards\nThe candidate should be among the top 1,50,000 (all categories included) in JEE (Main) of the respective years and should satisfy at least one of these two criteria:",
+      "char_count": 466,
+      "start_index": 3673,
+      "end_index": 4139,
+      "chunk_hash": "2c204e3e63f9"
+    },
+    {
+      "chunk_id": 6,
+      "source": "document.pdf",
+      "page_start": 4,
+      "page_end": 4,
+      "pages": [
+        4
+      ],
+      "text": "I. He/she is within the category-wise top 20 percentile of successful candidates in his/her respective Class XII (or equivalent) board examination. II. He/she has secured 75% (for GEN or OBC-NCL) or 70% (SC, ST or PwD) of aggregate marks in the Class XII (or equivalent) board examination\n- The marks scored in the following five subjects will be considered for calculating the aggregate marks and the cut-off marks for fulfilling the top 20 percentile criterion: (1) Physics, (2) Chemistry, (3) Mathematics, (4) a language (if the candidate has taken more than one language, then the language with the higher marks will be considered), and (5) any subject other than the above four (the subject with the higher marks will be considered).",
+      "char_count": 738,
+      "start_index": 4141,
+      "end_index": 4879,
+      "chunk_hash": "462cdd8c3fa7"
+    },
+    {
+      "chunk_id": 7,
+      "source": "document.pdf",
+      "page_start": 4,
+      "page_end": 4,
+      "pages": [
+        4
+      ],
+      "text": "- In case any of the subjects Physics, Chemistry, Mathematics and Language are not evaluated in the final year (e.g., in a 3-year diploma course), then the marks for the same subject from the previous year will be used for calculating the top 20 percentile cut-off and percentage of aggregate marks.\n- Candidates who have failed in one or more subjects in the Class XII (or equivalent)\nexamination will have to reappear for all the subjects in subsequent year.\n- For candidates who appeared for the Class XII (or equivalent) Board Examination, but reappeared in all subjects in subsequent year, the best of two performances will be considered.",
+      "char_count": 643,
+      "start_index": 4880,
+      "end_index": 5523,
+      "chunk_hash": "e1171f38268f"
+    },
+    {
+      "chunk_id": 8,
+      "source": "document.pdf",
+      "page_start": 4,
+      "page_end": 4,
+      "pages": [
+        4
+      ],
+      "text": "- For candidates who appeared for the Class XII (or equivalent) Board Examination, but reappeared in all subjects in subsequent year, the best of two performances will be considered.\n- If a Board awards only letter grades without providing an equivalent percentage of marks on the grade sheet, the candidate should obtain a certificate from the Board specifying the equivalent marks and submit it at the time of online acceptance of the allocated seat. In case such a certificate is not provided, the decision taken by the Joint Implementation. Committee of JEE (Advanced) will be final.\n- If a Board gives aggregate marks considering both Class XI and Class XII examinations",
+      "char_count": 675,
+      "start_index": 5341,
+      "end_index": 6016,
+      "chunk_hash": "758064bad90f"
+    },
+    {
+      "chunk_id": 9,
+      "source": "document.pdf",
+      "page_start": 4,
+      "page_end": 4,
+      "pages": [
+        4
+      ],
+      "text": "- If a Board gives aggregate marks considering both Class XI and Class XII examinations\n(in the 10+2 system), then only the Class XII marks will be considered. If a Board gives aggregate marks considering the results of all three years of a 3-year diploma or courses of equivalent duration, then only the marks scored in the final year will be considered. Similarly, for Boards which follow a semester system, the marks scored in the final two semesters will be considered.\n- If a Board does not give marks scored in individual subjects but gives only the aggregate marks, then the aggregate marks given by the Board will be considered as such.\n- The criteria, as specified above, is applicable \"in toto\" to all the candidates including foreign nationals.",
+      "char_count": 755,
+      "start_index": 5929,
+      "end_index": 6684,
+      "chunk_hash": "14e42cdb4bba"
+    },
+    {
+      "chunk_id": 10,
+      "source": "document.pdf",
+      "page_start": 5,
+      "page_end": 5,
+      "pages": [
+        5
+      ],
+      "text": "Regarding the cut-off marks for the top 20 percentile\n- The category-wise cut-off marks for the top 20 percentile are calculated based on the marks scored by all the \"successful\" candidates in their respective boards.\n- The cut-off marks for PwD candidates will be the same as the lowest of the cut-off marks for GEN, OBC-NCL, SC and ST categories.\n- The top 20 percentile cut-off marks of an year of the respective Boards only will be considered for candidates who pass the Class XII (or equivalent) examination in that year and not cut-off marks of subsequent year.\n- In case a Board does not provide information about the cut-off for the top 20 percentile, the candidate will have to produce a certificate from the respective Board stating that he/she falls within the top 20 percentile of successful candidates. If the candidate fails to do so, then the cut-off marks for the CBSE will be used.",
+      "char_count": 898,
+      "start_index": 6686,
+      "end_index": 7584,
+      "chunk_hash": "7f0bf721cdd6"
+    },
+    {
+      "chunk_id": 11,
+      "source": "document.pdf",
+      "page_start": 5,
+      "page_end": 5,
+      "pages": [
+        5
+      ],
+      "text": "AND Candidates who have been placed in the final merit list in the JEE (Advanced) administered jointly IITs are eligible to be considered for admission to the B.Tech/Dual Degree programme in the year in which the JEE (Advanced) is held.",
+      "char_count": 236,
+      "start_index": 7586,
+      "end_index": 7822,
+      "chunk_hash": "ebdd815266cd"
+    },
+    {
+      "chunk_id": 12,
+      "source": "document.pdf",
+      "page_start": 5,
+      "page_end": 6,
+      "pages": [
+        5,
+        6
+      ],
+      "text": "In addition; candidates who are eligible to seek admission as foreign nationals or under other categories as approved by the Council of the IITs will also be considered for admission to the B.Tech programme if their applications are received through proper channels and if they are qualified in JEE.\nO.2 Admission to the particular branch of study shall be as decided by the Joint Admission Board.\nO.3 The duration of the B.Tech/ B.Tech (Honours) programme will normally be 8 semesters\nO.4 The award of merit scholarships to the B.Tech/ B.Tech (Honours) students will be governed by the regulations framed by the Senate from time to time. 0.5 Student can opt for B.Tech (Honours) at the end of the fourth semester of B.Tech programme subject to the conditions prescribed by the Senate from time to time.\nO.6 The award of the B.Tech/ B,Tech (Honours) degree shall be in accordance with the regulations of the Senate of the Institute\nREGULATIONS\nR.1.0 Admission",
+      "char_count": 959,
+      "start_index": 7824,
+      "end_index": 8783,
+      "chunk_hash": "e992e22d6ab5"
+    },
+    {
+      "chunk_id": 13,
+      "source": "document.pdf",
+      "page_start": 5,
+      "page_end": 6,
+      "pages": [
+        5,
+        6
+      ],
+      "text": "O.6 The award of the B.Tech/ B,Tech (Honours) degree shall be in accordance with the regulations of the Senate of the Institute\nREGULATIONS\nR.1.0 Admission\nR.1.1 The number of seats in each branch of the B.Tech programme for which admission is to be made in the IIT Madras, will be decided by its Senate. Seats are reserved for candidates belonging to the Scheduled Castes, Scheduled Tribes, Other Backward Classes, Persons with Disability and children of defence/ paramilitary personnel killed or permanently disabled in action during war or peace-time operations, as per the Government of India orders from time to time.\nR.1.2 Admission to the B.Tech programme in any year will be based on the results of a Joint Entrance Examination conducted in the month of April of that year by the IITs.",
+      "char_count": 793,
+      "start_index": 8628,
+      "end_index": 9421,
+      "chunk_hash": "bd36aa220cfc"
+    },
+    {
+      "chunk_id": 14,
+      "source": "document.pdf",
+      "page_start": 6,
+      "page_end": 6,
+      "pages": [
+        6
+      ],
+      "text": "R.1.2 Admission to the B.Tech programme in any year will be based on the results of a Joint Entrance Examination conducted in the month of April of that year by the IITs.\nR.1.3 The eligibility criteria, consistent with ordinance O.1, for appearing at the Joint Entrance Examination, as well as the criteria to be satisfied to apply for direct admission in any year will be decided by the Joint Admission Board and the Directors of all the IITs in their capacity as Chairman of the respective Senate.",
+      "char_count": 499,
+      "start_index": 9251,
+      "end_index": 9750,
+      "chunk_hash": "780cd5db6da7"
+    },
+    {
+      "chunk_id": 15,
+      "source": "document.pdf",
+      "page_start": 6,
+      "page_end": 6,
+      "pages": [
+        6
+      ],
+      "text": "The criteria will be set out in an information brochure to be forwarded to the applicants along with the relevant application forms.\nR.1.4 The Joint Admission Board will decide on the procedure for conducting the Joint Entrance Examination and preparing a merit list for the general category of students and a separate merit list for candidates belonging to Scheduled Castes, Scheduled Tribes, other Backward Classes and Persons with Disabilities (PD). Subject to minimum performance criteria in the examination decided by the committee from year to year, the Joint Admission Board will offer admission, in order of merit, from these lists to candidates, taking into account the choice of branch indicated by the candidate and the available seats in each branch in the various IITs.\n\nR.1.5 At the time of admission, a candidate should have appeared/ passed in the final examination of any of the following qualifying examinations:",
+      "char_count": 930,
+      "start_index": 9752,
+      "end_index": 10682,
+      "chunk_hash": "61ef00ee43d7"
+    },
+    {
+      "chunk_id": 16,
+      "source": "document.pdf",
+      "page_start": 6,
+      "page_end": 7,
+      "pages": [
+        6,
+        7
+      ],
+      "text": "- Final examination of the 10+2 system, conducted by any recognized Central/State Board, such as Central Board of Secondary Education, New Delhi; Council for Indian School Certificate Examination, New Delhi, etc. OR\n- Intermediate or two-year Pre-University Examination conducted by a recognized\nBoard/University OR\n- Two-year course of the Joint Services Wing of the National Defence Academy OR\n- General Certificate Education (GCE) Examination (London/Cambridge/Sri Lanka) at the\nAdvanced (A) level OR\n- High School Certificate Examination of the Cambridge University OR International\nBaccalaureate Diploma of the International Baccalaureate office, Geneva or\n- Any Public School/Board/University Examination in India or in any foreign country recognized as equivalent to 10+2 system by the Association of Indian Universities (AIU) OR\n- H.S.C. vocational Examination OR\n- Senior Secondary School Examination conducted by the National Open Schooling with a minimum of five subjects OR",
+      "char_count": 985,
+      "start_index": 10684,
+      "end_index": 11669,
+      "chunk_hash": "dcbae65df9c3"
+    },
+    {
+      "chunk_id": 17,
+      "source": "document.pdf",
+      "page_start": 6,
+      "page_end": 7,
+      "pages": [
+        6,
+        7
+      ],
+      "text": "- H.S.C. vocational Examination OR\n- Senior Secondary School Examination conducted by the National Open Schooling with a minimum of five subjects OR\n- 3 or 4 year Diploma recognized by AICTE or a State Board of Technical Education and\n- in case the relevant qualifying examination is not a public examination, the candidate must have passed at least one public (Board or Pre-University) examination at an earlier level. For 2010-2012 batches Candidates belonging to GE, OBC, and DS categories should have secured atleast 60% marks in aggregate in their qualifying examination. Candidates belonging to SC, ST and PD categories must secure a minimum of 55% marks in aggregate in the qualifying examination.",
+      "char_count": 704,
+      "start_index": 11521,
+      "end_index": 12225,
+      "chunk_hash": "72b5e347f704"
+    },
+    {
+      "chunk_id": 18,
+      "source": "document.pdf",
+      "page_start": 7,
+      "page_end": 7,
+      "pages": [
+        7
+      ],
+      "text": "If any board awards only letter grades without providing an equivalent percentage of marks on the grade sheet, the candidate should obtain a certificate from the Board specifying equivalent marks, and submit it at the time of counseling. In case such a certificate is not provided by the candidate, the decision of the Joint Implementation Committee regarding his/ her eligibility shall be held final.\n\nFor 2013 batch Criterion 1: The candidate should be among the top 1,50,000 (all categories included) in JEE\nMain of respective years.\n\nAND Criterion 2: Candidates should be within the category-wise top 20 percentile of successful candidates in his/her respective class XII (or equivalent) Board Examination From 2014 batch onwards Criterion 1: The candidate should be among the top 1,50,000 (all categories included) in JEE\nMain of respective years.",
+      "char_count": 852,
+      "start_index": 12227,
+      "end_index": 13079,
+      "chunk_hash": "76612c2e0aff"
+    },
+    {
+      "chunk_id": 19,
+      "source": "document.pdf",
+      "page_start": 7,
+      "page_end": 7,
+      "pages": [
+        7
+      ],
+      "text": "AND Criterion 2: Candidates should be within the category-wise top 20 percentile of successful candidates in his/her respective class XII (or equivalent) Board Examination (2013 & 2014 batch)\nOR He/She has secured 75% (for GEN/OBC-NCL) or 70% (for SC/ ST/PWD) of aggregate marks in the class XII (or equivalent) Board Examination .\nR.1.6 A candidate has to fulfill the medical standards required for admission as set out in the\nInformation Brochure of JEE sent along with the application form.\nR.1.7 The selected candidate will be admitted to the B.Tech programme after he/she fulfills all the admission requirements as indicated in the letter of admission, after payment of the prescribed fees.\nR.1.8 In matters of admission to the B.Tech programme, the decision of the Joint Admission\nBoard is final.",
+      "char_count": 802,
+      "start_index": 13081,
+      "end_index": 13883,
+      "chunk_hash": "faac0e6b852e"
+    },
+    {
+      "chunk_id": 20,
+      "source": "document.pdf",
+      "page_start": 7,
+      "page_end": 7,
+      "pages": [
+        7
+      ],
+      "text": "R.1.8 In matters of admission to the B.Tech programme, the decision of the Joint Admission\nBoard is final.\nR.1.9 If, at any time after admission, it is found that a candidate has not fulfilled all the requirements stipulated in the offer of admission, the Dean of Academic Courses may revoke the admission of the candidate and report the matter to the Senate.",
+      "char_count": 359,
+      "start_index": 13777,
+      "end_index": 14136,
+      "chunk_hash": "d4edce987f94"
+    },
+    {
+      "chunk_id": 21,
+      "source": "document.pdf",
+      "page_start": 8,
+      "page_end": 8,
+      "pages": [
+        8
+      ],
+      "text": "R.1.10 A student can have only two attempts to write JEE / JEE (Advanced) from 2013.\n\nFurthermore, he/she is allowed to write JEE / JEE (Advanced) from 2013 only in the year in which he/she passes the qualifying examination and/or in the following year.\nR.1.11 Candidates who join any of the IITs, IT-BHU, Varanasi, and ISMU, Dhanbad through JEE /\nJEE (Advanced) from 2013 of that year will NOT be permitted to appear in subsequent JEE(s) / JEE (Advanced) from 2013 from the following year .\nR.1.12 Students admitted to B.Tech Programme can opt for B.Tech (Honours) programme during the fourth semester. The student should have a CGPA of 8.5 and above at the end of their third semester and should have cleared all the courses as prescribed in the curriculum in the first attempt. Students who have obtained \"U\" or \"W\" grade in any course are not eligible for B.Tech (Honours) degree.\nR.2.0 Structure of the B.Tech/ B.Tech (Honours) Programme\nR.2.1 The programme of instruction will consist of:",
+      "char_count": 994,
+      "start_index": 14138,
+      "end_index": 15132,
+      "chunk_hash": "7764181f0be6"
+    },
+    {
+      "chunk_id": 22,
+      "source": "document.pdf",
+      "page_start": 8,
+      "page_end": 8,
+      "pages": [
+        8
+      ],
+      "text": "(i) a general core programme comprising basic sciences, engineering sciences, humanities, engineering arts, and mathematics;\n\n(ii) an engineering core programme introducing the student to the foundations of engineering in his/her branch;\n\n(iii) an elective programme enabling the students to take up a group of courses of interest to him/her;\n\nand\n(iii) a project approved by the Department.\n\nIn addition, a student should satisfactorily complete the prescribed NCC/NSO/NSS programme.\nR.2.2 The complete programme will consist of 5 categories:\n\nHumanities, Basic Sciences, Basic Engineering, Professional Major & Minor, and distributed over eight semesters, with two semesters per year.\n\nThe Professional Major Theory (PMT) courses will commence from first semester onwards. The Minor Stream courses will be offered from the 5th semester onwards.",
+      "char_count": 846,
+      "start_index": 15134,
+      "end_index": 15980,
+      "chunk_hash": "277c9c4d0086"
+    },
+    {
+      "chunk_id": 23,
+      "source": "document.pdf",
+      "page_start": 8,
+      "page_end": 8,
+      "pages": [
+        8
+      ],
+      "text": "The Professional Major Theory (PMT) courses will commence from first semester onwards. The Minor Stream courses will be offered from the 5th semester onwards.\n\nA Minor stream course means a bunch of not less than 3 courses which may be offered by one or more number of Departments of which one department will be the coordinating department, and the other(s) will be participating department(s).\nR.2.3 Every branch of the B.Tech programme will have a curriculum and course contents (syllabi)\nfor the courses approved by the Senate.\nR.2.4 Credits are assigned to the courses based on the following general pattern:\n\nOne credit for each lecture period;\n\nOne credit for each tutorial period;\n\nTwo credits for each laboratory or practical or project session of three periods.",
+      "char_count": 771,
+      "start_index": 15822,
+      "end_index": 16593,
+      "chunk_hash": "6e19cc515c3f"
+    },
+    {
+      "chunk_id": 24,
+      "source": "document.pdf",
+      "page_start": 8,
+      "page_end": 9,
+      "pages": [
+        8,
+        9
+      ],
+      "text": "One credit for each lecture period;\n\nOne credit for each tutorial period;\n\nTwo credits for each laboratory or practical or project session of three periods.\n\nR.2.5. The curriculum of any branch of the B.Tech programme is designed to have a total of 180\ncredits (184 credits from 2013) for the award of the B.Tech degree.\nR.2.6 No semester shall have more than six lecture based courses and four laboratory courses as prescribed in the curriculum carrying a maximum of 29 credits, subject to the following:",
+      "char_count": 505,
+      "start_index": 16437,
+      "end_index": 16942,
+      "chunk_hash": "1d1acb2adfe3"
+    },
+    {
+      "chunk_id": 25,
+      "source": "document.pdf",
+      "page_start": 9,
+      "page_end": 9,
+      "pages": [
+        9
+      ],
+      "text": "Students are permitted to register for an additional course (backlog) from the fifth semester onwards. However, in special cases, students of VII semester will be permitted to take seven lecture based courses if they are not already prescribed seven courses in previous semesters subject to the following conditions:\na) Two/three-lab slots out of the 4 recommended are free.\nb) The maximum number of credits registered in any semester shall not exceed 29.\nc) No withdrawal from any of the courses for which a student has registered will be allowed, except as per regulation 7.1.\nd) The student\"s Faculty Adviser and Head of the Dept. recommends the same.\ne) Students can register for one backlog course in V & VI semesters and two backlog courses in VII & VIII semesters, subject to a maximum of 29 credits in a semester.\nR.2.7 Every course of the B.Tech/ B.Tech (Honours) programme will be placed in one of the seventeen categories listed in Table-1.",
+      "char_count": 951,
+      "start_index": 16944,
+      "end_index": 17895,
+      "chunk_hash": "a0c4bae6ad21"
+    },
+    {
+      "chunk_id": 26,
+      "source": "document.pdf",
+      "page_start": 9,
+      "page_end": 9,
+      "pages": [
+        9
+      ],
+      "text": "A student must earn a minimum number of credits under each category as shown in Table-1.\n\nHowever, only students belonging to the V or higher semesters are eligible to register for M.Tech/M.Sc. courses, and every such student desiring to register for such a course must obtain the consent of the teacher offering the course.",
+      "char_count": 324,
+      "start_index": 17897,
+      "end_index": 18221,
+      "chunk_hash": "779bf7c30ff1"
+    },
+    {
+      "chunk_id": 27,
+      "source": "document.pdf",
+      "page_start": 10,
+      "page_end": 10,
+      "pages": [
+        10
+      ],
+      "text": "TABLE-1\n(for 2010 batch)\n| Sl.No | Category | Code | CGPA Credit | Non- CGPA credit | Course-wise minimum credit requirement |\n| --- | --- | --- | --- | --- | --- |\n| 1. | HUMANITIES | HSS | 9 |  | 11 |\n|  | Pass/Fail Option | HPF |  | 2 |  |\n| 2. | BASIC SCIENCES: |  |  |  | 30-35 |\n|  | Physics | SPH | 10 |  |  |\n|  | Chemistry | SCY | 7 |  |  |\n|  | Mathematics | SMA | 12-15 |  |  |\n|  | Life Science | SLS | 0-2 |  |  |\n| 3. | BASIC ENGG |  |  |  | 20-26 |\n|  | Theory | BET | 14-17 |  |  |\n|  | Skills | BES | 9 |  |  |\n| 4. | PROFESSIONAL MAJOR |  |  |  | 94-102 |\n|  | Theory Courses | PMT | 58-68* |  |  |\n|  |  |  | 68-80** |  |  |\n|  | Laboratory | PML | 12-19 |  |  |\n|  | Self Study | PSS | 3-4 |  |  |\n|  | Viva voce | PMP | 0-2 |  |  |\n|  | Project | PMP | 8-11 |  |  |\n|  | Industrial Training | PIT | 2 |  |  |\n|  | Pass/ Fail Electives | PPF |  | 0-6 |  |\n|  | Industrial Lecture | PIL |  | 1 |  |\n|  | (Pass/Fail) |  |  |  |  |\n| 5. | MINOR ELECTIVES | MNS | 9 |  | 9 |",
+      "char_count": 990,
+      "start_index": 18223,
+      "end_index": 19213,
+      "chunk_hash": "1419ea5198c5"
+    },
+    {
+      "chunk_id": 28,
+      "source": "document.pdf",
+      "page_start": 10,
+      "page_end": 10,
+      "pages": [
+        10
+      ],
+      "text": "|  | Pass/ Fail Electives | PPF |  | 0-6 |  |\n|  | Industrial Lecture | PIL |  | 1 |  |\n|  | (Pass/Fail) |  |  |  |  |\n| 5. | MINOR ELECTIVES | MNS | 9 |  | 9 |\n| 6. | FREE ELECTIVES |  | 6 |  | 6 |\n|  | TOTAL |  | 177-171* | 3-9 |  |\n|  |  |  | 189-183** |  |  |\n* B.Tech programme * * B.Tech. (Honours) programme",
+      "char_count": 314,
+      "start_index": 19053,
+      "end_index": 19367,
+      "chunk_hash": "afbf04348848"
+    },
+    {
+      "chunk_id": 29,
+      "source": "document.pdf",
+      "page_start": 11,
+      "page_end": 11,
+      "pages": [
+        11
+      ],
+      "text": "(for 2011-2012 batches)\n| Sl.No | Category | Code | CGPA Credit | Non- CGPA credit | Course-wise minimum credit requirement |\n| --- | --- | --- | --- | --- | --- |\n| 1. | HUMANITIES | HSS | 9 |  | 11 |\n|  | Pass/Fail Option | HPF |  | 2 |  |\n| 2. | BASIC SCIENCES: |  |  |  | 30-35 |\n|  | Physics | SPH | 10 |  |  |\n|  | Chemistry | SCY | 7 |  |  |\n|  | Mathematics | SMA | 12-15 |  |  |\n|  | Life Science | SLS | 0-2 |  |  |\n| 3. | BASIC ENGG |  |  |  | 23-26 |\n|  | Theory | BET | 14-17 |  |  |\n|  | Skills | BES | 9 |  |  |\n| 4. | PROFESSIONAL MAJOR |  |  |  | 94-102 |\n|  | Theory Courses | PMT | 58-68* |  |  |\n|  |  |  | 68-80** |  |  |\n|  | Laboratory | PML | 12-19 |  |  |\n|  | Self Study | PSS | 3-4 |  |  |\n|  | Viva voce | PMP | 0-2 |  |  |\n|  | Project | PMP | 8-11 |  |  |\n|  | Industrial Training | PIT |  | 2 |  |\n|  | Pass/ Fail Electives | PPF |  | 0-6 |  |\n|  | Industrial Lecture | PIL |  | 1 |  |\n|  | (Pass/Fail) |  |  |  |  |\n| 5. | MINOR ELECTIVES | MNS | 9 |  | 9 |",
+      "char_count": 989,
+      "start_index": 19369,
+      "end_index": 20358,
+      "chunk_hash": "1947ef9aba93"
+    },
+    {
+      "chunk_id": 30,
+      "source": "document.pdf",
+      "page_start": 11,
+      "page_end": 11,
+      "pages": [
+        11
+      ],
+      "text": "|  | Pass/ Fail Electives | PPF |  | 0-6 |  |\n|  | Industrial Lecture | PIL |  | 1 |  |\n|  | (Pass/Fail) |  |  |  |  |\n| 5. | MINOR ELECTIVES | MNS | 9 |  | 9 |\n| 6. | FREE ELECTIVES |  | 0-9 |  | 9 |\n|  | TOTAL |  | 175-169* | 5-11 |  |\n|  |  |  | 187-181** |  |  |\n* B.Tech programme * * B.Tech. (Honours) programme",
+      "char_count": 317,
+      "start_index": 20198,
+      "end_index": 20515,
+      "chunk_hash": "bef008b12278"
+    },
+    {
+      "chunk_id": 31,
+      "source": "document.pdf",
+      "page_start": 12,
+      "page_end": 12,
+      "pages": [
+        12
+      ],
+      "text": "(for 2013 batch onwards)\n| Sl.No | Category | Code | CGPA Credit | Non- CGPA credit | Course-wise minimum credit requirement |\n| --- | --- | --- | --- | --- | --- |\n| 1. | HUMANITIES | HSS | 9 |  | 11 |\n|  | Pass/Fail Option | HPF |  | 4 |  |\n| 2. | BASIC SCIENCES: |  |  |  | 30-35 |\n|  | Physics | SPH | 10 |  |  |\n|  | Chemistry | SCY | 7 |  |  |\n|  | Mathematics | SMA | 14-17 |  |  |\n|  | Life Science | SLS | 0-2 |  |  |\n| 3. | BASIC ENGG |  |  |  | 20-26 |\n|  | Theory | BET | 14-17 |  |  |\n|  | Skills | BES | 9 |  |  |\n| 4. | PROFESSIONAL MAJOR |  |  |  | 94-102 |\n|  | Theory Courses | PMT | 58-68* |  |  |\n|  |  |  | 68-80** |  |  |\n|  | Laboratory | PML | 10-19 |  |  |\n|  | Self Study | PSS | 0-4 |  |  |\n|  | Viva voce | PMP | 0-2 |  |  |\n|  | Project | PMP | 8-13 |  |  |\n|  | Industrial Training | PIT |  | 2 |  |\n|  | Pass/ Fail Electives | PPF |  | 0-6 |  |\n|  | Industrial Lecture | PIL |  | 1 |  |\n|  | (Pass/Fail) |  |  |  |  |\n| 5. | MINOR ELECTIVES | MNS | 9 |  | 9 |",
+      "char_count": 990,
+      "start_index": 20517,
+      "end_index": 21507,
+      "chunk_hash": "0089170e6453"
+    },
+    {
+      "chunk_id": 32,
+      "source": "document.pdf",
+      "page_start": 12,
+      "page_end": 12,
+      "pages": [
+        12
+      ],
+      "text": "|  | Pass/ Fail Electives | PPF |  | 0-6 |  |\n|  | Industrial Lecture | PIL |  | 1 |  |\n|  | (Pass/Fail) |  |  |  |  |\n| 5. | MINOR ELECTIVES | MNS | 9 |  | 9 |\n| 6. | FREE ELECTIVES |  | 6-9 |  | 6 |\n|  | TOTAL |  | 177-171* | 7-13 |  |\n|  |  |  | 189-183** |  |  |\n* B.Tech programme * * B.Tech. (Honours) programme",
+      "char_count": 317,
+      "start_index": 21347,
+      "end_index": 21664,
+      "chunk_hash": "c97a3e9aff4c"
+    },
+    {
+      "chunk_id": 33,
+      "source": "document.pdf",
+      "page_start": 12,
+      "page_end": 12,
+      "pages": [
+        12
+      ],
+      "text": "The minimum number of credits to be earned for the award of the B.Tech. Degree is 180 (184 from 2013) out of which 3-9 credits (for 2010 batch), 5-11 credits (for 2011-2012 batch) and 7-13 credits (from 2013 batch onwards) of coursework done under the Pass/Fail option are not counted towards CGPA calculation.\nR.2.8 For 2010 batch In addition to B.Tech regulations specified above, the B.Tech (Honours) students must earn minimum of 12 additional PMT credits. Students who have obtained \"E\" or \"U\" or \"W\" grade in any course are not eligible for B.Tech (Honours) degree. From 2011 batch onwards In addition to B.Tech regulations specified above, the B.Tech (Honours) students must earn minimum of 12 additional PMT credits. Students who have obtained \"U\" or \"W\" grade in any course are not eligible for B.Tech (Honours) degree",
+      "char_count": 827,
+      "start_index": 21666,
+      "end_index": 22493,
+      "chunk_hash": "4f791282cb50"
+    },
+    {
+      "chunk_id": 34,
+      "source": "document.pdf",
+      "page_start": 12,
+      "page_end": 12,
+      "pages": [
+        12
+      ],
+      "text": "B.Tech (Honours) students can register for a maximum of 2 additional PMT courses in a semester from the Honours basket of courses over and above the courses prescribed in the B.Tech curriculum from 5th semester onwards. Project work is a must for B.Tech (Honours) students in B.Tech programme.\nR.2.9 The medium of instruction, examination and project reports will be English.",
+      "char_count": 375,
+      "start_index": 22494,
+      "end_index": 22869,
+      "chunk_hash": "aaae325526bf"
+    },
+    {
+      "chunk_id": 35,
+      "source": "document.pdf",
+      "page_start": 13,
+      "page_end": 13,
+      "pages": [
+        13
+      ],
+      "text": "R.3.0 Faculty Adviser\nR.3.1 To help the students in planning their courses of study and for getting general advice on the academic programme, the concerned Department will assign a certain number of students to a Faculty member who will be called their Faculty Adviser.\nR.4.0 Class Committee R. 4.1 Every class of the B.Tech programme will have a Class Committee consisting of Faculty and students. There will be one Class Committee for each of the first two semesters and for the common courses of the third semester, constituted by the Dean (Academic Courses). The Class Committees for the department courses of each semester will be constituted by the Head of the departments concerned.\nR.4.2 The constitution of the Class Committee for the first three semesters\" common courses\n(excepting PMT courses) will be as follows:\n\n(i) One professor-not associated with teaching the particular class to be nominated by the Dean of Academic Courses to act as the Chairman of the Class Committee.",
+      "char_count": 989,
+      "start_index": 22871,
+      "end_index": 23860,
+      "chunk_hash": "6b3ca3cd1574"
+    },
+    {
+      "chunk_id": 36,
+      "source": "document.pdf",
+      "page_start": 13,
+      "page_end": 13,
+      "pages": [
+        13
+      ],
+      "text": "(i) One professor-not associated with teaching the particular class to be nominated by the Dean of Academic Courses to act as the Chairman of the Class Committee.\n\n(ii) Course coordinator of each of the lecture based subjects\n(iii) Workshop Superintendent\n(iv) Four students from the respective class; and\n(v) Faculty Advisers of the respective class.\n\nAll teachers offering the common courses of first to third semester B.Tech./Dual Degree programmes, shall be invited to attend the class committee meetings.\nR.4.3 The constitution of the class committee for the department courses of each semester will be as follows:\n\n(i) one professor of the Department concerned, preferably not associated with teaching of the class, to be nominated by the Head of the Department concerned, to act as the Chairman of the Class Committee.",
+      "char_count": 825,
+      "start_index": 23698,
+      "end_index": 24523,
+      "chunk_hash": "88ff388d913d"
+    },
+    {
+      "chunk_id": 37,
+      "source": "document.pdf",
+      "page_start": 13,
+      "page_end": 14,
+      "pages": [
+        13,
+        14
+      ],
+      "text": "(ii) all teachers of lecture-based subjects except Chemistry Mathematics and Humanities / Management courses\n(iii) Separate Class Committee for Chemistry, Physics, Mathematics and Humanities courses will be constituted by the respective Heads of Departments on similar lines\n(iv) four students from the top half of the class to be chosen by the students of the class from amongst themselves\n(v) Faculty Advisers of the respective class.\nR.4.4 The basic responsibilities of the Class Committees are\n(a) to review periodically the progress of the classes,\n(b) to discuss issues concerning curriculum and syllabi and the conduct of the classes.\n\n(c) The method of assessment in the course will be decided by the teacher, in consultation with the class committee, and will be announced to the students at the beginning of the semester. Each class committee will communicate its recommendations to the Head of the Department and the Dean of Academic Courses.",
+      "char_count": 953,
+      "start_index": 24525,
+      "end_index": 25478,
+      "chunk_hash": "7249d15329b3"
+    },
+    {
+      "chunk_id": 38,
+      "source": "document.pdf",
+      "page_start": 14,
+      "page_end": 14,
+      "pages": [
+        14
+      ],
+      "text": "(d) The Class Committees without student members is responsible for the finalization of the semester results.",
+      "char_count": 109,
+      "start_index": 25480,
+      "end_index": 25589,
+      "chunk_hash": "2c437b0aa0d7"
+    },
+    {
+      "chunk_id": 39,
+      "source": "document.pdf",
+      "page_start": 14,
+      "page_end": 14,
+      "pages": [
+        14
+      ],
+      "text": "(e) The Class Committees shall meet at least thrice in a semester, once at the beginning of the semester, once after the II quiz and once after the end semester examination to finalize the grades. However, for the common courses in the first three semesters of the B.Tech programme the method of assessment will consist of two quizzes or mid-semester and an end semester examination with weightages specified in R.19.1.\nR.5.0 Change of Branch\nR.5.1 Change of branch may be permitted subject to the following:\nR.5.2 Such change will be considered only at the end of the first semester. The performance during the first semester will be the basis for consideration for change of branch.\nR.5.3 All students who have successfully completed the first semester of the course, except\nEngineering Design Dual Degree students, will be eligible for consideration for change of branch, subject to the availability of vacancies.",
+      "char_count": 916,
+      "start_index": 25591,
+      "end_index": 26507,
+      "chunk_hash": "da57503e76ca"
+    },
+    {
+      "chunk_id": 40,
+      "source": "document.pdf",
+      "page_start": 14,
+      "page_end": 14,
+      "pages": [
+        14
+      ],
+      "text": "Engineering Design Dual Degree students, will be eligible for consideration for change of branch, subject to the availability of vacancies.\nR.5.4 In making a change of branch, the strength of a class should not fall below the existing strength by more than ten percent and should not go above the sanctioned strength by more than ten percent. For this purpose, the strength in both cases refers to the total strength of the students in the class.\nR.5.5 However, a minimum of one student will be eligible for consideration for change of branch from each discipline at the end of the first semester, irrespective of the regulation 5.4\nR.5.6 If a student with a higher GPA is not offered a particular branch because of other constraints, this should not be offered to any other students with a lower GPA even if he/she is eligible on the basis of the existing norms.",
+      "char_count": 863,
+      "start_index": 26368,
+      "end_index": 27231,
+      "chunk_hash": "4ed0ad260011"
+    },
+    {
+      "chunk_id": 41,
+      "source": "document.pdf",
+      "page_start": 14,
+      "page_end": 14,
+      "pages": [
+        14
+      ],
+      "text": "R.5.7 Change over from 4-year B.Tech programme to 5-year dual degree programme is permitted within the same Department (from 2012 batch onwards, the streams offered by the Department of Applied Mechanics will be treated as one of the stream in case of AE, CE, EE and OE Departments for the purpose changeover) during the sixth semester, provided a student meets the following criteria:",
+      "char_count": 385,
+      "start_index": 27232,
+      "end_index": 27617,
+      "chunk_hash": "e05fd2d6245a"
+    },
+    {
+      "chunk_id": 42,
+      "source": "document.pdf",
+      "page_start": 14,
+      "page_end": 15,
+      "pages": [
+        14,
+        15
+      ],
+      "text": "- Should have a minimum of 8.0 CGPA from 2011 batch at the end of 5th semester\n- Should not have any backlog courses\nR.5.8 Dual degree students are not eligible for branch/ programme change to 4-year B.Tech programme. However, they are eligible for change of discipline within the same Department, in case the Department offers more than one discipline under their dual degree programme. From 2012 batch, Applied Mechanics will be treated as one of the discipline in the case of AE/CE/EE/NA Departments. The Dual Degree students except Engineering Design students are also eligible for change of branch at the end of the first semester as per the Dual Degree Regulations.\nR.5.9 Change of branch rules is subject to revision from time to time and the decision of the Senate will be final and binding.\nR.6.0 Enrolment and Registration R 6.1 Enrolment:",
+      "char_count": 849,
+      "start_index": 27619,
+      "end_index": 28468,
+      "chunk_hash": "b7562b5c10ea"
+    },
+    {
+      "chunk_id": 43,
+      "source": "document.pdf",
+      "page_start": 15,
+      "page_end": 15,
+      "pages": [
+        15
+      ],
+      "text": "From the second semester onwards, all students have to enroll on a specified day at the beginning of a semester. A student will be eligible for enrolment only if he / she satisfies\nR.10 and will be permitted to enroll only if he/she has cleared all dues to the Institute, Hostel, Library and the NCC Unit up to the end of the previous semester, provided he / she is not debarred from enrolment, on disciplinary grounds. R 6.2 Registration:\n\nExcept for the first semester, registration of a semester will be done during a specified week before the end-semester examination of the previous semester.",
+      "char_count": 597,
+      "start_index": 28470,
+      "end_index": 29067,
+      "chunk_hash": "cc497bdec0bc"
+    },
+    {
+      "chunk_id": 44,
+      "source": "document.pdf",
+      "page_start": 15,
+      "page_end": 15,
+      "pages": [
+        15
+      ],
+      "text": "Late registration/enrolment will be permitted with a fine as decided from time to time up to two weeks from the last date specified for registration.\nR.6.3 The registration sheet contains the course number, course name, number of credits and category for each course to be taken in that semester. The student makes the choice of course in consultation with his / her Faculty Adviser. Registration is done through online from the semester Jul-Nov 2012.",
+      "char_count": 451,
+      "start_index": 29069,
+      "end_index": 29520,
+      "chunk_hash": "b4e98e1a57dc"
+    },
+    {
+      "chunk_id": 45,
+      "source": "document.pdf",
+      "page_start": 15,
+      "page_end": 15,
+      "pages": [
+        15
+      ],
+      "text": "R.6.4 The B.Tech students are also eligible to take extra courses apart from the courses prescribed in the curriculum, viz., one course in the 5th, 6th, 7th semesters, from Jan-May 2013 semester, one course in 4th, 5th, 6th and 7th semester and not more than two courses in the 8th semester, subject to a maximum of 15 credits, provided a student has no backlog and has a CGPA of 7.0 & above, at the end of the previous semester. Students taking extra courses should obtain the prior approval of the Dean (Academic Courses). This will be shown in the grade card as EXT category and will be taken for CGPA calculation.",
+      "char_count": 617,
+      "start_index": 29521,
+      "end_index": 30138,
+      "chunk_hash": "f0aacdd91ecd"
+    },
+    {
+      "chunk_id": 46,
+      "source": "document.pdf",
+      "page_start": 15,
+      "page_end": 15,
+      "pages": [
+        15
+      ],
+      "text": "R.6.5 Students should have successfully completed the courses of (n minus 4)th semester to register for courses in nth semester. E.g to register for courses in 5th, 6th, 7th & 8th semester of B.Tech programme, the student should have successfully completed all the courses of 1st, 2nd, 3rd and 4th semesters respectively, as prescribed in the curriculum of the concerned branch of study i.e This \"n4\" rule is also applicable for the Dual Degree programme of 10 semester duration.",
+      "char_count": 479,
+      "start_index": 30139,
+      "end_index": 30618,
+      "chunk_hash": "50393aa25ec4"
+    },
+    {
+      "chunk_id": 47,
+      "source": "document.pdf",
+      "page_start": 15,
+      "page_end": 16,
+      "pages": [
+        15,
+        16
+      ],
+      "text": "i. Students who have backlog courses under n-4 rule, the registration of courses shall be restricted to the average credit clearance capacity in the last two semesters. The student must register the backlog courses first giving priority to the oldest backlogs. The students will register by default for backlog courses being offered in a particular semester. ii. The semester used by a student to clear only the backlog course(s), will not be treated as effective for reckoning the no. of semesters spent by the student with respect to the maximum permissible limit (vide R 11.1)\nR.7.0 Registration Requirement\nR.7.1 The curriculum for any semester, except for the final semester will normally carry credits between 21 and 29.",
+      "char_count": 726,
+      "start_index": 30620,
+      "end_index": 31346,
+      "chunk_hash": "82f03724f979"
+    },
+    {
+      "chunk_id": 48,
+      "source": "document.pdf",
+      "page_start": 16,
+      "page_end": 16,
+      "pages": [
+        16
+      ],
+      "text": "If a student finds his/her academic/course load heavy in any semester, or for any other valid reason, he/she may drop courses if the student maintains a minimum attendance grade G in that case till the date of application or may opt for conversion of Department electives from graded courses to Pass / Fail course within 45 instructional days from the commencement of the semester with the written approval of his/her Faculty Adviser & Head of the Department.",
+      "char_count": 459,
+      "start_index": 31348,
+      "end_index": 31807,
+      "chunk_hash": "9b2a0896bb97"
+    },
+    {
+      "chunk_id": 49,
+      "source": "document.pdf",
+      "page_start": 16,
+      "page_end": 16,
+      "pages": [
+        16
+      ],
+      "text": "However, the student should ensure that the total number of credits registered in any semester should enable him/her to earn the minimum number of credits as specified in R.10.1.\nR.8.0 Supplementary Examination\nR.8.1 Students who get \"U\" grade and attendance code \"G\" (Good) and above in a core course are eligible to seek Supplementary Examination.\nR.8.2 A student is eligible for only one Supplementary Examination in any course. No second chance is given. In case a student fails in the Supplementary Examination he/she has to repeat the course in a regular semester, as and when it is offered.\nR.8.3 Supplementary Examination may be availed by a student within one year of that student obtaining a \"U\" grade.\nR.8.4 A supplementary examination may be offered by a faculty/ department on the recommendation of the Dean (Academic Courses).",
+      "char_count": 840,
+      "start_index": 31809,
+      "end_index": 32649,
+      "chunk_hash": "017b8548ee73"
+    },
+    {
+      "chunk_id": 50,
+      "source": "document.pdf",
+      "page_start": 16,
+      "page_end": 16,
+      "pages": [
+        16
+      ],
+      "text": "R.8.4 A supplementary examination may be offered by a faculty/ department on the recommendation of the Dean (Academic Courses).\nR.8.5 The Supplementary Examination will be offered by the same teacher who offered the course earlier and it is his/ her prerogative to give or not to give the Supplementary Examination.\nR.8.6 The Supplementary Examination can be held during the makeup/supplementary week of the subsequent semester, at the convenience of the teacher concerned.\nR.8.7 For taking Supplementary Examinations, the students need not attend classes in that course once again. The same attendance code earned in the earlier examination will be retained for the Supplementary Examination.\nR.8.8 The end semester alone is given as a Supplementary Examination and the sessional marks already secured by a student in that course will be taken into account for finalizing the grade and the same cut-off for the grades shall be used.\nR.9.0 Contact Courses",
+      "char_count": 955,
+      "start_index": 32522,
+      "end_index": 33477,
+      "chunk_hash": "059e4c292a02"
+    },
+    {
+      "chunk_id": 51,
+      "source": "document.pdf",
+      "page_start": 16,
+      "page_end": 16,
+      "pages": [
+        16
+      ],
+      "text": "R.9.0 Contact Courses\nR.9.1 A Contact course may be offered during the regular semester or during summer by a\nDepartment, only to a final year student who has obtained \"U\" grade in a CORE course.",
+      "char_count": 195,
+      "start_index": 33456,
+      "end_index": 33651,
+      "chunk_hash": "784b35161732"
+    },
+    {
+      "chunk_id": 52,
+      "source": "document.pdf",
+      "page_start": 16,
+      "page_end": 17,
+      "pages": [
+        16,
+        17
+      ],
+      "text": "The course will be offered only on the recommendation of the department, with the mutual agreement of the teacher and the student.\nR.9.2 No student should register for more than two contact courses during the semester or summer period.\nR.9.3 The contact course cannot be offered if the same subject is offered as a regular course, during that period.\nR.9.4 Such final year students, who wish to take contact course(s), should apply to the Dean,\nAcademic Courses before the commencement of the semester or summer as the case may be, in which the contact course is to be taken.\nR.9.5 The assessment procedure for a contact course will be similar to that of the regular semester course.\nR.9.6 Withdrawal from a contact course is not permitted.\nR.10.0 Minimum Requirement to Continue the Programme\nR.10.1 A student should earn not less than 12 credits in the first semester, and 28 credits at the end of the second semester.",
+      "char_count": 920,
+      "start_index": 33653,
+      "end_index": 34573,
+      "chunk_hash": "4d077aa65b20"
+    },
+    {
+      "chunk_id": 53,
+      "source": "document.pdf",
+      "page_start": 17,
+      "page_end": 17,
+      "pages": [
+        17
+      ],
+      "text": "Thereafter, he/she must maintain an average of 15 credits per semester, including the first two semesters, to continue his/ her studies.\n\nHowever, in the final semester, a student may earn less than 15 credits if it is sufficient for him/ her to fulfill the requirements for the award of the degree.\n\nIf a student fails to earn credits every semester as stated above, he/she will be relieved from the programme at the end of the semester.\nR.10.2 A student who has not completed the NCC / NSO / NSS requirements (see R.27) in the first four semesters will not be permitted to continue the B.Tech programme.\nR.10.3 A student should have a minimum CGPA of 5.0 (see R.26.2), calculated for the courses successfully completed at the end of each semester. If the CGPA so calculated is below 5.0 or if he/she earns less than the average 22 credits, the student will be issued a warning under intimation to the parent.",
+      "char_count": 910,
+      "start_index": 34575,
+      "end_index": 35485,
+      "chunk_hash": "da7e3796c9ef"
+    },
+    {
+      "chunk_id": 54,
+      "source": "document.pdf",
+      "page_start": 17,
+      "page_end": 17,
+      "pages": [
+        17
+      ],
+      "text": "In the following semester, if the CGPA is less than 5.0 or the student could not earn an average of 15 credits, as per R.10.1, he/she will be relieved from the programme at the end of the semester.\nR.11.0 Maximum Duration of the Programme\nR.11.1 A student is expected to complete the B.Tech programme in eight semesters. However a student may complete the programme at a slower pace, but in any case not more than 12 semesters, excluding semesters withdrawn on medical grounds, etc. as per R.12.1. However the students have to satisfy R.10.1 every semester, failing which their registration will be cancelled.\nR.12.0 Temporary Withdrawal from the Programme\nR.12.1 A student may be permitted by the Dean of Academic Courses to withdraw from the programme for a semester or longer for reasons of ill health or other valid reasons. Normally, a student will be permitted to withdraw from the programme only for a maximum continuous period of two semesters.",
+      "char_count": 952,
+      "start_index": 35487,
+      "end_index": 36439,
+      "chunk_hash": "40f4542f8a49"
+    },
+    {
+      "chunk_id": 55,
+      "source": "document.pdf",
+      "page_start": 18,
+      "page_end": 18,
+      "pages": [
+        18
+      ],
+      "text": "R.13.0 Discipline\nR.13.1 Every student is required to observe discipline and decorous behaviour both inside and outside the campus and not to indulge in any activity which will tend to bring down the prestige of the Institute.\nR.13.2 Any act of indiscipline of a student reported to the Dean, Academic Courses, will be referred to a Discipline and Welfare Committee constituted by the Senate.",
+      "char_count": 392,
+      "start_index": 36441,
+      "end_index": 36833,
+      "chunk_hash": "8696a550ece2"
+    },
+    {
+      "chunk_id": 56,
+      "source": "document.pdf",
+      "page_start": 18,
+      "page_end": 18,
+      "pages": [
+        18
+      ],
+      "text": "The Committee will enquire into the charges and recommend suitable punishment if the charges are substantiated. The Senate will consider the recommendation of the Discipline and Welfare Committee for appropriate action.\nR.13.3 Appeal: The student may appeal to the Chairman, Senate, whose decision will be final. The\nDean will report the action taken at the next meeting of the Senate. R. 13.4 Ragging of any dimension is a criminal and non-bailable offence in our country. The current",
+      "char_count": 485,
+      "start_index": 36835,
+      "end_index": 37320,
+      "chunk_hash": "e009e4a9586b"
+    },
+    {
+      "chunk_id": 57,
+      "source": "document.pdf",
+      "page_start": 18,
+      "page_end": 18,
+      "pages": [
+        18
+      ],
+      "text": "Dean will report the action taken at the next meeting of the Senate. R. 13.4 Ragging of any dimension is a criminal and non-bailable offence in our country. The current\nState and Central legislations provide for stringent punishment, including imprisonment. Once the involvement of a student is established in ragging, the offending student will be dismissed from the Institution and will not be admitted into any other Institution. Avenues also exist for collective punishment, if individuals can not be identified in this inhuman act. Every senior student of the Institute, along with the parent, shall give an undertaking every year in this regard and this should be submitted at the time of enrolment.\nR.14.0 Attendance\nR.14.1 Every teaching staff member handling a class will take attendance till the last instructional day in the Semester. The percentage of attendance, calculated up to this point, will be indicated by a letter code as follows:\n| Attendance Rounded to | Remarks | Code |",
+      "char_count": 994,
+      "start_index": 37152,
+      "end_index": 38146,
+      "chunk_hash": "31566608b888"
+    },
+    {
+      "chunk_id": 58,
+      "source": "document.pdf",
+      "page_start": 18,
+      "page_end": 18,
+      "pages": [
+        18
+      ],
+      "text": "| Attendance Rounded to | Remarks | Code |\n| --- | --- | --- |\n| ≥ 95% | Very Good | VG |\n| 85 to 94% | Good | G |\n| < 85% | Poor | P |",
+      "char_count": 135,
+      "start_index": 38104,
+      "end_index": 38239,
+      "chunk_hash": "7ee9cfc482cd"
+    },
+    {
+      "chunk_id": 59,
+      "source": "document.pdf",
+      "page_start": 18,
+      "page_end": 18,
+      "pages": [
+        18
+      ],
+      "text": "R.14.2 A student who has an attendance lower than 85%, whatever may be the reason for the shortfall in attendance, will not be permitted to appear in the end-semester examination of the course in which the shortfall exists.\n\nHis/her registration for that course will be treated as cancelled, and he/she shall be awarded \"W\" grade (W stands for registration cancelled for want of minimum attendance) in that subject. This grade shall appear in the grade card till the course is successfully completed.\n\nIn the case of a core course, the student should register for and repeat the course when it is offered next.\nR.14.3 The teacher handling a course must finalise the attendance 3 calendar days before the last instructional day of the course in the semester.",
+      "char_count": 757,
+      "start_index": 38241,
+      "end_index": 38998,
+      "chunk_hash": "fb048065859c"
+    },
+    {
+      "chunk_id": 60,
+      "source": "document.pdf",
+      "page_start": 18,
+      "page_end": 19,
+      "pages": [
+        18,
+        19
+      ],
+      "text": "The particulars of all students who have attendance less than 85% in that course must be announced in the class by the teacher himself/ herself. Copies of the same should be sent to the Dean, Academic Courses and Heads of Departments concerned. Students who get less than 85% should not be permitted to sit for the end-semester exam without the permission of the Dean Academic Courses.\n\nR.14.4 Condonation of Attendance: Every student is expected to put in 100% attendance. The minimum-attendance requirement is 85%. For cases of casual absenteeism, no condonation of attendance is permissible. If a student has less than 85% attendance, he/she should be assigned \"W\" grade in that subject along with \"P\" as the attendance code. The percentage of attendance in a subject shall be computed as:\n\n(a) For calculation of attendance in normal cases:\n\nFor cases of minor illnesses and casual absenteeism actual % of attendance is computed as:",
+      "char_count": 936,
+      "start_index": 39000,
+      "end_index": 39936,
+      "chunk_hash": "5d8e331f1f76"
+    },
+    {
+      "chunk_id": 61,
+      "source": "document.pdf",
+      "page_start": 19,
+      "page_end": 19,
+      "pages": [
+        19
+      ],
+      "text": "(a) For calculation of attendance in normal cases:\n\nFor cases of minor illnesses and casual absenteeism actual % of attendance is computed as:\n\nActual no. of classes attended x 100\nTotal no. of classes held till date of compilation of attendance which should be ≥ 85%. Otherwise, W grade shall be awarded. Such cases will not come under the purview of condonation of attendance.\n\n(b) For calculation of attendance in case of prolonged illness and/or hospitalization with medical certificate:\n\nA student should have more than 40% attendance calculated as per (a) above to be eligible for condonation.",
+      "char_count": 599,
+      "start_index": 39794,
+      "end_index": 40393,
+      "chunk_hash": "32301681a3fd"
+    },
+    {
+      "chunk_id": 62,
+      "source": "document.pdf",
+      "page_start": 19,
+      "page_end": 19,
+      "pages": [
+        19
+      ],
+      "text": "Notional % of attendance =\nActual no. of classes attended x 100\n(Total no. of classes held in the semester) - (No. of classes held during the days of prolonged illness and or hospitalization)\nwhich should be ≥ 85% for condonation\nR.15.0 Assessment Procedure – Tests and Examinations\nR.15.1 The Senate will decide from time to time on the system of tests and examinations in each subject in each semester. The current practice is the following:\nR.16.0 System of Tests\nR.16.1 In lecture based courses, two quiz tests will be held in the case of common courses of first three semesters and for higher semester courses as decided by the Class Committee. The details of weightage of marks for these quizzes have to be announced to the students, in consultation with the Class Committee. The Dean of Academic Courses should be informed of the scheme of evaluation at the beginning of the semester.",
+      "char_count": 891,
+      "start_index": 40395,
+      "end_index": 41286,
+      "chunk_hash": "188100d8c32c"
+    },
+    {
+      "chunk_id": 63,
+      "source": "document.pdf",
+      "page_start": 19,
+      "page_end": 19,
+      "pages": [
+        19
+      ],
+      "text": "R.16.2 The adoption of mid-semester examination for the common courses of I to III semesters may be considered by the Heads of Departments concerned.\nR.17.0 End Semester Examination\nR.17.1 There will be one end-semester examination of three hours duration in each lecture based subject.",
+      "char_count": 286,
+      "start_index": 41287,
+      "end_index": 41573,
+      "chunk_hash": "cf3e647d2a37"
+    },
+    {
+      "chunk_id": 64,
+      "source": "document.pdf",
+      "page_start": 20,
+      "page_end": 20,
+      "pages": [
+        20
+      ],
+      "text": "R.18.0 Project Evaluation\nR.18.1 At the completion of a project, the student will submit a project report which will be evaluated by duly appointed examiner(s). The evaluation will be based on the report and a viva-voce examination on the project.\nR.18.2 The project reports of B.Tech students who have not completed their course work will be evaluated in that semester itself and the result sent, in confidential, to the Dean, Academic Courses. The result of the project work evaluation will be declared by the Dean, Academic Courses only after the successful completion of the course requirements.\nR.19.0 Weightages\nR.19.1 The following will be the weightages for different subjects:\n| a) | For common courses of first three semesters: 2 Quizzes – 20 marks each End Semester Examination | 40% 60% |\n| --- | --- | --- |",
+      "char_count": 820,
+      "start_index": 41575,
+      "end_index": 42395,
+      "chunk_hash": "903bd1d1ffdf"
+    },
+    {
+      "chunk_id": 65,
+      "source": "document.pdf",
+      "page_start": 20,
+      "page_end": 20,
+      "pages": [
+        20
+      ],
+      "text": "| a) | For common courses of first three semesters: 2 Quizzes – 20 marks each End Semester Examination | 40% 60% |\n| --- | --- | --- |\n| b) | Laboratory based subjects: For Laboratory based subjects, an end semester examination may or may not be held Sessional Assessment Practical examination must be conducted for all the lab courses. End-semester examination, if held: Maximum weightage | 75–100% 25% |",
+      "char_count": 405,
+      "start_index": 42261,
+      "end_index": 42666,
+      "chunk_hash": "231c56980865"
+    },
+    {
+      "chunk_id": 66,
+      "source": "document.pdf",
+      "page_start": 20,
+      "page_end": 20,
+      "pages": [
+        20
+      ],
+      "text": "For higher semester courses: The weightage for theory courses of higher semesters of the B.Tech programme should not be below 40% each for both sessional assessment and end semester examination. Subject to the above constraint, the Class Committee is free to decide the weightages in any course and announce to the students within 2 weeks from the beginning of the semester.\nR.19.2 The markings for all tests, tutorial assignments (if any), laboratory work and examinations will be on an absolute basis. The final percentages of marks are calculated in each subject as per the weightages given in R.19.1.\nR.20.0 Make-up Examination\nR.20.1 Students who have missed the quizzes or end-semester examination for valid reasons are eligible for a make-up examination.",
+      "char_count": 761,
+      "start_index": 42668,
+      "end_index": 43429,
+      "chunk_hash": "a8d8cc84babc"
+    },
+    {
+      "chunk_id": 67,
+      "source": "document.pdf",
+      "page_start": 20,
+      "page_end": 20,
+      "pages": [
+        20
+      ],
+      "text": "A student who has missed quiz(zes) and the end semester examination in the same course due to genuine reasons like illness etc. may be permitted to write a make-up examination for the missed end-semester alone and awarded zero marks for the missed quiz(zes), provided the student satisfies the attendance requirements. The students should make an application to the Dean, Academic Courses within ten days from the date of the examination missed, explaining the reasons for their absence. Applications received after this period need not be entertained.\nR.20.2 Official permission to take a make-up examination will be given under exceptional circumstances such as admission to a hospital due to illness.",
+      "char_count": 703,
+      "start_index": 43431,
+      "end_index": 44134,
+      "chunk_hash": "23f94a3bb367"
+    },
+    {
+      "chunk_id": 68,
+      "source": "document.pdf",
+      "page_start": 21,
+      "page_end": 21,
+      "pages": [
+        21
+      ],
+      "text": "Students residing in the Hostels should produce a Medical Certificate issued by the Chief Medical Officer of the Institute that he/she was admitted in the Hospital during the period of the missed quiz / exam. Students residing in the Hostels and taking medical consultation with outside Doctors are required to obtain written permission from the Medical Officer of the Institute Hospital before they proceed for such consultation.",
+      "char_count": 430,
+      "start_index": 44136,
+      "end_index": 44566,
+      "chunk_hash": "af45f39ce881"
+    },
+    {
+      "chunk_id": 69,
+      "source": "document.pdf",
+      "page_start": 21,
+      "page_end": 21,
+      "pages": [
+        21
+      ],
+      "text": "Students residing in the hostels but taking medical consultation with outside Doctors are required to obtain an endorsement on the certificate of treatment by the Medical Officer of the Institute Hospital. A student staying outside the Campus permanently / temporarily must produce a medical certificate from the Registered Medical Practitioner and the same should be duly endorsed by the parent / guardian.\nR.20.3 A slot-wise make-up examination will be held during the makeup / supplementary week as per Academic Calendar of subsequent semester for those who are permitted to take the make-up examination.",
+      "char_count": 607,
+      "start_index": 44568,
+      "end_index": 45175,
+      "chunk_hash": "892be6ef1a3d"
+    },
+    {
+      "chunk_id": 70,
+      "source": "document.pdf",
+      "page_start": 21,
+      "page_end": 21,
+      "pages": [
+        21
+      ],
+      "text": "The question paper will be common to all the students taking make-up examinations in a given subject. However, the question paper will be so structured that a student will be required to answer only parts of the paper carrying marks in proportion to the weightages of the tests / examinations missed by him / her.\nR.20.4 A student who misses this make-up examination will not normally be given another make-up examination. However, in exceptional cases of prolonged illness resulting in the student missing a make-up examination, the Chairman of the Senate, in consultation with the Dean of Academic Courses or with approval of the Senate may permit the student to appear for a second make-up examination.",
+      "char_count": 705,
+      "start_index": 45177,
+      "end_index": 45882,
+      "chunk_hash": "3a5f47ba5e8b"
+    },
+    {
+      "chunk_id": 71,
+      "source": "document.pdf",
+      "page_start": 21,
+      "page_end": 21,
+      "pages": [
+        21
+      ],
+      "text": "R.21.0 Subject-wise Grading of Students\nR.21.1 Letter Grades\nBased on the performance, each student is awarded a final letter grade at the end of the semester, in each subject. The letter grades and the corresponding grade points are as follows:\n| Grade | Grade Points | Remarks |\n| --- | --- | --- |\n| S | 10 |  |\n| A | 9 |  |\n| B | 8 |  |\n| C | 7 |  |\n| D | 6 |  |\n| E | 4 |  |\n| U | 0 |  |\n| P | - | Pass |\n| F | 0 | Fail |\n| W | 0 | Failure due to insufficient attendance in course |\n| I | 0 | Incomplete (subsequently to be changed into pass (E to S) or U grade in the same semester). |\n| X | 0 | Completed NSO/NCC/NSS requirements |\n| Y | 0 | Incomplete (in NSO/NCC/NSS) |",
+      "char_count": 678,
+      "start_index": 45884,
+      "end_index": 46562,
+      "chunk_hash": "0d4c7a2c6e7a"
+    },
+    {
+      "chunk_id": 72,
+      "source": "document.pdf",
+      "page_start": 22,
+      "page_end": 22,
+      "pages": [
+        22
+      ],
+      "text": "R.21.2 A student is considered to have completed a subject successfully and earned the credits if he/she secures a letter grade other than U/ F or W or I in that subject. A letter grade U/F or W in any subject implies a failure in that subject.\nR.22.0 Method of Awarding Letter Grades\nR.22.1 A final meeting of the Class Committee without the student members, will be convened within seven days after the last day of the end-semester examination. The letter grades to be awarded to the students for different subjects will be finalized at the meeting.\nR.22.2 Two copies of the results sheets for each subject, one with the final grade and attendance code and the other with the absolute marks, the final grade and the attendance code should be submitted by the teacher to the concerned Class Committee Chairman.",
+      "char_count": 811,
+      "start_index": 46564,
+      "end_index": 47375,
+      "chunk_hash": "bacb0575e6fe"
+    },
+    {
+      "chunk_id": 73,
+      "source": "document.pdf",
+      "page_start": 22,
+      "page_end": 22,
+      "pages": [
+        22
+      ],
+      "text": "After finalization of the grades at the Class Committee meeting, one copy with the absolute marks and one without the absolute marks but having only the grades and the attendance code will be forwarded by the Chairman, Class Committee to the Dean of Academic Courses.\nR.23.0 Declaration of Results\nR.23.1 After finalization by the Class Committee as per R.22.1, the Letter-Grades awarded to the students in each common course in the first two semesters and in the courses of the third semester offered in common to all the disciplines of the B.Tech programme, will be announced by the Academic Section.",
+      "char_count": 602,
+      "start_index": 47377,
+      "end_index": 47979,
+      "chunk_hash": "538701e9b896"
+    },
+    {
+      "chunk_id": 74,
+      "source": "document.pdf",
+      "page_start": 22,
+      "page_end": 22,
+      "pages": [
+        22
+      ],
+      "text": "For the rest of the courses offered in the third semester and courses offered in the fourth and higher semesters by a department, the letter grades awarded will be announced on the departmental notice board.\nR.23.2 The W grade once awarded stays in the record of the student and is deleted when he/she completes the subject successfully later. The grade acquired by him/her will be indicated in the grade card of the appropriate semester with an indication of number of attempts made in that course.\nR.23.3 'U' grade obtained by the students will be deleted in the grade card once that course is successfully completed, indicating also the number of attempts made in that course.\nR.24.0 Re-examination of Answer Papers\nR.24.1 In case any student feels aggrieved, he/she can contact the teacher concerned within three weeks from the commencement of the semester immediately following the announcement of the results.",
+      "char_count": 915,
+      "start_index": 47981,
+      "end_index": 48896,
+      "chunk_hash": "77ec6a0d696a"
+    },
+    {
+      "chunk_id": 75,
+      "source": "document.pdf",
+      "page_start": 22,
+      "page_end": 22,
+      "pages": [
+        22
+      ],
+      "text": "The student shall have access to his/her answer paper(s) in the end semester examination which may be shown to him/her by the teachers concerned. If the teacher feels that the case is genuine, he/she may re-examine the case and forward a revised grade, if any, to the Dean of Academic Courses through the Chairman of the Class Committee with justification for the revision, with intimation to the Head of the Department.\nR.25.0 Course Repetition\nR.25.1 A student who earns a U or W grade in a core course has to repeat it compulsorily when the course is offered next.\n\nA student securing a U or W grade in an elective course, may repeat it if he/she so desires to get a successful grade.",
+      "char_count": 687,
+      "start_index": 48898,
+      "end_index": 49585,
+      "chunk_hash": "096cecb56cec"
+    },
+    {
+      "chunk_id": 76,
+      "source": "document.pdf",
+      "page_start": 22,
+      "page_end": 23,
+      "pages": [
+        22,
+        23
+      ],
+      "text": "A student securing a U or W grade in an elective course, may repeat it if he/she so desires to get a successful grade.\n\nA course successfully completed cannot be repeated. However from academic year 2014-15 where students have taken all core and elective courses but still fail to get a minimum CGPA of 5 and they are not eligible to get degree, these students are permitted to repeat the core or elective courses to earn the minimum CGPA.\nR.26.0 Grade Card\nR.26.1 The grade card issued at the end of the semester to each student will contain the following:",
+      "char_count": 557,
+      "start_index": 49467,
+      "end_index": 50024,
+      "chunk_hash": "3df849ca935a"
+    },
+    {
+      "chunk_id": 77,
+      "source": "document.pdf",
+      "page_start": 23,
+      "page_end": 23,
+      "pages": [
+        23
+      ],
+      "text": "a) the course number, name of the course and the credits for each course registered in that semester.\nb) the letter grade obtained in each course c) the attendance code in each course d) the total number of credits earned by the student upto the end of that semester in each of the course categories e) the Cumulative Grade Point Average (CGPA) of all the courses taken from the first semester.\nR.26.2 The GPA will be calculated according to the formula:\n\nGPA = Si (Ci x GP) / Si Ci\nWhere Ci = credit for the course, GP = the grade point obtained for the course and SiCi = the sum of credits of all courses taken in that semester, including those in which the student has secured U and W grades.\n\nFor the cumulative grade point average (CGPA), a similar formula is used where the sum SiCi is the sum of credits of all courses taken in all the semesters completed up to the point in time.",
+      "char_count": 887,
+      "start_index": 50026,
+      "end_index": 50913,
+      "chunk_hash": "8332d0b8da21"
+    },
+    {
+      "chunk_id": 78,
+      "source": "document.pdf",
+      "page_start": 23,
+      "page_end": 23,
+      "pages": [
+        23
+      ],
+      "text": "For the cumulative grade point average (CGPA), a similar formula is used where the sum SiCi is the sum of credits of all courses taken in all the semesters completed up to the point in time.\n\nThe CGPA based on the successfully completed courses is calculated, deleting the \"U\" or \"W\" grades, and is also shown separately in the grade card.\nR.26.3 No class or division or rank will be awarded to the students at the end of their B.Tech programme.\nR.27.0 NCC / NSO / NSS Requirements\nR.27.1 All students admitted to the B.Tech programme will have to take either NCC or NSO / NSS\nas an extra-curricular programme.\n\nNCC programme is not available for Foreign nationals and women students.\nR.27.2 The NCC programme will have to be completed in two semesters.\n\nNSO / NSS programme will be held as announced by the Gymkhana / Advisor, NSS.\nR.27.3 The NCC / NSO / NSS requirement should be completed within the first two semesters.\nR.27.4 The minimum attendance requirement is 85%.",
+      "char_count": 973,
+      "start_index": 50723,
+      "end_index": 51696,
+      "chunk_hash": "07e24e13aa75"
+    },
+    {
+      "chunk_id": 79,
+      "source": "document.pdf",
+      "page_start": 24,
+      "page_end": 24,
+      "pages": [
+        24
+      ],
+      "text": "R.27.5 If a student falls short of the attendance requirements he / she should make up the deficiency as noted below:\n\n(i) If the absence is on valid grounds, the deficiency will be made up in the extra NCC / NSO / NSS programmes to be offered during May of the same year.\n\n(ii) If the absence is unauthorized, the deficiency will have to be made up during the following year. The deficiency in NCC will have to be made up in NSO / NSS programmes at the rate of four times the deficiency, i.e., each NCC / NSS class missed will be made up by four NSO classes.",
+      "char_count": 559,
+      "start_index": 51698,
+      "end_index": 52257,
+      "chunk_hash": "e504cfad6efd"
+    },
+    {
+      "chunk_id": 80,
+      "source": "document.pdf",
+      "page_start": 24,
+      "page_end": 24,
+      "pages": [
+        24
+      ],
+      "text": "(iii) The deficiency in NSO / NSS classes will have to be made up at the rate of two classes for each class missed.\nR.28.0 Scholarships and Tuition Fee Exemption\nR.28.1 25% of the students admitted or 25% of the sanctioned strength, whichever is less, will be awarded Merit-Cum-Means (MCM) scholarship for the entire duration of the programme subject to the terms and conditions and at the rates approved by the Government of India from time to time.\n\nThese students are exempted from paying tuition fees.\n\nIn addition, 10% of the students admitted or 10% of the sanctioned strength, whichever is less, are exempted from payment of tuition fees for the duration of the programme.\n\nIn the cases of scholarships provided by private organisations, the rates and terms and conditions for the award of such scholarship shall be as approved by the Senate.",
+      "char_count": 849,
+      "start_index": 52259,
+      "end_index": 53108,
+      "chunk_hash": "6d68c4c68ea9"
+    },
+    {
+      "chunk_id": 81,
+      "source": "document.pdf",
+      "page_start": 24,
+      "page_end": 24,
+      "pages": [
+        24
+      ],
+      "text": "In the cases of scholarships provided by private organisations, the rates and terms and conditions for the award of such scholarship shall be as approved by the Senate.\n\nIn the case of the SC / ST candidates the award of scholarships and other benefits will be in accordance with the rules framed by the Government of India.",
+      "char_count": 324,
+      "start_index": 52940,
+      "end_index": 53264,
+      "chunk_hash": "3b7f6cbdd113"
+    },
+    {
+      "chunk_id": 82,
+      "source": "document.pdf",
+      "page_start": 24,
+      "page_end": 24,
+      "pages": [
+        24
+      ],
+      "text": "The Dean of Academic Courses will lay down the administrative procedures to be followed in the selection of the students for the award of the scholarships consistent with existing Government regulations if any. The number and names of the selected candidates will be reported to the Senate.\nR.29.0 Eligibility for Award of the B.Tech Degree\nR.29.1 A student shall be declared to be eligible for award of the B.Tech degree if he/she has a) registered and successfully completed all the core courses and projects;\nb) successfully acquired the minimum required credits as specified in the curriculum corresponding to the branch of his/ her study within the stipulated time;\nc) earned the specified credits in all the categories of subjects;\nd) completed the NCC / NSO / NSS requirements;\ne) secured a CGPA of 5.0 in passed subjects only.\nf) no dues to the Institute, Hostels, Libraries, NCC / NSS / NSO etc.\n\nand\ng) no disciplinary action is pending against him / her.",
+      "char_count": 965,
+      "start_index": 53266,
+      "end_index": 54231,
+      "chunk_hash": "6eb1680e39f7"
+    },
+    {
+      "chunk_id": 83,
+      "source": "document.pdf",
+      "page_start": 24,
+      "page_end": 25,
+      "pages": [
+        24,
+        25
+      ],
+      "text": "and\ng) no disciplinary action is pending against him / her.\n\nProcedure for credit transfer for students visiting Universities abroad\nThe following procedure will be followed for credit transfer for students visiting Universities abroad under Exchange programme of NUS/DAAD or any other University, with effect from Jan-May 2008 semester:\n\nThe credits / grades indicated in the grade sheet obtained from the university in which the student has completed the courses should be used by the student as part of his/her transcripts.\n\nIIT Madras transcripts will only indicate the courses, credits and grades completed at IITM and the total no. of credits (without grades) earned in other Universities in a particular semester.\n\nThe CGPA calculation based on credits earned/completed at IIT Madras alone is to be considered for award of prizes.",
+      "char_count": 837,
+      "start_index": 54172,
+      "end_index": 55009,
+      "chunk_hash": "c7ad7349ad19"
+    },
+    {
+      "chunk_id": 84,
+      "source": "document.pdf",
+      "page_start": 25,
+      "page_end": 25,
+      "pages": [
+        25
+      ],
+      "text": "The CGPA calculation based on credits earned/completed at IIT Madras alone is to be considered for award of prizes.\n\nThe credits earned at Universities abroad will be taken into account for calculation of minimum required credits for the award of the degree.\nR.30.0 Eligibility for Award of the B.Tech (Honours) Degree\nR.30.1 In addition to the conditions prescribed under R.29.0, the B.Tech (Honours) students must maintain an average CGPA of 8.5. Otherwise, they will be awarded only B.Tech Degree.\nR.30.2 Extra credits earned by the students will be counted for prizes and awards.\nR.30.3 The award of the degree must be recommended by the Senate and approved by the Board of\nGovernors of the Institute.\nR.31.0 Power to Modify\nR.31.1 Notwithstanding all that has been stated above, the Senate has the right to modify any of the above regulations from time to time.\n\n*****",
+      "char_count": 873,
+      "start_index": 54894,
+      "end_index": 55767,
+      "chunk_hash": "196da0d062bf"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+| category | improved | unchanged | worsened | improved_top3 | worsened_top3 |
+|---|---|---|---|---|---|
+| keyword_trap | 1 | 5 | 0 | 1 | 0 |
+| exception | 1 | 4 | 1 | 1 | 0 |
+| negation_constraint | 3 | 2 | 1 | 1 | 0 |
+| synonym_mismatch | 0 | 5 | 1 | 0 | 1 |
+| document_specific | 2 | 2 | 1 | 1 | 1 |
+| control | 0 | 4 | 0 | 0 | 0 |
+| ALL | 7 | 22 | 4 | 4 | 2 |

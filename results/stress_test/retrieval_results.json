@@ -1,0 +1,6917 @@
+{
+  "metadata": {
+    "created_utc": "2026-10-19T14:00:31+00:00",
+    "source_pdf": "document.pdf",
+    "corpus_fingerprint": "037b86edb2eec9674c3357fa9da058e7fca183abb480dd0f668b2218f6bb5a18",
+    "bi_encoder": "sentence-transformers/all-MiniLM-L6-v2",
+    "cross_encoder": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "definitions": "(relevance labels = relevant_chunk_ids from data/evaluation/questions.json)\n    Recall@3          |relevant ∩ top-3| / |relevant|\n    Recall@10         |relevant ∩ top-10| / |relevant|   (same for both pipelines)\n    MRR@10            1 / rank of the first relevant chunk in the 10-list (0 if none)\n    evidence_cov@3    fraction of the question's evidence quotes that occur in at least\n                      one top-3 chunk (a quote may occur in two overlapping chunks)\n    promoted          relevant chunk with baseline rank 4-10 and re-ranked rank 1-3\n    demoted           relevant chunk with baseline rank 1-3 and re-ranked rank 4-10\n    outcome           compares evidence_cov@3 first; if equal, the reciprocal rank:\n                      improved / unchanged / worsened\n    rescue            relevant evidence missing from the baseline top-3 (cov@3 < 1),\n                      present in the baseline top-10, and promoted into the re-ranked\n                      top-3 so that cov@3 increases\n    strict_rescue     rescue where the baseline top-3 contained NO relevant chunk"
+  },
+  "overall": {
+    "n_questions": 33,
+    "baseline": {
+      "recall@3": 0.8182,
+      "hit@3": 0.8485,
+      "mrr@10": 0.8006,
+      "evidence_cov@3": 0.8364
+    },
+    "reranked": {
+      "recall@3": 0.8788,
+      "hit@3": 0.9091,
+      "mrr@10": 0.8634,
+      "evidence_cov@3": 0.8939
+    },
+    "recall@10": 0.9394,
+    "questions_with_no_relevant_in_top10": [
+      "C-04"
+    ],
+    "relevant_chunks_promoted_4to10_into_top3": 4,
+    "relevant_chunks_demoted_from_top3": 2,
+    "improved": [
+      "KT-02",
+      "EX-05",
+      "NG-02",
+      "NG-05",
+      "NG-06",
+      "DS-01",
+      "DS-02"
+    ],
+    "improved_top3_coverage": [
+      "KT-02",
+      "EX-05",
+      "NG-06",
+      "DS-02"
+    ],
+    "unchanged": [
+      "KT-01",
+      "KT-03",
+      "KT-04",
+      "KT-05",
+      "KT-06",
+      "EX-02",
+      "EX-03",
+      "EX-04",
+      "EX-06",
+      "NG-03",
+      "NG-04",
+      "SY-01",
+      "SY-02",
+      "SY-04",
+      "SY-05",
+      "SY-06",
+      "DS-03",
+      "DS-04",
+      "C-01",
+      "C-02",
+      "C-03",
+      "C-04"
+    ],
+    "unchanged_top3_coverage": [],
+    "worsened": [
+      "EX-01",
+      "NG-01",
+      "SY-03",
+      "DS-05"
+    ],
+    "worsened_top3_coverage": [
+      "SY-03",
+      "DS-05"
+    ],
+    "rescues": [
+      "KT-02",
+      "EX-05",
+      "NG-06",
+      "DS-02"
+    ],
+    "strict_rescues": [
+      "KT-02",
+      "NG-06",
+      "DS-02"
+    ]
+  },
+  "by_category": {
+    "keyword_trap": {
+      "n_questions": 6,
+      "baseline": {
+        "recall@3": 0.8333,
+        "hit@3": 0.8333,
+        "mrr@10": 0.875,
+        "evidence_cov@3": 0.8333
+      },
+      "reranked": {
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0
+      },
+      "recall@10": 1.0,
+      "questions_with_no_relevant_in_top10": [],
+      "relevant_chunks_promoted_4to10_into_top3": 1,
+      "relevant_chunks_demoted_from_top3": 0,
+      "improved": [
+        "KT-02"
+      ],
+      "improved_top3_coverage": [
+        "KT-02"
+      ],
+      "unchanged": [
+        "KT-01",
+        "KT-03",
+        "KT-04",
+        "KT-05",
+        "KT-06"
+      ],
+      "unchanged_top3_coverage": [],
+      "worsened": [],
+      "worsened_top3_coverage": [],
+      "rescues": [
+        "KT-02"
+      ],
+      "strict_rescues": [
+        "KT-02"
+      ]
+    },
+    "exception": {
+      "n_questions": 6,
+      "baseline": {
+        "recall@3": 0.9167,
+        "hit@3": 1.0,
+        "mrr@10": 0.9167,
+        "evidence_cov@3": 0.9333
+      },
+      "reranked": {
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "mrr@10": 0.8889,
+        "evidence_cov@3": 1.0
+      },
+      "recall@10": 1.0,
+      "questions_with_no_relevant_in_top10": [],
+      "relevant_chunks_promoted_4to10_into_top3": 1,
+      "relevant_chunks_demoted_from_top3": 0,
+      "improved": [
+        "EX-05"
+      ],
+      "improved_top3_coverage": [
+        "EX-05"
+      ],
+      "unchanged": [
+        "EX-02",
+        "EX-03",
+        "EX-04",
+        "EX-06"
+      ],
+      "unchanged_top3_coverage": [],
+      "worsened": [
+        "EX-01"
+      ],
+      "worsened_top3_coverage": [],
+      "rescues": [
+        "EX-05"
+      ],
+      "strict_rescues": []
+    },
+    "negation_constraint": {
+      "n_questions": 6,
+      "baseline": {
+        "recall@3": 0.8333,
+        "hit@3": 0.8333,
+        "mrr@10": 0.6806,
+        "evidence_cov@3": 0.8333
+      },
+      "reranked": {
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "mrr@10": 0.9167,
+        "evidence_cov@3": 1.0
+      },
+      "recall@10": 1.0,
+      "questions_with_no_relevant_in_top10": [],
+      "relevant_chunks_promoted_4to10_into_top3": 1,
+      "relevant_chunks_demoted_from_top3": 0,
+      "improved": [
+        "NG-02",
+        "NG-05",
+        "NG-06"
+      ],
+      "improved_top3_coverage": [
+        "NG-06"
+      ],
+      "unchanged": [
+        "NG-03",
+        "NG-04"
+      ],
+      "unchanged_top3_coverage": [],
+      "worsened": [
+        "NG-01"
+      ],
+      "worsened_top3_coverage": [],
+      "rescues": [
+        "NG-06"
+      ],
+      "strict_rescues": [
+        "NG-06"
+      ]
+    },
+    "synonym_mismatch": {
+      "n_questions": 6,
+      "baseline": {
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0
+      },
+      "reranked": {
+        "recall@3": 0.9167,
+        "hit@3": 1.0,
+        "mrr@10": 0.8889,
+        "evidence_cov@3": 0.9167
+      },
+      "recall@10": 1.0,
+      "questions_with_no_relevant_in_top10": [],
+      "relevant_chunks_promoted_4to10_into_top3": 0,
+      "relevant_chunks_demoted_from_top3": 1,
+      "improved": [],
+      "improved_top3_coverage": [],
+      "unchanged": [
+        "SY-01",
+        "SY-02",
+        "SY-04",
+        "SY-05",
+        "SY-06"
+      ],
+      "unchanged_top3_coverage": [],
+      "worsened": [
+        "SY-03"
+      ],
+      "worsened_top3_coverage": [
+        "SY-03"
+      ],
+      "rescues": [],
+      "strict_rescues": []
+    },
+    "document_specific": {
+      "n_questions": 5,
+      "baseline": {
+        "recall@3": 0.5,
+        "hit@3": 0.6,
+        "mrr@10": 0.5175,
+        "evidence_cov@3": 0.6
+      },
+      "reranked": {
+        "recall@3": 0.5,
+        "hit@3": 0.6,
+        "mrr@10": 0.665,
+        "evidence_cov@3": 0.6
+      },
+      "recall@10": 0.8,
+      "questions_with_no_relevant_in_top10": [],
+      "relevant_chunks_promoted_4to10_into_top3": 1,
+      "relevant_chunks_demoted_from_top3": 1,
+      "improved": [
+        "DS-01",
+        "DS-02"
+      ],
+      "improved_top3_coverage": [
+        "DS-02"
+      ],
+      "unchanged": [
+        "DS-03",
+        "DS-04"
+      ],
+      "unchanged_top3_coverage": [],
+      "worsened": [
+        "DS-05"
+      ],
+      "worsened_top3_coverage": [
+        "DS-05"
+      ],
+      "rescues": [
+        "DS-02"
+      ],
+      "strict_rescues": [
+        "DS-02"
+      ]
+    },
+    "control": {
+      "n_questions": 4,
+      "baseline": {
+        "recall@3": 0.75,
+        "hit@3": 0.75,
+        "mrr@10": 0.75,
+        "evidence_cov@3": 0.75
+      },
+      "reranked": {
+        "recall@3": 0.75,
+        "hit@3": 0.75,
+        "mrr@10": 0.75,
+        "evidence_cov@3": 0.75
+      },
+      "recall@10": 0.75,
+      "questions_with_no_relevant_in_top10": [
+        "C-04"
+      ],
+      "relevant_chunks_promoted_4to10_into_top3": 0,
+      "relevant_chunks_demoted_from_top3": 0,
+      "improved": [],
+      "improved_top3_coverage": [],
+      "unchanged": [
+        "C-01",
+        "C-02",
+        "C-03",
+        "C-04"
+      ],
+      "unchanged_top3_coverage": [],
+      "worsened": [],
+      "worsened_top3_coverage": [],
+      "rescues": [],
+      "strict_rescues": []
+    }
+  },
+  "questions": [
+    {
+      "query_id": "KT-01",
+      "category": "keyword_trap",
+      "question": "If a student's absence from NCC classes is unauthorized, how must the attendance deficiency be made up?",
+      "relevant_chunk_ids": [
+        79
+      ],
+      "distractor_chunk_ids": [
+        59
+      ],
+      "relevant_in_top10": [
+        79
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          79,
+          43,
+          60
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          79,
+          60,
+          43
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 79,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 79,
+          "baseline_rank": 1,
+          "cosine_score": 0.7602,
+          "ce_score": 8.4484,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            24,
+            24
+          ]
+        },
+        {
+          "chunk_id": 43,
+          "baseline_rank": 2,
+          "cosine_score": 0.5822,
+          "ce_score": -3.8315,
+          "reranked_rank": 3,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 60,
+          "baseline_rank": 3,
+          "cosine_score": 0.5563,
+          "ce_score": -2.7747,
+          "reranked_rank": 2,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            19
+          ]
+        },
+        {
+          "chunk_id": 61,
+          "baseline_rank": 4,
+          "cosine_score": 0.5197,
+          "ce_score": -4.6097,
+          "reranked_rank": 4,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            19,
+            19
+          ]
+        },
+        {
+          "chunk_id": 57,
+          "baseline_rank": 5,
+          "cosine_score": 0.5172,
+          "ce_score": -7.2789,
+          "reranked_rank": 8,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 59,
+          "baseline_rank": 6,
+          "cosine_score": 0.507,
+          "ce_score": -5.5035,
+          "reranked_rank": 7,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": true,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 53,
+          "baseline_rank": 7,
+          "cosine_score": 0.4833,
+          "ce_score": -4.8895,
+          "reranked_rank": 5,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 71,
+          "baseline_rank": 8,
+          "cosine_score": 0.474,
+          "ce_score": -5.3069,
+          "reranked_rank": 6,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            21,
+            21
+          ]
+        },
+        {
+          "chunk_id": 38,
+          "baseline_rank": 9,
+          "cosine_score": 0.4715,
+          "ce_score": -7.8684,
+          "reranked_rank": 9,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            14,
+            14
+          ]
+        },
+        {
+          "chunk_id": 44,
+          "baseline_rank": 10,
+          "cosine_score": 0.4651,
+          "ce_score": -10.307,
+          "reranked_rank": 10,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 13.499089000106324,
+        "ce_predict": 238.49765399791067
+      }
+    },
+    {
+      "query_id": "KT-02",
+      "category": "keyword_trap",
+      "question": "What CGPA does a student need in order to opt for the B.Tech (Honours) programme, and when can they opt?",
+      "relevant_chunk_ids": [
+        21
+      ],
+      "distractor_chunk_ids": [
+        84
+      ],
+      "relevant_in_top10": [
+        21
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          78,
+          84,
+          33
+        ],
+        "recall@3": 0.0,
+        "hit@3": 0,
+        "mrr@10": 0.25,
+        "evidence_cov@3": 0.0,
+        "distractors_in_top3": [
+          84
+        ]
+      },
+      "reranked": {
+        "top3": [
+          21,
+          12,
+          78
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 21,
+          "baseline_rank": 4,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [
+        21
+      ],
+      "demoted_from_top3": [],
+      "outcome": "improved",
+      "outcome_basis": "evidence_cov@3",
+      "rescue": true,
+      "strict_rescue": true,
+      "candidates": [
+        {
+          "chunk_id": 78,
+          "baseline_rank": 1,
+          "cosine_score": 0.7502,
+          "ce_score": 2.3652,
+          "reranked_rank": 3,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            23,
+            23
+          ]
+        },
+        {
+          "chunk_id": 84,
+          "baseline_rank": 2,
+          "cosine_score": 0.7229,
+          "ce_score": 1.9592,
+          "reranked_rank": 5,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": true,
+          "pages": [
+            25,
+            25
+          ]
+        },
+        {
+          "chunk_id": 33,
+          "baseline_rank": 3,
+          "cosine_score": 0.7062,
+          "ce_score": 1.8265,
+          "reranked_rank": 6,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            12,
+            12
+          ]
+        },
+        {
+          "chunk_id": 21,
+          "baseline_rank": 4,
+          "cosine_score": 0.6728,
+          "ce_score": 4.3333,
+          "reranked_rank": 1,
+          "rank_change": 3,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            8,
+            8
+          ]
+        },
+        {
+          "chunk_id": 45,
+          "baseline_rank": 5,
+          "cosine_score": 0.6644,
+          "ce_score": 1.1006,
+          "reranked_rank": 7,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 53,
+          "baseline_rank": 6,
+          "cosine_score": 0.6619,
+          "ce_score": 0.5558,
+          "reranked_rank": 8,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 82,
+          "baseline_rank": 7,
+          "cosine_score": 0.6583,
+          "ce_score": -0.7676,
+          "reranked_rank": 9,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            24,
+            24
+          ]
+        },
+        {
+          "chunk_id": 12,
+          "baseline_rank": 8,
+          "cosine_score": 0.6377,
+          "ce_score": 4.1379,
+          "reranked_rank": 2,
+          "rank_change": 6,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            5,
+            6
+          ]
+        },
+        {
+          "chunk_id": 34,
+          "baseline_rank": 9,
+          "cosine_score": 0.6373,
+          "ce_score": 2.0116,
+          "reranked_rank": 4,
+          "rank_change": 5,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            12,
+            12
+          ]
+        },
+        {
+          "chunk_id": 76,
+          "baseline_rank": 10,
+          "cosine_score": 0.6233,
+          "ce_score": -3.7905,
+          "reranked_rank": 10,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            23
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 15.888819998508552,
+        "ce_predict": 288.2047490020341
+      }
+    },
+    {
+      "query_id": "KT-03",
+      "category": "keyword_trap",
+      "question": "What minimum CGPA must a student keep to avoid being relieved from the programme, and what happens if it drops below that?",
+      "relevant_chunk_ids": [
+        53,
+        54
+      ],
+      "distractor_chunk_ids": [
+        82
+      ],
+      "relevant_in_top10": [
+        53,
+        54
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          53,
+          54,
+          76
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          54,
+          53,
+          76
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 53,
+          "baseline_rank": 1,
+          "reranked_rank": 2
+        },
+        {
+          "chunk_id": 54,
+          "baseline_rank": 2,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 53,
+          "baseline_rank": 1,
+          "cosine_score": 0.7336,
+          "ce_score": 3.8783,
+          "reranked_rank": 2,
+          "rank_change": -1,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 54,
+          "baseline_rank": 2,
+          "cosine_score": 0.7324,
+          "ce_score": 4.3198,
+          "reranked_rank": 1,
+          "rank_change": 1,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 76,
+          "baseline_rank": 3,
+          "cosine_score": 0.6639,
+          "ce_score": 0.2582,
+          "reranked_rank": 3,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            23
+          ]
+        },
+        {
+          "chunk_id": 78,
+          "baseline_rank": 4,
+          "cosine_score": 0.6373,
+          "ce_score": -1.68,
+          "reranked_rank": 5,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            23,
+            23
+          ]
+        },
+        {
+          "chunk_id": 84,
+          "baseline_rank": 5,
+          "cosine_score": 0.5672,
+          "ce_score": -2.582,
+          "reranked_rank": 6,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            25,
+            25
+          ]
+        },
+        {
+          "chunk_id": 45,
+          "baseline_rank": 6,
+          "cosine_score": 0.5448,
+          "ce_score": -5.0812,
+          "reranked_rank": 9,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 77,
+          "baseline_rank": 7,
+          "cosine_score": 0.5447,
+          "ce_score": -8.0258,
+          "reranked_rank": 10,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            23,
+            23
+          ]
+        },
+        {
+          "chunk_id": 79,
+          "baseline_rank": 8,
+          "cosine_score": 0.5294,
+          "ce_score": -4.8908,
+          "reranked_rank": 8,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            24,
+            24
+          ]
+        },
+        {
+          "chunk_id": 42,
+          "baseline_rank": 9,
+          "cosine_score": 0.5284,
+          "ce_score": -0.7153,
+          "reranked_rank": 4,
+          "rank_change": 5,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            14,
+            15
+          ]
+        },
+        {
+          "chunk_id": 33,
+          "baseline_rank": 10,
+          "cosine_score": 0.5265,
+          "ce_score": -2.6861,
+          "reranked_rank": 7,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            12,
+            12
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 15.998550999938743,
+        "ce_predict": 271.8664259991783
+      }
+    },
+    {
+      "query_id": "KT-04",
+      "category": "keyword_trap",
+      "question": "How many credits must a student admitted in the 2013 batch earn for the award of the B.Tech degree?",
+      "relevant_chunk_ids": [
+        24,
+        33
+      ],
+      "distractor_chunk_ids": [],
+      "relevant_in_top10": [
+        24,
+        33
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          33,
+          24,
+          84
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          33,
+          24,
+          84
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 24,
+          "baseline_rank": 2,
+          "reranked_rank": 2
+        },
+        {
+          "chunk_id": 33,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 33,
+          "baseline_rank": 1,
+          "cosine_score": 0.8109,
+          "ce_score": 9.455,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            12,
+            12
+          ]
+        },
+        {
+          "chunk_id": 24,
+          "baseline_rank": 2,
+          "cosine_score": 0.745,
+          "ce_score": 6.8489,
+          "reranked_rank": 2,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            8,
+            9
+          ]
+        },
+        {
+          "chunk_id": 84,
+          "baseline_rank": 3,
+          "cosine_score": 0.6784,
+          "ce_score": 3.8456,
+          "reranked_rank": 3,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            25,
+            25
+          ]
+        },
+        {
+          "chunk_id": 12,
+          "baseline_rank": 4,
+          "cosine_score": 0.6603,
+          "ce_score": 0.046,
+          "reranked_rank": 9,
+          "rank_change": -5,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            5,
+            6
+          ]
+        },
+        {
+          "chunk_id": 45,
+          "baseline_rank": 5,
+          "cosine_score": 0.6478,
+          "ce_score": 3.1054,
+          "reranked_rank": 5,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 34,
+          "baseline_rank": 6,
+          "cosine_score": 0.6383,
+          "ce_score": -0.2718,
+          "reranked_rank": 10,
+          "rank_change": -4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            12,
+            12
+          ]
+        },
+        {
+          "chunk_id": 53,
+          "baseline_rank": 7,
+          "cosine_score": 0.6271,
+          "ce_score": 3.749,
+          "reranked_rank": 4,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 82,
+          "baseline_rank": 8,
+          "cosine_score": 0.6164,
+          "ce_score": 2.4696,
+          "reranked_rank": 6,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            24,
+            24
+          ]
+        },
+        {
+          "chunk_id": 13,
+          "baseline_rank": 9,
+          "cosine_score": 0.6151,
+          "ce_score": 0.2913,
+          "reranked_rank": 8,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            5,
+            6
+          ]
+        },
+        {
+          "chunk_id": 21,
+          "baseline_rank": 10,
+          "cosine_score": 0.6023,
+          "ce_score": 2.327,
+          "reranked_rank": 7,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            8,
+            8
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 13.167031000193674,
+        "ce_predict": 310.48793800073327
+      }
+    },
+    {
+      "query_id": "KT-05",
+      "category": "keyword_trap",
+      "question": "How many times can a student take the supplementary examination in a course?",
+      "relevant_chunk_ids": [
+        49
+      ],
+      "distractor_chunk_ids": [
+        70
+      ],
+      "relevant_in_top10": [
+        49
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          49,
+          50,
+          25
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          49,
+          50,
+          63
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 49,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 49,
+          "baseline_rank": 1,
+          "cosine_score": 0.7163,
+          "ce_score": 4.9648,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            16,
+            16
+          ]
+        },
+        {
+          "chunk_id": 50,
+          "baseline_rank": 2,
+          "cosine_score": 0.6846,
+          "ce_score": 4.2103,
+          "reranked_rank": 2,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            16
+          ]
+        },
+        {
+          "chunk_id": 25,
+          "baseline_rank": 3,
+          "cosine_score": 0.5644,
+          "ce_score": -3.2803,
+          "reranked_rank": 4,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            9,
+            9
+          ]
+        },
+        {
+          "chunk_id": 63,
+          "baseline_rank": 4,
+          "cosine_score": 0.5374,
+          "ce_score": -3.0633,
+          "reranked_rank": 3,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            19,
+            19
+          ]
+        },
+        {
+          "chunk_id": 46,
+          "baseline_rank": 5,
+          "cosine_score": 0.5341,
+          "ce_score": -7.512,
+          "reranked_rank": 10,
+          "rank_change": -5,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 39,
+          "baseline_rank": 6,
+          "cosine_score": 0.5292,
+          "ce_score": -4.6147,
+          "reranked_rank": 5,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            14,
+            14
+          ]
+        },
+        {
+          "chunk_id": 52,
+          "baseline_rank": 7,
+          "cosine_score": 0.5166,
+          "ce_score": -5.3841,
+          "reranked_rank": 6,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            17
+          ]
+        },
+        {
+          "chunk_id": 3,
+          "baseline_rank": 8,
+          "cosine_score": 0.5166,
+          "ce_score": -5.4219,
+          "reranked_rank": 7,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            3,
+            3
+          ]
+        },
+        {
+          "chunk_id": 54,
+          "baseline_rank": 9,
+          "cosine_score": 0.5151,
+          "ce_score": -6.6563,
+          "reranked_rank": 9,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 48,
+          "baseline_rank": 10,
+          "cosine_score": 0.5142,
+          "ce_score": -5.4328,
+          "reranked_rank": 8,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            16
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 19.71326000057161,
+        "ce_predict": 270.7682399995974
+      }
+    },
+    {
+      "query_id": "KT-06",
+      "category": "keyword_trap",
+      "question": "Who acts as Chairman of the Class Committee for a department's own courses, and who nominates them?",
+      "relevant_chunk_ids": [
+        36
+      ],
+      "distractor_chunk_ids": [
+        35
+      ],
+      "relevant_in_top10": [
+        36
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          36,
+          35,
+          38
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": [
+          35
+        ]
+      },
+      "reranked": {
+        "top3": [
+          36,
+          35,
+          37
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": [
+          35
+        ]
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 36,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 36,
+          "baseline_rank": 1,
+          "cosine_score": 0.7372,
+          "ce_score": 5.8406,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            13,
+            13
+          ]
+        },
+        {
+          "chunk_id": 35,
+          "baseline_rank": 2,
+          "cosine_score": 0.6849,
+          "ce_score": 1.9755,
+          "reranked_rank": 2,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": true,
+          "pages": [
+            13,
+            13
+          ]
+        },
+        {
+          "chunk_id": 38,
+          "baseline_rank": 3,
+          "cosine_score": 0.6292,
+          "ce_score": -2.8683,
+          "reranked_rank": 5,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            14,
+            14
+          ]
+        },
+        {
+          "chunk_id": 37,
+          "baseline_rank": 4,
+          "cosine_score": 0.6169,
+          "ce_score": 0.7899,
+          "reranked_rank": 3,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            13,
+            14
+          ]
+        },
+        {
+          "chunk_id": 73,
+          "baseline_rank": 5,
+          "cosine_score": 0.4284,
+          "ce_score": -0.5745,
+          "reranked_rank": 4,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            22
+          ]
+        },
+        {
+          "chunk_id": 23,
+          "baseline_rank": 6,
+          "cosine_score": 0.411,
+          "ce_score": -7.0686,
+          "reranked_rank": 7,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            8,
+            8
+          ]
+        },
+        {
+          "chunk_id": 48,
+          "baseline_rank": 7,
+          "cosine_score": 0.3916,
+          "ce_score": -8.1302,
+          "reranked_rank": 9,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            16
+          ]
+        },
+        {
+          "chunk_id": 44,
+          "baseline_rank": 8,
+          "cosine_score": 0.3886,
+          "ce_score": -10.7539,
+          "reranked_rank": 10,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 51,
+          "baseline_rank": 9,
+          "cosine_score": 0.3782,
+          "ce_score": -7.5716,
+          "reranked_rank": 8,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            16
+          ]
+        },
+        {
+          "chunk_id": 62,
+          "baseline_rank": 10,
+          "cosine_score": 0.3697,
+          "ce_score": -6.5672,
+          "reranked_rank": 6,
+          "rank_change": 4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            19,
+            19
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 21.812464998220094,
+        "ce_predict": 246.86559199835756
+      }
+    },
+    {
+      "query_id": "EX-01",
+      "category": "exception",
+      "question": "Which students who have completed their first semester are not eligible to be considered for a change of branch?",
+      "relevant_chunk_ids": [
+        39
+      ],
+      "distractor_chunk_ids": [],
+      "relevant_in_top10": [
+        39
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          40,
+          39,
+          42
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 0.5,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          40,
+          42,
+          39
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 0.3333333333333333,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 39,
+          "baseline_rank": 2,
+          "reranked_rank": 3
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "worsened",
+      "outcome_basis": "rank_only",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 40,
+          "baseline_rank": 1,
+          "cosine_score": 0.5758,
+          "ce_score": 6.273,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            14,
+            14
+          ]
+        },
+        {
+          "chunk_id": 39,
+          "baseline_rank": 2,
+          "cosine_score": 0.571,
+          "ce_score": 5.5973,
+          "reranked_rank": 3,
+          "rank_change": -1,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            14,
+            14
+          ]
+        },
+        {
+          "chunk_id": 42,
+          "baseline_rank": 3,
+          "cosine_score": 0.5666,
+          "ce_score": 5.7878,
+          "reranked_rank": 2,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            14,
+            15
+          ]
+        },
+        {
+          "chunk_id": 43,
+          "baseline_rank": 4,
+          "cosine_score": 0.5158,
+          "ce_score": 0.0778,
+          "reranked_rank": 4,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 54,
+          "baseline_rank": 5,
+          "cosine_score": 0.5061,
+          "ce_score": -5.8122,
+          "reranked_rank": 8,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 47,
+          "baseline_rank": 6,
+          "cosine_score": 0.5015,
+          "ce_score": -5.6167,
+          "reranked_rank": 7,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            16
+          ]
+        },
+        {
+          "chunk_id": 53,
+          "baseline_rank": 7,
+          "cosine_score": 0.4809,
+          "ce_score": -2.4527,
+          "reranked_rank": 5,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 38,
+          "baseline_rank": 8,
+          "cosine_score": 0.4779,
+          "ce_score": -6.8025,
+          "reranked_rank": 9,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            14,
+            14
+          ]
+        },
+        {
+          "chunk_id": 25,
+          "baseline_rank": 9,
+          "cosine_score": 0.4769,
+          "ce_score": -5.5226,
+          "reranked_rank": 6,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            9,
+            9
+          ]
+        },
+        {
+          "chunk_id": 44,
+          "baseline_rank": 10,
+          "cosine_score": 0.473,
+          "ce_score": -9.3364,
+          "reranked_rank": 10,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 11.805938000179594,
+        "ce_predict": 242.45764399893233
+      }
+    },
+    {
+      "query_id": "EX-02",
+      "category": "exception",
+      "question": "Can a dual degree student change to a different discipline or branch?",
+      "relevant_chunk_ids": [
+        42
+      ],
+      "distractor_chunk_ids": [
+        41
+      ],
+      "relevant_in_top10": [
+        42
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          42,
+          40,
+          41
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": [
+          41
+        ]
+      },
+      "reranked": {
+        "top3": [
+          42,
+          40,
+          39
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 42,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 42,
+          "baseline_rank": 1,
+          "cosine_score": 0.6472,
+          "ce_score": 7.7036,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            14,
+            15
+          ]
+        },
+        {
+          "chunk_id": 40,
+          "baseline_rank": 2,
+          "cosine_score": 0.6296,
+          "ce_score": 7.1487,
+          "reranked_rank": 2,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            14,
+            14
+          ]
+        },
+        {
+          "chunk_id": 41,
+          "baseline_rank": 3,
+          "cosine_score": 0.6079,
+          "ce_score": 0.9795,
+          "reranked_rank": 4,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": true,
+          "pages": [
+            14,
+            14
+          ]
+        },
+        {
+          "chunk_id": 39,
+          "baseline_rank": 4,
+          "cosine_score": 0.5245,
+          "ce_score": 1.5966,
+          "reranked_rank": 3,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            14,
+            14
+          ]
+        },
+        {
+          "chunk_id": 46,
+          "baseline_rank": 5,
+          "cosine_score": 0.4274,
+          "ce_score": -2.5556,
+          "reranked_rank": 5,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 36,
+          "baseline_rank": 6,
+          "cosine_score": 0.4137,
+          "ce_score": -5.2209,
+          "reranked_rank": 6,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            13,
+            13
+          ]
+        },
+        {
+          "chunk_id": 25,
+          "baseline_rank": 7,
+          "cosine_score": 0.3836,
+          "ce_score": -10.7783,
+          "reranked_rank": 9,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            9,
+            9
+          ]
+        },
+        {
+          "chunk_id": 76,
+          "baseline_rank": 8,
+          "cosine_score": 0.3764,
+          "ce_score": -10.6183,
+          "reranked_rank": 7,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            23
+          ]
+        },
+        {
+          "chunk_id": 23,
+          "baseline_rank": 9,
+          "cosine_score": 0.3761,
+          "ce_score": -10.7393,
+          "reranked_rank": 8,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            8,
+            8
+          ]
+        },
+        {
+          "chunk_id": 45,
+          "baseline_rank": 10,
+          "cosine_score": 0.369,
+          "ce_score": -10.8653,
+          "reranked_rank": 10,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 11.18527099970379,
+        "ce_predict": 213.93844300109777
+      }
+    },
+    {
+      "query_id": "EX-03",
+      "category": "exception",
+      "question": "Must a student earn at least 15 credits in every semester, including the final one?",
+      "relevant_chunk_ids": [
+        53
+      ],
+      "distractor_chunk_ids": [
+        47
+      ],
+      "relevant_in_top10": [
+        53
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          53,
+          47,
+          76
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": [
+          47
+        ]
+      },
+      "reranked": {
+        "top3": [
+          53,
+          54,
+          26
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 53,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 53,
+          "baseline_rank": 1,
+          "cosine_score": 0.6301,
+          "ce_score": 8.1294,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 47,
+          "baseline_rank": 2,
+          "cosine_score": 0.5581,
+          "ce_score": 0.2832,
+          "reranked_rank": 6,
+          "rank_change": -4,
+          "relevant": false,
+          "distractor": true,
+          "pages": [
+            15,
+            16
+          ]
+        },
+        {
+          "chunk_id": 76,
+          "baseline_rank": 3,
+          "cosine_score": 0.5224,
+          "ce_score": -4.6492,
+          "reranked_rank": 10,
+          "rank_change": -7,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            23
+          ]
+        },
+        {
+          "chunk_id": 54,
+          "baseline_rank": 4,
+          "cosine_score": 0.5111,
+          "ce_score": 3.2792,
+          "reranked_rank": 2,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 26,
+          "baseline_rank": 5,
+          "cosine_score": 0.5086,
+          "ce_score": 2.5576,
+          "reranked_rank": 3,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            9,
+            9
+          ]
+        },
+        {
+          "chunk_id": 49,
+          "baseline_rank": 6,
+          "cosine_score": 0.5059,
+          "ce_score": 1.4203,
+          "reranked_rank": 4,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            16
+          ]
+        },
+        {
+          "chunk_id": 45,
+          "baseline_rank": 7,
+          "cosine_score": 0.4936,
+          "ce_score": 0.3479,
+          "reranked_rank": 5,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 33,
+          "baseline_rank": 8,
+          "cosine_score": 0.4873,
+          "ce_score": -3.2286,
+          "reranked_rank": 8,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            12,
+            12
+          ]
+        },
+        {
+          "chunk_id": 25,
+          "baseline_rank": 9,
+          "cosine_score": 0.4852,
+          "ce_score": -1.1237,
+          "reranked_rank": 7,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            9,
+            9
+          ]
+        },
+        {
+          "chunk_id": 24,
+          "baseline_rank": 10,
+          "cosine_score": 0.4829,
+          "ce_score": -3.5935,
+          "reranked_rank": 9,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            8,
+            9
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 12.831468000513269,
+        "ce_predict": 257.64953500038246
+      }
+    },
+    {
+      "query_id": "EX-04",
+      "category": "exception",
+      "question": "Can a student repeat a course they have already passed in order to improve their CGPA?",
+      "relevant_chunk_ids": [
+        76
+      ],
+      "distractor_chunk_ids": [
+        75
+      ],
+      "relevant_in_top10": [
+        76
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          76,
+          45,
+          54
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          76,
+          75,
+          54
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": [
+          75
+        ]
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 76,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 76,
+          "baseline_rank": 1,
+          "cosine_score": 0.6578,
+          "ce_score": 6.5624,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            22,
+            23
+          ]
+        },
+        {
+          "chunk_id": 45,
+          "baseline_rank": 2,
+          "cosine_score": 0.5861,
+          "ce_score": -1.7105,
+          "reranked_rank": 4,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 54,
+          "baseline_rank": 3,
+          "cosine_score": 0.5722,
+          "ce_score": -1.6677,
+          "reranked_rank": 3,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 53,
+          "baseline_rank": 4,
+          "cosine_score": 0.5535,
+          "ce_score": -2.8041,
+          "reranked_rank": 7,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 75,
+          "baseline_rank": 5,
+          "cosine_score": 0.5517,
+          "ce_score": 0.6318,
+          "reranked_rank": 2,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": true,
+          "pages": [
+            22,
+            22
+          ]
+        },
+        {
+          "chunk_id": 78,
+          "baseline_rank": 6,
+          "cosine_score": 0.5343,
+          "ce_score": -2.1559,
+          "reranked_rank": 5,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            23,
+            23
+          ]
+        },
+        {
+          "chunk_id": 42,
+          "baseline_rank": 7,
+          "cosine_score": 0.5223,
+          "ce_score": -2.2502,
+          "reranked_rank": 6,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            14,
+            15
+          ]
+        },
+        {
+          "chunk_id": 84,
+          "baseline_rank": 8,
+          "cosine_score": 0.5058,
+          "ce_score": -4.5218,
+          "reranked_rank": 8,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            25,
+            25
+          ]
+        },
+        {
+          "chunk_id": 48,
+          "baseline_rank": 9,
+          "cosine_score": 0.5038,
+          "ce_score": -4.7742,
+          "reranked_rank": 9,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            16
+          ]
+        },
+        {
+          "chunk_id": 77,
+          "baseline_rank": 10,
+          "cosine_score": 0.4853,
+          "ce_score": -5.295,
+          "reranked_rank": 10,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            23,
+            23
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 12.96533700224245,
+        "ce_predict": 267.01618199876975
+      }
+    },
+    {
+      "query_id": "EX-05",
+      "category": "exception",
+      "question": "Can attendance below 85% be condoned for a student who was hospitalised?",
+      "relevant_chunk_ids": [
+        61,
+        62
+      ],
+      "distractor_chunk_ids": [
+        59
+      ],
+      "relevant_in_top10": [
+        61,
+        62
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          61,
+          60,
+          58
+        ],
+        "recall@3": 0.5,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 0.6,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          61,
+          62,
+          60
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 61,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        },
+        {
+          "chunk_id": 62,
+          "baseline_rank": 5,
+          "reranked_rank": 2
+        }
+      ],
+      "promoted_into_top3": [
+        62
+      ],
+      "demoted_from_top3": [],
+      "outcome": "improved",
+      "outcome_basis": "evidence_cov@3",
+      "rescue": true,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 61,
+          "baseline_rank": 1,
+          "cosine_score": 0.7429,
+          "ce_score": 5.4906,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            19,
+            19
+          ]
+        },
+        {
+          "chunk_id": 60,
+          "baseline_rank": 2,
+          "cosine_score": 0.6608,
+          "ce_score": 3.5861,
+          "reranked_rank": 3,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            19
+          ]
+        },
+        {
+          "chunk_id": 58,
+          "baseline_rank": 3,
+          "cosine_score": 0.518,
+          "ce_score": -5.0539,
+          "reranked_rank": 5,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 68,
+          "baseline_rank": 4,
+          "cosine_score": 0.4995,
+          "ce_score": -7.0538,
+          "reranked_rank": 7,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            21,
+            21
+          ]
+        },
+        {
+          "chunk_id": 62,
+          "baseline_rank": 5,
+          "cosine_score": 0.4693,
+          "ce_score": 4.4625,
+          "reranked_rank": 2,
+          "rank_change": 3,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            19,
+            19
+          ]
+        },
+        {
+          "chunk_id": 59,
+          "baseline_rank": 6,
+          "cosine_score": 0.4678,
+          "ce_score": -0.6509,
+          "reranked_rank": 4,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": true,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 57,
+          "baseline_rank": 7,
+          "cosine_score": 0.451,
+          "ce_score": -6.5833,
+          "reranked_rank": 6,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 69,
+          "baseline_rank": 8,
+          "cosine_score": 0.4257,
+          "ce_score": -8.2327,
+          "reranked_rank": 8,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            21,
+            21
+          ]
+        },
+        {
+          "chunk_id": 79,
+          "baseline_rank": 9,
+          "cosine_score": 0.4145,
+          "ce_score": -8.9599,
+          "reranked_rank": 9,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            24,
+            24
+          ]
+        },
+        {
+          "chunk_id": 71,
+          "baseline_rank": 10,
+          "cosine_score": 0.3755,
+          "ce_score": -11.2287,
+          "reranked_rank": 10,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            21,
+            21
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 13.339598001039121,
+        "ce_predict": 224.88884099948336
+      }
+    },
+    {
+      "query_id": "EX-06",
+      "category": "exception",
+      "question": "Can a student who missed the make-up examination be given another one?",
+      "relevant_chunk_ids": [
+        70
+      ],
+      "distractor_chunk_ids": [
+        49
+      ],
+      "relevant_in_top10": [
+        70
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          70,
+          67,
+          69
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          70,
+          67,
+          66
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 70,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 70,
+          "baseline_rank": 1,
+          "cosine_score": 0.7534,
+          "ce_score": 8.929,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            21,
+            21
+          ]
+        },
+        {
+          "chunk_id": 67,
+          "baseline_rank": 2,
+          "cosine_score": 0.7223,
+          "ce_score": 7.461,
+          "reranked_rank": 2,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            20,
+            20
+          ]
+        },
+        {
+          "chunk_id": 69,
+          "baseline_rank": 3,
+          "cosine_score": 0.4881,
+          "ce_score": -0.7783,
+          "reranked_rank": 4,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            21,
+            21
+          ]
+        },
+        {
+          "chunk_id": 7,
+          "baseline_rank": 4,
+          "cosine_score": 0.4491,
+          "ce_score": -4.9151,
+          "reranked_rank": 7,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            4,
+            4
+          ]
+        },
+        {
+          "chunk_id": 75,
+          "baseline_rank": 5,
+          "cosine_score": 0.4432,
+          "ce_score": -5.559,
+          "reranked_rank": 9,
+          "rank_change": -4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            22
+          ]
+        },
+        {
+          "chunk_id": 59,
+          "baseline_rank": 6,
+          "cosine_score": 0.4386,
+          "ce_score": -5.472,
+          "reranked_rank": 8,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 66,
+          "baseline_rank": 7,
+          "cosine_score": 0.4323,
+          "ce_score": 1.7605,
+          "reranked_rank": 3,
+          "rank_change": 4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            20,
+            20
+          ]
+        },
+        {
+          "chunk_id": 79,
+          "baseline_rank": 8,
+          "cosine_score": 0.4308,
+          "ce_score": -2.1801,
+          "reranked_rank": 5,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            24,
+            24
+          ]
+        },
+        {
+          "chunk_id": 74,
+          "baseline_rank": 9,
+          "cosine_score": 0.4246,
+          "ce_score": -7.5906,
+          "reranked_rank": 10,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            22
+          ]
+        },
+        {
+          "chunk_id": 68,
+          "baseline_rank": 10,
+          "cosine_score": 0.4217,
+          "ce_score": -2.4446,
+          "reranked_rank": 6,
+          "rank_change": 4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            21,
+            21
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 8.99316199866007,
+        "ce_predict": 219.65114799968433
+      }
+    },
+    {
+      "query_id": "NG-01",
+      "category": "negation_constraint",
+      "question": "Which students are not allowed to take the NCC programme?",
+      "relevant_chunk_ids": [
+        78
+      ],
+      "distractor_chunk_ids": [],
+      "relevant_in_top10": [
+        78
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          78,
+          53,
+          43
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          53,
+          78,
+          43
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 0.5,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 78,
+          "baseline_rank": 1,
+          "reranked_rank": 2
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "worsened",
+      "outcome_basis": "rank_only",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 78,
+          "baseline_rank": 1,
+          "cosine_score": 0.5742,
+          "ce_score": 1.9724,
+          "reranked_rank": 2,
+          "rank_change": -1,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            23,
+            23
+          ]
+        },
+        {
+          "chunk_id": 53,
+          "baseline_rank": 2,
+          "cosine_score": 0.54,
+          "ce_score": 2.4791,
+          "reranked_rank": 1,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 43,
+          "baseline_rank": 3,
+          "cosine_score": 0.5374,
+          "ce_score": 1.7239,
+          "reranked_rank": 3,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 79,
+          "baseline_rank": 4,
+          "cosine_score": 0.531,
+          "ce_score": -0.0255,
+          "reranked_rank": 4,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            24,
+            24
+          ]
+        },
+        {
+          "chunk_id": 26,
+          "baseline_rank": 5,
+          "cosine_score": 0.5155,
+          "ce_score": -7.2779,
+          "reranked_rank": 10,
+          "rank_change": -5,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            9,
+            9
+          ]
+        },
+        {
+          "chunk_id": 82,
+          "baseline_rank": 6,
+          "cosine_score": 0.5153,
+          "ce_score": -4.1685,
+          "reranked_rank": 7,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            24,
+            24
+          ]
+        },
+        {
+          "chunk_id": 54,
+          "baseline_rank": 7,
+          "cosine_score": 0.5052,
+          "ce_score": -2.1921,
+          "reranked_rank": 6,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 71,
+          "baseline_rank": 8,
+          "cosine_score": 0.4958,
+          "ce_score": -6.7278,
+          "reranked_rank": 8,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            21,
+            21
+          ]
+        },
+        {
+          "chunk_id": 17,
+          "baseline_rank": 9,
+          "cosine_score": 0.4721,
+          "ce_score": -7.0239,
+          "reranked_rank": 9,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            6,
+            7
+          ]
+        },
+        {
+          "chunk_id": 25,
+          "baseline_rank": 10,
+          "cosine_score": 0.462,
+          "ce_score": -0.4962,
+          "reranked_rank": 5,
+          "rank_change": 5,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            9,
+            9
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 7.776622001983924,
+        "ce_predict": 267.7033889995073
+      }
+    },
+    {
+      "query_id": "NG-02",
+      "category": "negation_constraint",
+      "question": "Can a student who joined an IIT through JEE appear for JEE again the following year?",
+      "relevant_chunk_ids": [
+        21
+      ],
+      "distractor_chunk_ids": [],
+      "relevant_in_top10": [
+        21
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          11,
+          21,
+          14
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 0.5,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          21,
+          11,
+          4
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 21,
+          "baseline_rank": 2,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "improved",
+      "outcome_basis": "rank_only",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 11,
+          "baseline_rank": 1,
+          "cosine_score": 0.7319,
+          "ce_score": 4.0087,
+          "reranked_rank": 2,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            5,
+            5
+          ]
+        },
+        {
+          "chunk_id": 21,
+          "baseline_rank": 2,
+          "cosine_score": 0.6504,
+          "ce_score": 7.5852,
+          "reranked_rank": 1,
+          "rank_change": 1,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            8,
+            8
+          ]
+        },
+        {
+          "chunk_id": 14,
+          "baseline_rank": 3,
+          "cosine_score": 0.553,
+          "ce_score": -2.5876,
+          "reranked_rank": 7,
+          "rank_change": -4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            6,
+            6
+          ]
+        },
+        {
+          "chunk_id": 4,
+          "baseline_rank": 4,
+          "cosine_score": 0.5529,
+          "ce_score": 0.7054,
+          "reranked_rank": 3,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            3,
+            3
+          ]
+        },
+        {
+          "chunk_id": 12,
+          "baseline_rank": 5,
+          "cosine_score": 0.5432,
+          "ce_score": -1.0267,
+          "reranked_rank": 5,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            5,
+            6
+          ]
+        },
+        {
+          "chunk_id": 8,
+          "baseline_rank": 6,
+          "cosine_score": 0.4872,
+          "ce_score": 0.0046,
+          "reranked_rank": 4,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            4,
+            4
+          ]
+        },
+        {
+          "chunk_id": 19,
+          "baseline_rank": 7,
+          "cosine_score": 0.4863,
+          "ce_score": -5.3493,
+          "reranked_rank": 9,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            7,
+            7
+          ]
+        },
+        {
+          "chunk_id": 18,
+          "baseline_rank": 8,
+          "cosine_score": 0.4751,
+          "ce_score": -3.3286,
+          "reranked_rank": 8,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            7,
+            7
+          ]
+        },
+        {
+          "chunk_id": 13,
+          "baseline_rank": 9,
+          "cosine_score": 0.4738,
+          "ce_score": -6.1866,
+          "reranked_rank": 10,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            5,
+            6
+          ]
+        },
+        {
+          "chunk_id": 5,
+          "baseline_rank": 10,
+          "cosine_score": 0.4649,
+          "ce_score": -1.9918,
+          "reranked_rank": 6,
+          "rank_change": 4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            4,
+            4
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 7.847274999221554,
+        "ce_predict": 285.52931800004444
+      }
+    },
+    {
+      "query_id": "NG-03",
+      "category": "negation_constraint",
+      "question": "Is a student allowed to withdraw from a contact course?",
+      "relevant_chunk_ids": [
+        52
+      ],
+      "distractor_chunk_ids": [
+        48
+      ],
+      "relevant_in_top10": [
+        52
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          52,
+          54,
+          48
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": [
+          48
+        ]
+      },
+      "reranked": {
+        "top3": [
+          52,
+          25,
+          54
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 52,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 52,
+          "baseline_rank": 1,
+          "cosine_score": 0.6651,
+          "ce_score": 6.2613,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            16,
+            17
+          ]
+        },
+        {
+          "chunk_id": 54,
+          "baseline_rank": 2,
+          "cosine_score": 0.5833,
+          "ce_score": 0.5121,
+          "reranked_rank": 3,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 48,
+          "baseline_rank": 3,
+          "cosine_score": 0.5246,
+          "ce_score": -5.5527,
+          "reranked_rank": 7,
+          "rank_change": -4,
+          "relevant": false,
+          "distractor": true,
+          "pages": [
+            16,
+            16
+          ]
+        },
+        {
+          "chunk_id": 51,
+          "baseline_rank": 4,
+          "cosine_score": 0.5034,
+          "ce_score": -0.9781,
+          "reranked_rank": 4,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            16
+          ]
+        },
+        {
+          "chunk_id": 44,
+          "baseline_rank": 5,
+          "cosine_score": 0.4716,
+          "ce_score": -6.0498,
+          "reranked_rank": 8,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 74,
+          "baseline_rank": 6,
+          "cosine_score": 0.4644,
+          "ce_score": -7.2555,
+          "reranked_rank": 9,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            22
+          ]
+        },
+        {
+          "chunk_id": 50,
+          "baseline_rank": 7,
+          "cosine_score": 0.4542,
+          "ce_score": -3.8338,
+          "reranked_rank": 5,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            16
+          ]
+        },
+        {
+          "chunk_id": 59,
+          "baseline_rank": 8,
+          "cosine_score": 0.4411,
+          "ce_score": -5.1764,
+          "reranked_rank": 6,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 75,
+          "baseline_rank": 9,
+          "cosine_score": 0.4394,
+          "ce_score": -9.32,
+          "reranked_rank": 10,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            22
+          ]
+        },
+        {
+          "chunk_id": 25,
+          "baseline_rank": 10,
+          "cosine_score": 0.4187,
+          "ce_score": 1.3184,
+          "reranked_rank": 2,
+          "rank_change": 8,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            9,
+            9
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 10.093420001794584,
+        "ce_predict": 224.23639100088621
+      }
+    },
+    {
+      "query_id": "NG-04",
+      "category": "negation_constraint",
+      "question": "Can a third-semester student register for an M.Tech course?",
+      "relevant_chunk_ids": [
+        26
+      ],
+      "distractor_chunk_ids": [],
+      "relevant_in_top10": [
+        26
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          26,
+          44,
+          25
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          26,
+          46,
+          25
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 26,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 26,
+          "baseline_rank": 1,
+          "cosine_score": 0.7108,
+          "ce_score": 5.4572,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            9,
+            9
+          ]
+        },
+        {
+          "chunk_id": 44,
+          "baseline_rank": 2,
+          "cosine_score": 0.6278,
+          "ce_score": -1.3453,
+          "reranked_rank": 8,
+          "rank_change": -6,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 25,
+          "baseline_rank": 3,
+          "cosine_score": 0.5924,
+          "ce_score": 3.9013,
+          "reranked_rank": 3,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            9,
+            9
+          ]
+        },
+        {
+          "chunk_id": 45,
+          "baseline_rank": 4,
+          "cosine_score": 0.5816,
+          "ce_score": 0.0569,
+          "reranked_rank": 6,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 46,
+          "baseline_rank": 5,
+          "cosine_score": 0.5574,
+          "ce_score": 4.55,
+          "reranked_rank": 2,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 43,
+          "baseline_rank": 6,
+          "cosine_score": 0.5498,
+          "ce_score": -2.2523,
+          "reranked_rank": 9,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 34,
+          "baseline_rank": 7,
+          "cosine_score": 0.5246,
+          "ce_score": 3.5861,
+          "reranked_rank": 4,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            12,
+            12
+          ]
+        },
+        {
+          "chunk_id": 63,
+          "baseline_rank": 8,
+          "cosine_score": 0.5087,
+          "ce_score": -6.2186,
+          "reranked_rank": 10,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            19,
+            19
+          ]
+        },
+        {
+          "chunk_id": 39,
+          "baseline_rank": 9,
+          "cosine_score": 0.5038,
+          "ce_score": 0.6935,
+          "reranked_rank": 5,
+          "rank_change": 4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            14,
+            14
+          ]
+        },
+        {
+          "chunk_id": 35,
+          "baseline_rank": 10,
+          "cosine_score": 0.5025,
+          "ce_score": -0.4964,
+          "reranked_rank": 7,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            13,
+            13
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 8.483773999614641,
+        "ce_predict": 254.82987499708543
+      }
+    },
+    {
+      "query_id": "NG-05",
+      "category": "negation_constraint",
+      "question": "Is an attendance shortage caused by casual absenteeism condoned?",
+      "relevant_chunk_ids": [
+        60
+      ],
+      "distractor_chunk_ids": [
+        61
+      ],
+      "relevant_in_top10": [
+        60
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          79,
+          61,
+          60
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 0.3333333333333333,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": [
+          61
+        ]
+      },
+      "reranked": {
+        "top3": [
+          60,
+          61,
+          79
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": [
+          61
+        ]
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 60,
+          "baseline_rank": 3,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "improved",
+      "outcome_basis": "rank_only",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 79,
+          "baseline_rank": 1,
+          "cosine_score": 0.4993,
+          "ce_score": -6.0873,
+          "reranked_rank": 3,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            24,
+            24
+          ]
+        },
+        {
+          "chunk_id": 61,
+          "baseline_rank": 2,
+          "cosine_score": 0.4776,
+          "ce_score": 1.2966,
+          "reranked_rank": 2,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": true,
+          "pages": [
+            19,
+            19
+          ]
+        },
+        {
+          "chunk_id": 60,
+          "baseline_rank": 3,
+          "cosine_score": 0.463,
+          "ce_score": 1.376,
+          "reranked_rank": 1,
+          "rank_change": 2,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            18,
+            19
+          ]
+        },
+        {
+          "chunk_id": 58,
+          "baseline_rank": 4,
+          "cosine_score": 0.4335,
+          "ce_score": -10.892,
+          "reranked_rank": 7,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 57,
+          "baseline_rank": 5,
+          "cosine_score": 0.3798,
+          "ce_score": -10.5326,
+          "reranked_rank": 5,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 59,
+          "baseline_rank": 6,
+          "cosine_score": 0.3796,
+          "ce_score": -10.6835,
+          "reranked_rank": 6,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 48,
+          "baseline_rank": 7,
+          "cosine_score": 0.3521,
+          "ce_score": -11.0586,
+          "reranked_rank": 8,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            16
+          ]
+        },
+        {
+          "chunk_id": 67,
+          "baseline_rank": 8,
+          "cosine_score": 0.339,
+          "ce_score": -8.9316,
+          "reranked_rank": 4,
+          "rank_change": 4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            20,
+            20
+          ]
+        },
+        {
+          "chunk_id": 43,
+          "baseline_rank": 9,
+          "cosine_score": 0.2762,
+          "ce_score": -11.2796,
+          "reranked_rank": 10,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 80,
+          "baseline_rank": 10,
+          "cosine_score": 0.2264,
+          "ce_score": -11.2124,
+          "reranked_rank": 9,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            24,
+            24
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 13.928087999374839,
+        "ce_predict": 222.1978699999454
+      }
+    },
+    {
+      "query_id": "NG-06",
+      "category": "negation_constraint",
+      "question": "Which courses is a student not allowed to repeat?",
+      "relevant_chunk_ids": [
+        76
+      ],
+      "distractor_chunk_ids": [
+        25
+      ],
+      "relevant_in_top10": [
+        76
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          25,
+          75,
+          46
+        ],
+        "recall@3": 0.0,
+        "hit@3": 0,
+        "mrr@10": 0.25,
+        "evidence_cov@3": 0.0,
+        "distractors_in_top3": [
+          25
+        ]
+      },
+      "reranked": {
+        "top3": [
+          76,
+          59,
+          75
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 76,
+          "baseline_rank": 4,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [
+        76
+      ],
+      "demoted_from_top3": [],
+      "outcome": "improved",
+      "outcome_basis": "evidence_cov@3",
+      "rescue": true,
+      "strict_rescue": true,
+      "candidates": [
+        {
+          "chunk_id": 25,
+          "baseline_rank": 1,
+          "cosine_score": 0.6228,
+          "ce_score": -0.2603,
+          "reranked_rank": 4,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": true,
+          "pages": [
+            9,
+            9
+          ]
+        },
+        {
+          "chunk_id": 75,
+          "baseline_rank": 2,
+          "cosine_score": 0.5464,
+          "ce_score": 2.7743,
+          "reranked_rank": 3,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            22
+          ]
+        },
+        {
+          "chunk_id": 46,
+          "baseline_rank": 3,
+          "cosine_score": 0.541,
+          "ce_score": -8.5039,
+          "reranked_rank": 9,
+          "rank_change": -6,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 76,
+          "baseline_rank": 4,
+          "cosine_score": 0.5398,
+          "ce_score": 7.2884,
+          "reranked_rank": 1,
+          "rank_change": 3,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            22,
+            23
+          ]
+        },
+        {
+          "chunk_id": 47,
+          "baseline_rank": 5,
+          "cosine_score": 0.5395,
+          "ce_score": -3.7029,
+          "reranked_rank": 6,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            16
+          ]
+        },
+        {
+          "chunk_id": 45,
+          "baseline_rank": 6,
+          "cosine_score": 0.5334,
+          "ce_score": -5.5626,
+          "reranked_rank": 8,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 52,
+          "baseline_rank": 7,
+          "cosine_score": 0.5228,
+          "ce_score": -2.5698,
+          "reranked_rank": 5,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            17
+          ]
+        },
+        {
+          "chunk_id": 48,
+          "baseline_rank": 8,
+          "cosine_score": 0.5169,
+          "ce_score": -4.7166,
+          "reranked_rank": 7,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            16
+          ]
+        },
+        {
+          "chunk_id": 59,
+          "baseline_rank": 9,
+          "cosine_score": 0.5014,
+          "ce_score": 3.5586,
+          "reranked_rank": 2,
+          "rank_change": 7,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 35,
+          "baseline_rank": 10,
+          "cosine_score": 0.5006,
+          "ce_score": -10.2769,
+          "reranked_rank": 10,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            13,
+            13
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 8.936694997828454,
+        "ce_predict": 214.70691300055478
+      }
+    },
+    {
+      "query_id": "SY-01",
+      "category": "synonym_mismatch",
+      "question": "What happens to a student found guilty of harassing or bullying junior students?",
+      "relevant_chunk_ids": [
+        56,
+        57
+      ],
+      "distractor_chunk_ids": [
+        55
+      ],
+      "relevant_in_top10": [
+        56,
+        57
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          57,
+          56,
+          74
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          57,
+          56,
+          55
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": [
+          55
+        ]
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 56,
+          "baseline_rank": 2,
+          "reranked_rank": 2
+        },
+        {
+          "chunk_id": 57,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 57,
+          "baseline_rank": 1,
+          "cosine_score": 0.5382,
+          "ce_score": -5.8866,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 56,
+          "baseline_rank": 2,
+          "cosine_score": 0.4905,
+          "ce_score": -7.0042,
+          "reranked_rank": 2,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 74,
+          "baseline_rank": 3,
+          "cosine_score": 0.3766,
+          "ce_score": -10.9,
+          "reranked_rank": 9,
+          "rank_change": -6,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            22
+          ]
+        },
+        {
+          "chunk_id": 55,
+          "baseline_rank": 4,
+          "cosine_score": 0.3491,
+          "ce_score": -8.9708,
+          "reranked_rank": 3,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": true,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 75,
+          "baseline_rank": 5,
+          "cosine_score": 0.318,
+          "ce_score": -10.2346,
+          "reranked_rank": 5,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            22
+          ]
+        },
+        {
+          "chunk_id": 48,
+          "baseline_rank": 6,
+          "cosine_score": 0.2983,
+          "ce_score": -9.9433,
+          "reranked_rank": 4,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            16
+          ]
+        },
+        {
+          "chunk_id": 59,
+          "baseline_rank": 7,
+          "cosine_score": 0.2911,
+          "ce_score": -10.9167,
+          "reranked_rank": 10,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 38,
+          "baseline_rank": 8,
+          "cosine_score": 0.2854,
+          "ce_score": -10.2989,
+          "reranked_rank": 6,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            14,
+            14
+          ]
+        },
+        {
+          "chunk_id": 53,
+          "baseline_rank": 9,
+          "cosine_score": 0.2636,
+          "ce_score": -10.8991,
+          "reranked_rank": 8,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 60,
+          "baseline_rank": 10,
+          "cosine_score": 0.2615,
+          "ce_score": -10.7751,
+          "reranked_rank": 7,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            19
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 11.384187997464323,
+        "ce_predict": 235.5912589991931
+      }
+    },
+    {
+      "query_id": "SY-02",
+      "category": "synonym_mismatch",
+      "question": "For how long can a student take a break from studies for health reasons?",
+      "relevant_chunk_ids": [
+        54
+      ],
+      "distractor_chunk_ids": [],
+      "relevant_in_top10": [
+        54
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          54,
+          63,
+          48
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          54,
+          67,
+          48
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 54,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 54,
+          "baseline_rank": 1,
+          "cosine_score": 0.5168,
+          "ce_score": -1.9564,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 63,
+          "baseline_rank": 2,
+          "cosine_score": 0.4105,
+          "ce_score": -8.7381,
+          "reranked_rank": 5,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            19,
+            19
+          ]
+        },
+        {
+          "chunk_id": 48,
+          "baseline_rank": 3,
+          "cosine_score": 0.3847,
+          "ce_score": -6.4004,
+          "reranked_rank": 3,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            16
+          ]
+        },
+        {
+          "chunk_id": 67,
+          "baseline_rank": 4,
+          "cosine_score": 0.3682,
+          "ce_score": -4.0131,
+          "reranked_rank": 2,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            20,
+            20
+          ]
+        },
+        {
+          "chunk_id": 53,
+          "baseline_rank": 5,
+          "cosine_score": 0.3543,
+          "ce_score": -8.2528,
+          "reranked_rank": 4,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 43,
+          "baseline_rank": 6,
+          "cosine_score": 0.3175,
+          "ce_score": -10.0124,
+          "reranked_rank": 9,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 70,
+          "baseline_rank": 7,
+          "cosine_score": 0.3161,
+          "ce_score": -8.8576,
+          "reranked_rank": 6,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            21,
+            21
+          ]
+        },
+        {
+          "chunk_id": 65,
+          "baseline_rank": 8,
+          "cosine_score": 0.3045,
+          "ce_score": -10.4921,
+          "reranked_rank": 10,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            20,
+            20
+          ]
+        },
+        {
+          "chunk_id": 69,
+          "baseline_rank": 9,
+          "cosine_score": 0.3014,
+          "ce_score": -9.7308,
+          "reranked_rank": 7,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            21,
+            21
+          ]
+        },
+        {
+          "chunk_id": 59,
+          "baseline_rank": 10,
+          "cosine_score": 0.2996,
+          "ce_score": -9.9491,
+          "reranked_rank": 8,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            18
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 9.309073000622448,
+        "ce_predict": 252.20125600026222
+      }
+    },
+    {
+      "query_id": "SY-03",
+      "category": "synonym_mismatch",
+      "question": "How much time does a student have to dispute a grade they think is unfair?",
+      "relevant_chunk_ids": [
+        74,
+        75
+      ],
+      "distractor_chunk_ids": [],
+      "relevant_in_top10": [
+        74,
+        75
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          75,
+          74,
+          59
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          48,
+          72,
+          75
+        ],
+        "recall@3": 0.5,
+        "hit@3": 1,
+        "mrr@10": 0.3333333333333333,
+        "evidence_cov@3": 0.5,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 74,
+          "baseline_rank": 2,
+          "reranked_rank": 4
+        },
+        {
+          "chunk_id": 75,
+          "baseline_rank": 1,
+          "reranked_rank": 3
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [
+        74
+      ],
+      "outcome": "worsened",
+      "outcome_basis": "evidence_cov@3",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 75,
+          "baseline_rank": 1,
+          "cosine_score": 0.5526,
+          "ce_score": -7.1138,
+          "reranked_rank": 3,
+          "rank_change": -2,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            22,
+            22
+          ]
+        },
+        {
+          "chunk_id": 74,
+          "baseline_rank": 2,
+          "cosine_score": 0.5223,
+          "ce_score": -7.309,
+          "reranked_rank": 4,
+          "rank_change": -2,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            22,
+            22
+          ]
+        },
+        {
+          "chunk_id": 59,
+          "baseline_rank": 3,
+          "cosine_score": 0.4462,
+          "ce_score": -7.9027,
+          "reranked_rank": 5,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 48,
+          "baseline_rank": 4,
+          "cosine_score": 0.4431,
+          "ce_score": -5.353,
+          "reranked_rank": 1,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            16
+          ]
+        },
+        {
+          "chunk_id": 72,
+          "baseline_rank": 5,
+          "cosine_score": 0.43,
+          "ce_score": -6.5164,
+          "reranked_rank": 2,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            22
+          ]
+        },
+        {
+          "chunk_id": 76,
+          "baseline_rank": 6,
+          "cosine_score": 0.4197,
+          "ce_score": -8.4891,
+          "reranked_rank": 6,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            23
+          ]
+        },
+        {
+          "chunk_id": 62,
+          "baseline_rank": 7,
+          "cosine_score": 0.3976,
+          "ce_score": -10.7584,
+          "reranked_rank": 10,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            19,
+            19
+          ]
+        },
+        {
+          "chunk_id": 66,
+          "baseline_rank": 8,
+          "cosine_score": 0.3973,
+          "ce_score": -9.9025,
+          "reranked_rank": 9,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            20,
+            20
+          ]
+        },
+        {
+          "chunk_id": 71,
+          "baseline_rank": 9,
+          "cosine_score": 0.3833,
+          "ce_score": -9.6629,
+          "reranked_rank": 8,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            21,
+            21
+          ]
+        },
+        {
+          "chunk_id": 54,
+          "baseline_rank": 10,
+          "cosine_score": 0.3825,
+          "ce_score": -8.8686,
+          "reranked_rank": 7,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 12.08713699816144,
+        "ce_predict": 246.40048099900014
+      }
+    },
+    {
+      "query_id": "SY-04",
+      "category": "synonym_mismatch",
+      "question": "What share of students receive a need-based scholarship, and do they have to pay tuition fees?",
+      "relevant_chunk_ids": [
+        80
+      ],
+      "distractor_chunk_ids": [
+        12
+      ],
+      "relevant_in_top10": [
+        80
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          80,
+          81,
+          82
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          80,
+          81,
+          82
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 80,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 80,
+          "baseline_rank": 1,
+          "cosine_score": 0.597,
+          "ce_score": -0.382,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            24,
+            24
+          ]
+        },
+        {
+          "chunk_id": 81,
+          "baseline_rank": 2,
+          "cosine_score": 0.4762,
+          "ce_score": -5.915,
+          "reranked_rank": 2,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            24,
+            24
+          ]
+        },
+        {
+          "chunk_id": 82,
+          "baseline_rank": 3,
+          "cosine_score": 0.3877,
+          "ce_score": -8.902,
+          "reranked_rank": 3,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            24,
+            24
+          ]
+        },
+        {
+          "chunk_id": 60,
+          "baseline_rank": 4,
+          "cosine_score": 0.358,
+          "ce_score": -10.5774,
+          "reranked_rank": 8,
+          "rank_change": -4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            19
+          ]
+        },
+        {
+          "chunk_id": 26,
+          "baseline_rank": 5,
+          "cosine_score": 0.3512,
+          "ce_score": -9.2678,
+          "reranked_rank": 4,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            9,
+            9
+          ]
+        },
+        {
+          "chunk_id": 49,
+          "baseline_rank": 6,
+          "cosine_score": 0.3491,
+          "ce_score": -9.9377,
+          "reranked_rank": 5,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            16
+          ]
+        },
+        {
+          "chunk_id": 66,
+          "baseline_rank": 7,
+          "cosine_score": 0.3357,
+          "ce_score": -11.1843,
+          "reranked_rank": 10,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            20,
+            20
+          ]
+        },
+        {
+          "chunk_id": 53,
+          "baseline_rank": 8,
+          "cosine_score": 0.3356,
+          "ce_score": -10.5413,
+          "reranked_rank": 6,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 52,
+          "baseline_rank": 9,
+          "cosine_score": 0.3316,
+          "ce_score": -10.5635,
+          "reranked_rank": 7,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            17
+          ]
+        },
+        {
+          "chunk_id": 38,
+          "baseline_rank": 10,
+          "cosine_score": 0.3254,
+          "ce_score": -10.5823,
+          "reranked_rank": 9,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            14,
+            14
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 11.310841000522487,
+        "ce_predict": 263.15739599886
+      }
+    },
+    {
+      "query_id": "SY-05",
+      "category": "synonym_mismatch",
+      "question": "If I spend a semester abroad on an exchange programme, do those credits and grades count at IIT Madras?",
+      "relevant_chunk_ids": [
+        83,
+        84
+      ],
+      "distractor_chunk_ids": [],
+      "relevant_in_top10": [
+        83,
+        84
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          83,
+          84,
+          21
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          83,
+          84,
+          13
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 83,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        },
+        {
+          "chunk_id": 84,
+          "baseline_rank": 2,
+          "reranked_rank": 2
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 83,
+          "baseline_rank": 1,
+          "cosine_score": 0.7608,
+          "ce_score": 5.6615,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            24,
+            25
+          ]
+        },
+        {
+          "chunk_id": 84,
+          "baseline_rank": 2,
+          "cosine_score": 0.5993,
+          "ce_score": 0.1299,
+          "reranked_rank": 2,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            25,
+            25
+          ]
+        },
+        {
+          "chunk_id": 21,
+          "baseline_rank": 3,
+          "cosine_score": 0.5568,
+          "ce_score": -7.0016,
+          "reranked_rank": 7,
+          "rank_change": -4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            8,
+            8
+          ]
+        },
+        {
+          "chunk_id": 12,
+          "baseline_rank": 4,
+          "cosine_score": 0.5469,
+          "ce_score": -5.3216,
+          "reranked_rank": 4,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            5,
+            6
+          ]
+        },
+        {
+          "chunk_id": 13,
+          "baseline_rank": 5,
+          "cosine_score": 0.5266,
+          "ce_score": -4.0766,
+          "reranked_rank": 3,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            5,
+            6
+          ]
+        },
+        {
+          "chunk_id": 33,
+          "baseline_rank": 6,
+          "cosine_score": 0.5247,
+          "ce_score": -9.5341,
+          "reranked_rank": 9,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            12,
+            12
+          ]
+        },
+        {
+          "chunk_id": 9,
+          "baseline_rank": 7,
+          "cosine_score": 0.5089,
+          "ce_score": -10.2117,
+          "reranked_rank": 10,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            4,
+            4
+          ]
+        },
+        {
+          "chunk_id": 11,
+          "baseline_rank": 8,
+          "cosine_score": 0.503,
+          "ce_score": -6.2198,
+          "reranked_rank": 5,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            5,
+            5
+          ]
+        },
+        {
+          "chunk_id": 0,
+          "baseline_rank": 9,
+          "cosine_score": 0.4989,
+          "ce_score": -7.4911,
+          "reranked_rank": 8,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            1,
+            2
+          ]
+        },
+        {
+          "chunk_id": 78,
+          "baseline_rank": 10,
+          "cosine_score": 0.4963,
+          "ce_score": -6.968,
+          "reranked_rank": 6,
+          "rank_change": 4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            23,
+            23
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 14.501431000098819,
+        "ce_predict": 321.9806310007698
+      }
+    },
+    {
+      "query_id": "SY-06",
+      "category": "synonym_mismatch",
+      "question": "Can I sign up for the next semester if I still owe money to the hostel?",
+      "relevant_chunk_ids": [
+        43
+      ],
+      "distractor_chunk_ids": [
+        82
+      ],
+      "relevant_in_top10": [
+        43
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          43,
+          44,
+          52
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          43,
+          69,
+          59
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 43,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 43,
+          "baseline_rank": 1,
+          "cosine_score": 0.5294,
+          "ce_score": -3.7664,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 44,
+          "baseline_rank": 2,
+          "cosine_score": 0.4324,
+          "ce_score": -10.6109,
+          "reranked_rank": 7,
+          "rank_change": -5,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 52,
+          "baseline_rank": 3,
+          "cosine_score": 0.4088,
+          "ce_score": -9.8973,
+          "reranked_rank": 4,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            17
+          ]
+        },
+        {
+          "chunk_id": 54,
+          "baseline_rank": 4,
+          "cosine_score": 0.408,
+          "ce_score": -10.0878,
+          "reranked_rank": 5,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 47,
+          "baseline_rank": 5,
+          "cosine_score": 0.396,
+          "ce_score": -10.5251,
+          "reranked_rank": 6,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            16
+          ]
+        },
+        {
+          "chunk_id": 59,
+          "baseline_rank": 6,
+          "cosine_score": 0.3926,
+          "ce_score": -9.6142,
+          "reranked_rank": 3,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 49,
+          "baseline_rank": 7,
+          "cosine_score": 0.3755,
+          "ce_score": -10.7886,
+          "reranked_rank": 9,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            16
+          ]
+        },
+        {
+          "chunk_id": 50,
+          "baseline_rank": 8,
+          "cosine_score": 0.3668,
+          "ce_score": -10.7354,
+          "reranked_rank": 8,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            16
+          ]
+        },
+        {
+          "chunk_id": 83,
+          "baseline_rank": 9,
+          "cosine_score": 0.3419,
+          "ce_score": -11.0121,
+          "reranked_rank": 10,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            24,
+            25
+          ]
+        },
+        {
+          "chunk_id": 69,
+          "baseline_rank": 10,
+          "cosine_score": 0.3276,
+          "ce_score": -7.5399,
+          "reranked_rank": 2,
+          "rank_change": 8,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            21,
+            21
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 11.211206998268608,
+        "ce_predict": 342.7544139995007
+      }
+    },
+    {
+      "query_id": "DS-01",
+      "category": "document_specific",
+      "question": "For the 2011-2012 batches, how many CGPA credits are prescribed for free electives?",
+      "relevant_chunk_ids": [
+        29,
+        30
+      ],
+      "distractor_chunk_ids": [
+        28,
+        32
+      ],
+      "relevant_in_top10": [
+        30
+      ],
+      "recall@10": 0.5,
+      "baseline": {
+        "top3": [
+          76,
+          33,
+          78
+        ],
+        "recall@3": 0.0,
+        "hit@3": 0,
+        "mrr@10": 0.1111111111111111,
+        "evidence_cov@3": 0.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          33,
+          42,
+          45
+        ],
+        "recall@3": 0.0,
+        "hit@3": 0,
+        "mrr@10": 0.125,
+        "evidence_cov@3": 0.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 30,
+          "baseline_rank": 9,
+          "reranked_rank": 8
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "improved",
+      "outcome_basis": "rank_only",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 76,
+          "baseline_rank": 1,
+          "cosine_score": 0.5865,
+          "ce_score": -3.49,
+          "reranked_rank": 6,
+          "rank_change": -5,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            23
+          ]
+        },
+        {
+          "chunk_id": 33,
+          "baseline_rank": 2,
+          "cosine_score": 0.5814,
+          "ce_score": 2.9797,
+          "reranked_rank": 1,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            12,
+            12
+          ]
+        },
+        {
+          "chunk_id": 78,
+          "baseline_rank": 3,
+          "cosine_score": 0.5709,
+          "ce_score": -4.3277,
+          "reranked_rank": 7,
+          "rank_change": -4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            23,
+            23
+          ]
+        },
+        {
+          "chunk_id": 42,
+          "baseline_rank": 4,
+          "cosine_score": 0.5685,
+          "ce_score": 2.3432,
+          "reranked_rank": 2,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            14,
+            15
+          ]
+        },
+        {
+          "chunk_id": 84,
+          "baseline_rank": 5,
+          "cosine_score": 0.5612,
+          "ce_score": -3.3021,
+          "reranked_rank": 5,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            25,
+            25
+          ]
+        },
+        {
+          "chunk_id": 45,
+          "baseline_rank": 6,
+          "cosine_score": 0.5573,
+          "ce_score": -0.8519,
+          "reranked_rank": 3,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 77,
+          "baseline_rank": 7,
+          "cosine_score": 0.5477,
+          "ce_score": -6.8097,
+          "reranked_rank": 10,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            23,
+            23
+          ]
+        },
+        {
+          "chunk_id": 54,
+          "baseline_rank": 8,
+          "cosine_score": 0.5342,
+          "ce_score": -2.5512,
+          "reranked_rank": 4,
+          "rank_change": 4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 30,
+          "baseline_rank": 9,
+          "cosine_score": 0.5025,
+          "ce_score": -4.5144,
+          "reranked_rank": 8,
+          "rank_change": 1,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            11,
+            11
+          ]
+        },
+        {
+          "chunk_id": 24,
+          "baseline_rank": 10,
+          "cosine_score": 0.4996,
+          "ce_score": -5.7921,
+          "reranked_rank": 9,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            8,
+            9
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 13.412264997896273,
+        "ce_predict": 274.265871001262
+      }
+    },
+    {
+      "query_id": "DS-02",
+      "category": "document_specific",
+      "question": "From the 2013 batch onwards, how many Humanities Pass/Fail (HPF) credits are required?",
+      "relevant_chunk_ids": [
+        31
+      ],
+      "distractor_chunk_ids": [
+        27,
+        29
+      ],
+      "relevant_in_top10": [
+        31
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          33,
+          30,
+          32
+        ],
+        "recall@3": 0.0,
+        "hit@3": 0,
+        "mrr@10": 0.14285714285714285,
+        "evidence_cov@3": 0.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          31,
+          33,
+          29
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": [
+          29
+        ]
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 31,
+          "baseline_rank": 7,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [
+        31
+      ],
+      "demoted_from_top3": [],
+      "outcome": "improved",
+      "outcome_basis": "evidence_cov@3",
+      "rescue": true,
+      "strict_rescue": true,
+      "candidates": [
+        {
+          "chunk_id": 33,
+          "baseline_rank": 1,
+          "cosine_score": 0.5285,
+          "ce_score": 3.5519,
+          "reranked_rank": 2,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            12,
+            12
+          ]
+        },
+        {
+          "chunk_id": 30,
+          "baseline_rank": 2,
+          "cosine_score": 0.5127,
+          "ce_score": -4.5186,
+          "reranked_rank": 6,
+          "rank_change": -4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            11,
+            11
+          ]
+        },
+        {
+          "chunk_id": 32,
+          "baseline_rank": 3,
+          "cosine_score": 0.5105,
+          "ce_score": -4.592,
+          "reranked_rank": 7,
+          "rank_change": -4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            12,
+            12
+          ]
+        },
+        {
+          "chunk_id": 28,
+          "baseline_rank": 4,
+          "cosine_score": 0.5069,
+          "ce_score": -4.3214,
+          "reranked_rank": 5,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            10,
+            10
+          ]
+        },
+        {
+          "chunk_id": 24,
+          "baseline_rank": 5,
+          "cosine_score": 0.4905,
+          "ce_score": -3.7831,
+          "reranked_rank": 4,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            8,
+            9
+          ]
+        },
+        {
+          "chunk_id": 29,
+          "baseline_rank": 6,
+          "cosine_score": 0.4899,
+          "ce_score": 2.0235,
+          "reranked_rank": 3,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": true,
+          "pages": [
+            11,
+            11
+          ]
+        },
+        {
+          "chunk_id": 31,
+          "baseline_rank": 7,
+          "cosine_score": 0.4881,
+          "ce_score": 5.03,
+          "reranked_rank": 1,
+          "rank_change": 6,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            12,
+            12
+          ]
+        },
+        {
+          "chunk_id": 47,
+          "baseline_rank": 8,
+          "cosine_score": 0.4685,
+          "ce_score": -8.6518,
+          "reranked_rank": 10,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            16
+          ]
+        },
+        {
+          "chunk_id": 23,
+          "baseline_rank": 9,
+          "cosine_score": 0.4612,
+          "ce_score": -7.9926,
+          "reranked_rank": 9,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            8,
+            8
+          ]
+        },
+        {
+          "chunk_id": 53,
+          "baseline_rank": 10,
+          "cosine_score": 0.4559,
+          "ce_score": -6.1257,
+          "reranked_rank": 8,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 18.29170999917551,
+        "ce_predict": 434.2775549994258
+      }
+    },
+    {
+      "query_id": "DS-03",
+      "category": "document_specific",
+      "question": "For a student of the 2010 batch, does an E grade make them ineligible for the B.Tech (Honours) degree?",
+      "relevant_chunk_ids": [
+        33
+      ],
+      "distractor_chunk_ids": [
+        21
+      ],
+      "relevant_in_top10": [
+        33
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          33,
+          12,
+          21
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": [
+          21
+        ]
+      },
+      "reranked": {
+        "top3": [
+          33,
+          34,
+          12
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 33,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 33,
+          "baseline_rank": 1,
+          "cosine_score": 0.6803,
+          "ce_score": 5.9535,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            12,
+            12
+          ]
+        },
+        {
+          "chunk_id": 12,
+          "baseline_rank": 2,
+          "cosine_score": 0.6203,
+          "ce_score": -0.9615,
+          "reranked_rank": 3,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            5,
+            6
+          ]
+        },
+        {
+          "chunk_id": 21,
+          "baseline_rank": 3,
+          "cosine_score": 0.6202,
+          "ce_score": -1.5835,
+          "reranked_rank": 6,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": true,
+          "pages": [
+            8,
+            8
+          ]
+        },
+        {
+          "chunk_id": 45,
+          "baseline_rank": 4,
+          "cosine_score": 0.5985,
+          "ce_score": -2.3472,
+          "reranked_rank": 9,
+          "rank_change": -5,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        },
+        {
+          "chunk_id": 73,
+          "baseline_rank": 5,
+          "cosine_score": 0.5715,
+          "ce_score": -3.3153,
+          "reranked_rank": 10,
+          "rank_change": -5,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            22
+          ]
+        },
+        {
+          "chunk_id": 84,
+          "baseline_rank": 6,
+          "cosine_score": 0.5601,
+          "ce_score": -1.585,
+          "reranked_rank": 7,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            25,
+            25
+          ]
+        },
+        {
+          "chunk_id": 34,
+          "baseline_rank": 7,
+          "cosine_score": 0.5462,
+          "ce_score": -0.8134,
+          "reranked_rank": 2,
+          "rank_change": 5,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            12,
+            12
+          ]
+        },
+        {
+          "chunk_id": 11,
+          "baseline_rank": 8,
+          "cosine_score": 0.5414,
+          "ce_score": -2.0786,
+          "reranked_rank": 8,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            5,
+            5
+          ]
+        },
+        {
+          "chunk_id": 13,
+          "baseline_rank": 9,
+          "cosine_score": 0.5349,
+          "ce_score": -1.3872,
+          "reranked_rank": 4,
+          "rank_change": 5,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            5,
+            6
+          ]
+        },
+        {
+          "chunk_id": 82,
+          "baseline_rank": 10,
+          "cosine_score": 0.529,
+          "ce_score": -1.39,
+          "reranked_rank": 5,
+          "rank_change": 5,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            24,
+            24
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 12.369451000267873,
+        "ce_predict": 300.1742970009218
+      }
+    },
+    {
+      "query_id": "DS-04",
+      "category": "document_specific",
+      "question": "How are marks split between quizzes and the end-semester examination in the common courses of the first three semesters?",
+      "relevant_chunk_ids": [
+        64,
+        65
+      ],
+      "distractor_chunk_ids": [
+        66
+      ],
+      "relevant_in_top10": [
+        65
+      ],
+      "recall@10": 0.5,
+      "baseline": {
+        "top3": [
+          65,
+          62,
+          63
+        ],
+        "recall@3": 0.5,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          65,
+          39,
+          62
+        ],
+        "recall@3": 0.5,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 65,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 65,
+          "baseline_rank": 1,
+          "cosine_score": 0.6436,
+          "ce_score": 6.2263,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            20,
+            20
+          ]
+        },
+        {
+          "chunk_id": 62,
+          "baseline_rank": 2,
+          "cosine_score": 0.6375,
+          "ce_score": 3.1298,
+          "reranked_rank": 3,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            19,
+            19
+          ]
+        },
+        {
+          "chunk_id": 63,
+          "baseline_rank": 3,
+          "cosine_score": 0.5931,
+          "ce_score": 2.8847,
+          "reranked_rank": 4,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            19,
+            19
+          ]
+        },
+        {
+          "chunk_id": 66,
+          "baseline_rank": 4,
+          "cosine_score": 0.5372,
+          "ce_score": 1.3368,
+          "reranked_rank": 5,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": true,
+          "pages": [
+            20,
+            20
+          ]
+        },
+        {
+          "chunk_id": 73,
+          "baseline_rank": 5,
+          "cosine_score": 0.537,
+          "ce_score": -0.2133,
+          "reranked_rank": 7,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            22
+          ]
+        },
+        {
+          "chunk_id": 9,
+          "baseline_rank": 6,
+          "cosine_score": 0.5236,
+          "ce_score": -1.2973,
+          "reranked_rank": 8,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            4,
+            4
+          ]
+        },
+        {
+          "chunk_id": 39,
+          "baseline_rank": 7,
+          "cosine_score": 0.5194,
+          "ce_score": 5.2875,
+          "reranked_rank": 2,
+          "rank_change": 5,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            14,
+            14
+          ]
+        },
+        {
+          "chunk_id": 7,
+          "baseline_rank": 8,
+          "cosine_score": 0.5084,
+          "ce_score": -5.5201,
+          "reranked_rank": 9,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            4,
+            4
+          ]
+        },
+        {
+          "chunk_id": 67,
+          "baseline_rank": 9,
+          "cosine_score": 0.4894,
+          "ce_score": 1.0059,
+          "reranked_rank": 6,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            20,
+            20
+          ]
+        },
+        {
+          "chunk_id": 37,
+          "baseline_rank": 10,
+          "cosine_score": 0.4864,
+          "ce_score": -9.2459,
+          "reranked_rank": 10,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            13,
+            14
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 12.737548997392878,
+        "ce_predict": 209.76677499857033
+      }
+    },
+    {
+      "query_id": "DS-05",
+      "category": "document_specific",
+      "question": "What attendance code does a student with 90% attendance in a course receive?",
+      "relevant_chunk_ids": [
+        58
+      ],
+      "distractor_chunk_ids": [],
+      "relevant_in_top10": [
+        58
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          60,
+          61,
+          58
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 0.3333333333333333,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          60,
+          59,
+          61
+        ],
+        "recall@3": 0.0,
+        "hit@3": 0,
+        "mrr@10": 0.2,
+        "evidence_cov@3": 0.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 58,
+          "baseline_rank": 3,
+          "reranked_rank": 5
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [
+        58
+      ],
+      "outcome": "worsened",
+      "outcome_basis": "evidence_cov@3",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 60,
+          "baseline_rank": 1,
+          "cosine_score": 0.7255,
+          "ce_score": 5.05,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            19
+          ]
+        },
+        {
+          "chunk_id": 61,
+          "baseline_rank": 2,
+          "cosine_score": 0.6495,
+          "ce_score": 1.9778,
+          "reranked_rank": 3,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            19,
+            19
+          ]
+        },
+        {
+          "chunk_id": 58,
+          "baseline_rank": 3,
+          "cosine_score": 0.649,
+          "ce_score": 0.6696,
+          "reranked_rank": 5,
+          "rank_change": -2,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 59,
+          "baseline_rank": 4,
+          "cosine_score": 0.5764,
+          "ce_score": 2.3887,
+          "reranked_rank": 2,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 62,
+          "baseline_rank": 5,
+          "cosine_score": 0.5621,
+          "ce_score": 0.7977,
+          "reranked_rank": 4,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            19,
+            19
+          ]
+        },
+        {
+          "chunk_id": 79,
+          "baseline_rank": 6,
+          "cosine_score": 0.5497,
+          "ce_score": -6.5725,
+          "reranked_rank": 9,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            24,
+            24
+          ]
+        },
+        {
+          "chunk_id": 57,
+          "baseline_rank": 7,
+          "cosine_score": 0.5278,
+          "ce_score": -3.3823,
+          "reranked_rank": 7,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 71,
+          "baseline_rank": 8,
+          "cosine_score": 0.5192,
+          "ce_score": -5.3843,
+          "reranked_rank": 8,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            21,
+            21
+          ]
+        },
+        {
+          "chunk_id": 30,
+          "baseline_rank": 9,
+          "cosine_score": 0.5095,
+          "ce_score": -10.5428,
+          "reranked_rank": 10,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            11,
+            11
+          ]
+        },
+        {
+          "chunk_id": 73,
+          "baseline_rank": 10,
+          "cosine_score": 0.507,
+          "ce_score": -2.7182,
+          "reranked_rank": 6,
+          "rank_change": 4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            22
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 10.773100999358576,
+        "ce_predict": 205.86211699992418
+      }
+    },
+    {
+      "query_id": "C-01",
+      "category": "control",
+      "question": "How long is the end-semester examination in a lecture-based subject?",
+      "relevant_chunk_ids": [
+        63
+      ],
+      "distractor_chunk_ids": [],
+      "relevant_in_top10": [
+        63
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          63,
+          65,
+          62
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          63,
+          65,
+          66
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 63,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 63,
+          "baseline_rank": 1,
+          "cosine_score": 0.7069,
+          "ce_score": 8.0928,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            19,
+            19
+          ]
+        },
+        {
+          "chunk_id": 65,
+          "baseline_rank": 2,
+          "cosine_score": 0.5609,
+          "ce_score": 2.7605,
+          "reranked_rank": 2,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            20,
+            20
+          ]
+        },
+        {
+          "chunk_id": 62,
+          "baseline_rank": 3,
+          "cosine_score": 0.5338,
+          "ce_score": -0.7258,
+          "reranked_rank": 5,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            19,
+            19
+          ]
+        },
+        {
+          "chunk_id": 66,
+          "baseline_rank": 4,
+          "cosine_score": 0.5176,
+          "ce_score": 0.734,
+          "reranked_rank": 3,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            20,
+            20
+          ]
+        },
+        {
+          "chunk_id": 48,
+          "baseline_rank": 5,
+          "cosine_score": 0.4955,
+          "ce_score": -4.0014,
+          "reranked_rank": 9,
+          "rank_change": -4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            16,
+            16
+          ]
+        },
+        {
+          "chunk_id": 39,
+          "baseline_rank": 6,
+          "cosine_score": 0.4858,
+          "ce_score": -1.0458,
+          "reranked_rank": 6,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            14,
+            14
+          ]
+        },
+        {
+          "chunk_id": 59,
+          "baseline_rank": 7,
+          "cosine_score": 0.4847,
+          "ce_score": -0.6902,
+          "reranked_rank": 4,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            18,
+            18
+          ]
+        },
+        {
+          "chunk_id": 54,
+          "baseline_rank": 8,
+          "cosine_score": 0.4791,
+          "ce_score": -3.9762,
+          "reranked_rank": 8,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 24,
+          "baseline_rank": 9,
+          "cosine_score": 0.4645,
+          "ce_score": -3.7655,
+          "reranked_rank": 7,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            8,
+            9
+          ]
+        },
+        {
+          "chunk_id": 64,
+          "baseline_rank": 10,
+          "cosine_score": 0.4503,
+          "ce_score": -5.1184,
+          "reranked_rank": 10,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            20,
+            20
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 9.03642800039961,
+        "ce_predict": 216.7199969990179
+      }
+    },
+    {
+      "query_id": "C-02",
+      "category": "control",
+      "question": "What is the medium of instruction for the B.Tech programme?",
+      "relevant_chunk_ids": [
+        34
+      ],
+      "distractor_chunk_ids": [],
+      "relevant_in_top10": [
+        34
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          34,
+          24,
+          23
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          34,
+          24,
+          39
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 34,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 34,
+          "baseline_rank": 1,
+          "cosine_score": 0.6352,
+          "ce_score": 6.1986,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            12,
+            12
+          ]
+        },
+        {
+          "chunk_id": 24,
+          "baseline_rank": 2,
+          "cosine_score": 0.6108,
+          "ce_score": 1.9282,
+          "reranked_rank": 2,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            8,
+            9
+          ]
+        },
+        {
+          "chunk_id": 23,
+          "baseline_rank": 3,
+          "cosine_score": 0.5883,
+          "ce_score": 0.4212,
+          "reranked_rank": 4,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            8,
+            8
+          ]
+        },
+        {
+          "chunk_id": 66,
+          "baseline_rank": 4,
+          "cosine_score": 0.5566,
+          "ce_score": -0.0962,
+          "reranked_rank": 5,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            20,
+            20
+          ]
+        },
+        {
+          "chunk_id": 12,
+          "baseline_rank": 5,
+          "cosine_score": 0.5507,
+          "ce_score": -0.2535,
+          "reranked_rank": 6,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            5,
+            6
+          ]
+        },
+        {
+          "chunk_id": 33,
+          "baseline_rank": 6,
+          "cosine_score": 0.549,
+          "ce_score": -3.3742,
+          "reranked_rank": 9,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            12,
+            12
+          ]
+        },
+        {
+          "chunk_id": 13,
+          "baseline_rank": 7,
+          "cosine_score": 0.5412,
+          "ce_score": -0.3829,
+          "reranked_rank": 7,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            5,
+            6
+          ]
+        },
+        {
+          "chunk_id": 39,
+          "baseline_rank": 8,
+          "cosine_score": 0.5328,
+          "ce_score": 0.9788,
+          "reranked_rank": 3,
+          "rank_change": 5,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            14,
+            14
+          ]
+        },
+        {
+          "chunk_id": 22,
+          "baseline_rank": 9,
+          "cosine_score": 0.52,
+          "ce_score": -7.4932,
+          "reranked_rank": 10,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            8,
+            8
+          ]
+        },
+        {
+          "chunk_id": 0,
+          "baseline_rank": 10,
+          "cosine_score": 0.5113,
+          "ce_score": -0.571,
+          "reranked_rank": 8,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            1,
+            2
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 12.205000999529148,
+        "ce_predict": 275.22019000025466
+      }
+    },
+    {
+      "query_id": "C-03",
+      "category": "control",
+      "question": "How many grade points does an S grade carry?",
+      "relevant_chunk_ids": [
+        71
+      ],
+      "distractor_chunk_ids": [],
+      "relevant_in_top10": [
+        71
+      ],
+      "recall@10": 1.0,
+      "baseline": {
+        "top3": [
+          71,
+          77,
+          6
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          71,
+          77,
+          6
+        ],
+        "recall@3": 1.0,
+        "hit@3": 1,
+        "mrr@10": 1.0,
+        "evidence_cov@3": 1.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [
+        {
+          "chunk_id": 71,
+          "baseline_rank": 1,
+          "reranked_rank": 1
+        }
+      ],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 71,
+          "baseline_rank": 1,
+          "cosine_score": 0.5314,
+          "ce_score": -2.0895,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": true,
+          "distractor": false,
+          "pages": [
+            21,
+            21
+          ]
+        },
+        {
+          "chunk_id": 77,
+          "baseline_rank": 2,
+          "cosine_score": 0.4908,
+          "ce_score": -7.9375,
+          "reranked_rank": 2,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            23,
+            23
+          ]
+        },
+        {
+          "chunk_id": 6,
+          "baseline_rank": 3,
+          "cosine_score": 0.4756,
+          "ce_score": -8.7511,
+          "reranked_rank": 3,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            4,
+            4
+          ]
+        },
+        {
+          "chunk_id": 9,
+          "baseline_rank": 4,
+          "cosine_score": 0.4652,
+          "ce_score": -10.8282,
+          "reranked_rank": 8,
+          "rank_change": -4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            4,
+            4
+          ]
+        },
+        {
+          "chunk_id": 76,
+          "baseline_rank": 5,
+          "cosine_score": 0.463,
+          "ce_score": -9.793,
+          "reranked_rank": 6,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            23
+          ]
+        },
+        {
+          "chunk_id": 62,
+          "baseline_rank": 6,
+          "cosine_score": 0.4569,
+          "ce_score": -10.8784,
+          "reranked_rank": 9,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            19,
+            19
+          ]
+        },
+        {
+          "chunk_id": 74,
+          "baseline_rank": 7,
+          "cosine_score": 0.4546,
+          "ce_score": -9.2956,
+          "reranked_rank": 4,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            22
+          ]
+        },
+        {
+          "chunk_id": 66,
+          "baseline_rank": 8,
+          "cosine_score": 0.4537,
+          "ce_score": -11.0263,
+          "reranked_rank": 10,
+          "rank_change": -2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            20,
+            20
+          ]
+        },
+        {
+          "chunk_id": 72,
+          "baseline_rank": 9,
+          "cosine_score": 0.4464,
+          "ce_score": -9.3388,
+          "reranked_rank": 5,
+          "rank_change": 4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            22
+          ]
+        },
+        {
+          "chunk_id": 75,
+          "baseline_rank": 10,
+          "cosine_score": 0.4458,
+          "ce_score": -9.9077,
+          "reranked_rank": 7,
+          "rank_change": 3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            22,
+            22
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 10.00118400042993,
+        "ce_predict": 207.71502799834707
+      }
+    },
+    {
+      "query_id": "C-04",
+      "category": "control",
+      "question": "How many credits must a student earn in the first semester to continue in the programme?",
+      "relevant_chunk_ids": [
+        52
+      ],
+      "distractor_chunk_ids": [],
+      "relevant_in_top10": [],
+      "recall@10": 0.0,
+      "baseline": {
+        "top3": [
+          53,
+          24,
+          47
+        ],
+        "recall@3": 0.0,
+        "hit@3": 0,
+        "mrr@10": 0.0,
+        "evidence_cov@3": 0.0,
+        "distractors_in_top3": []
+      },
+      "reranked": {
+        "top3": [
+          53,
+          54,
+          24
+        ],
+        "recall@3": 0.0,
+        "hit@3": 0,
+        "mrr@10": 0.0,
+        "evidence_cov@3": 0.0,
+        "distractors_in_top3": []
+      },
+      "relevant_rank_shifts": [],
+      "promoted_into_top3": [],
+      "demoted_from_top3": [],
+      "outcome": "unchanged",
+      "outcome_basis": "none",
+      "rescue": false,
+      "strict_rescue": false,
+      "candidates": [
+        {
+          "chunk_id": 53,
+          "baseline_rank": 1,
+          "cosine_score": 0.6477,
+          "ce_score": 7.618,
+          "reranked_rank": 1,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 24,
+          "baseline_rank": 2,
+          "cosine_score": 0.5943,
+          "ce_score": 0.4107,
+          "reranked_rank": 3,
+          "rank_change": -1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            8,
+            9
+          ]
+        },
+        {
+          "chunk_id": 47,
+          "baseline_rank": 3,
+          "cosine_score": 0.59,
+          "ce_score": -0.9811,
+          "reranked_rank": 6,
+          "rank_change": -3,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            16
+          ]
+        },
+        {
+          "chunk_id": 54,
+          "baseline_rank": 4,
+          "cosine_score": 0.5876,
+          "ce_score": 3.6423,
+          "reranked_rank": 2,
+          "rank_change": 2,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            17,
+            17
+          ]
+        },
+        {
+          "chunk_id": 33,
+          "baseline_rank": 5,
+          "cosine_score": 0.5661,
+          "ce_score": -2.7581,
+          "reranked_rank": 10,
+          "rank_change": -5,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            12,
+            12
+          ]
+        },
+        {
+          "chunk_id": 23,
+          "baseline_rank": 6,
+          "cosine_score": 0.566,
+          "ce_score": -0.8643,
+          "reranked_rank": 5,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            8,
+            8
+          ]
+        },
+        {
+          "chunk_id": 25,
+          "baseline_rank": 7,
+          "cosine_score": 0.5554,
+          "ce_score": -1.1481,
+          "reranked_rank": 7,
+          "rank_change": 0,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            9,
+            9
+          ]
+        },
+        {
+          "chunk_id": 26,
+          "baseline_rank": 8,
+          "cosine_score": 0.5501,
+          "ce_score": -0.1184,
+          "reranked_rank": 4,
+          "rank_change": 4,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            9,
+            9
+          ]
+        },
+        {
+          "chunk_id": 78,
+          "baseline_rank": 9,
+          "cosine_score": 0.5464,
+          "ce_score": -1.5377,
+          "reranked_rank": 8,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            23,
+            23
+          ]
+        },
+        {
+          "chunk_id": 46,
+          "baseline_rank": 10,
+          "cosine_score": 0.5462,
+          "ce_score": -2.5686,
+          "reranked_rank": 9,
+          "rank_change": 1,
+          "relevant": false,
+          "distractor": false,
+          "pages": [
+            15,
+            15
+          ]
+        }
+      ],
+      "timing_ms": {
+        "retrieval": 9.351519001938868,
+        "ce_predict": 279.2848800017964
+      }
+    }
+  ]
+}

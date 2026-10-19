@@ -1,0 +1,43 @@
+| query_id | category | relevant_chunk | baseline_rank | reranked_rank | rank_change | cosine_similarity | cross_encoder_logit | entered_top3 | left_top3 |
+|---|---|---|---|---|---|---|---|---|---|
+| KT-01 | keyword_trap | 79 | 1 | 1 | 0 | 0.7602 | 8.4484 | False | False |
+| KT-02 | keyword_trap | 21 | 4 | 1 | 3 | 0.6728 | 4.3333 | True | False |
+| KT-03 | keyword_trap | 53 | 1 | 2 | -1 | 0.7336 | 3.8783 | False | False |
+| KT-03 | keyword_trap | 54 | 2 | 1 | 1 | 0.7324 | 4.3198 | False | False |
+| KT-04 | keyword_trap | 24 | 2 | 2 | 0 | 0.7450 | 6.8489 | False | False |
+| KT-04 | keyword_trap | 33 | 1 | 1 | 0 | 0.8109 | 9.4550 | False | False |
+| KT-05 | keyword_trap | 49 | 1 | 1 | 0 | 0.7163 | 4.9648 | False | False |
+| KT-06 | keyword_trap | 36 | 1 | 1 | 0 | 0.7372 | 5.8406 | False | False |
+| EX-01 | exception | 39 | 2 | 3 | -1 | 0.5710 | 5.5973 | False | False |
+| EX-02 | exception | 42 | 1 | 1 | 0 | 0.6472 | 7.7036 | False | False |
+| EX-03 | exception | 53 | 1 | 1 | 0 | 0.6301 | 8.1294 | False | False |
+| EX-04 | exception | 76 | 1 | 1 | 0 | 0.6578 | 6.5624 | False | False |
+| EX-05 | exception | 61 | 1 | 1 | 0 | 0.7429 | 5.4906 | False | False |
+| EX-05 | exception | 62 | 5 | 2 | 3 | 0.4693 | 4.4625 | True | False |
+| EX-06 | exception | 70 | 1 | 1 | 0 | 0.7534 | 8.9290 | False | False |
+| NG-01 | negation_constraint | 78 | 1 | 2 | -1 | 0.5742 | 1.9724 | False | False |
+| NG-02 | negation_constraint | 21 | 2 | 1 | 1 | 0.6504 | 7.5852 | False | False |
+| NG-03 | negation_constraint | 52 | 1 | 1 | 0 | 0.6651 | 6.2613 | False | False |
+| NG-04 | negation_constraint | 26 | 1 | 1 | 0 | 0.7108 | 5.4572 | False | False |
+| NG-05 | negation_constraint | 60 | 3 | 1 | 2 | 0.4630 | 1.3760 | False | False |
+| NG-06 | negation_constraint | 76 | 4 | 1 | 3 | 0.5398 | 7.2884 | True | False |
+| SY-01 | synonym_mismatch | 56 | 2 | 2 | 0 | 0.4905 | -7.0042 | False | False |
+| SY-01 | synonym_mismatch | 57 | 1 | 1 | 0 | 0.5382 | -5.8866 | False | False |
+| SY-02 | synonym_mismatch | 54 | 1 | 1 | 0 | 0.5168 | -1.9564 | False | False |
+| SY-03 | synonym_mismatch | 74 | 2 | 4 | -2 | 0.5223 | -7.3090 | False | True |
+| SY-03 | synonym_mismatch | 75 | 1 | 3 | -2 | 0.5526 | -7.1138 | False | False |
+| SY-04 | synonym_mismatch | 80 | 1 | 1 | 0 | 0.5970 | -0.3820 | False | False |
+| SY-05 | synonym_mismatch | 83 | 1 | 1 | 0 | 0.7608 | 5.6615 | False | False |
+| SY-05 | synonym_mismatch | 84 | 2 | 2 | 0 | 0.5993 | 0.1299 | False | False |
+| SY-06 | synonym_mismatch | 43 | 1 | 1 | 0 | 0.5294 | -3.7664 | False | False |
+| DS-01 | document_specific | 29 | not in top-10 | not in top-10 |  |  |  | False | False |
+| DS-01 | document_specific | 30 | 9 | 8 | 1 | 0.5025 | -4.5144 | False | False |
+| DS-02 | document_specific | 31 | 7 | 1 | 6 | 0.4881 | 5.0300 | True | False |
+| DS-03 | document_specific | 33 | 1 | 1 | 0 | 0.6803 | 5.9535 | False | False |
+| DS-04 | document_specific | 64 | not in top-10 | not in top-10 |  |  |  | False | False |
+| DS-04 | document_specific | 65 | 1 | 1 | 0 | 0.6436 | 6.2263 | False | False |
+| DS-05 | document_specific | 58 | 3 | 5 | -2 | 0.6490 | 0.6696 | False | True |
+| C-01 | control | 63 | 1 | 1 | 0 | 0.7069 | 8.0928 | False | False |
+| C-02 | control | 34 | 1 | 1 | 0 | 0.6352 | 6.1986 | False | False |
+| C-03 | control | 71 | 1 | 1 | 0 | 0.5314 | -2.0895 | False | False |
+| C-04 | control | 52 | not in top-10 | not in top-10 |  |  |  | False | False |

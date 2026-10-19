@@ -1,0 +1,1499 @@
+{
+  "metadata": {
+    "source_pdf": "document.pdf",
+    "source_sha256": "3e9178fb705aefb95e2681b97337a61f0139ebd30fc4542205b9afcbdfa2436f",
+    "chunking": {
+      "chunk_size": 1000,
+      "chunk_overlap": 200,
+      "n_chunks": 85
+    },
+    "categories": {
+      "keyword_trap": "High lexical overlap with a different (wrong) passage",
+      "exception": "General rule plus an 'except / however / unless' condition",
+      "negation_constraint": "Prohibitions, 'not allowed', role or count limits",
+      "synonym_mismatch": "Query wording differs from the document's terminology",
+      "document_specific": "Batch-specific variants and near-identical tables",
+      "control": "Easy, direct lookup (sanity check)"
+    },
+    "n_questions": 33,
+    "page_numbering": "1-based PDF page index (printed page number = PDF page - 1)",
+    "verification": "every evidence/distractor quote matched in cleaned page text, in the raw PyMuPDF page text (word sequence) and inside at least one chunk",
+    "note": "Candidate stress tests only; failures/rescues are not established until measured."
+  },
+  "questions": [
+    {
+      "query_id": "KT-01",
+      "category": "keyword_trap",
+      "question": "If a student's absence from NCC classes is unauthorized, how must the attendance deficiency be made up?",
+      "reference_answer": "It has to be made up during the following year, and an NCC deficiency is made up in NSO/NSS programmes at four times the deficiency (each NCC/NSS class missed is made up by four NSO classes). (If the absence is on valid grounds, it is instead made up in the extra NCC/NSO/NSS programmes offered in May of the same year.)",
+      "supporting_pages": [
+        24
+      ],
+      "relevant_chunk_ids": [
+        79
+      ],
+      "evidence": [
+        {
+          "quote": "If the absence is unauthorized, the deficiency will have to be made up during the following year.",
+          "pages": [
+            24
+          ],
+          "chunk_ids": [
+            79
+          ]
+        },
+        {
+          "quote": "The deficiency in NCC will have to be made up in NSO / NSS programmes at the rate of four times the deficiency",
+          "pages": [
+            24
+          ],
+          "chunk_ids": [
+            79
+          ]
+        },
+        {
+          "quote": "If the absence is on valid grounds, the deficiency will be made up in the extra NCC / NSO / NSS programmes to be offered during May of the same year.",
+          "pages": [
+            24
+          ],
+          "chunk_ids": [
+            79
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        59
+      ],
+      "distractors": [
+        {
+          "quote": "whatever may be the reason for the shortfall in attendance",
+          "pages": [
+            18
+          ],
+          "chunk_ids": [
+            59
+          ]
+        }
+      ],
+      "difficulty_reason": "Shares 'attendance', 'deficiency/shortfall' and 'absence' with the much larger academic-attendance section (R.14), which may outrank the short NCC sub-clause R.27.5.",
+      "verified": true
+    },
+    {
+      "query_id": "KT-02",
+      "category": "keyword_trap",
+      "question": "What CGPA does a student need in order to opt for the B.Tech (Honours) programme, and when can they opt?",
+      "reference_answer": "A CGPA of 8.5 and above at the end of the third semester; the option is exercised during the fourth semester. The student must also have cleared all prescribed courses in the first attempt; students with a 'U' or 'W' grade in any course are not eligible.",
+      "supporting_pages": [
+        8
+      ],
+      "relevant_chunk_ids": [
+        21
+      ],
+      "evidence": [
+        {
+          "quote": "Students admitted to B.Tech Programme can opt for B.Tech (Honours) programme during the fourth semester.",
+          "pages": [
+            8
+          ],
+          "chunk_ids": [
+            21
+          ]
+        },
+        {
+          "quote": "The student should have a CGPA of 8.5 and above at the end of their third semester and should have cleared all the courses as prescribed in the curriculum in the first attempt.",
+          "pages": [
+            8
+          ],
+          "chunk_ids": [
+            21
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        84
+      ],
+      "distractors": [
+        {
+          "quote": "the B.Tech (Honours) students must maintain an average CGPA of 8.5",
+          "pages": [
+            25
+          ],
+          "chunk_ids": [
+            84
+          ]
+        }
+      ],
+      "difficulty_reason": "R.30.1 (p. 25) contains the same keywords ('B.Tech (Honours)', 'CGPA of 8.5') but is about keeping 8.5 to be awarded the degree, not about eligibility to opt in (R.1.12, p. 8).",
+      "verified": true
+    },
+    {
+      "query_id": "KT-03",
+      "category": "keyword_trap",
+      "question": "What minimum CGPA must a student keep to avoid being relieved from the programme, and what happens if it drops below that?",
+      "reference_answer": "5.0, calculated over successfully completed courses at the end of each semester. If it is below 5.0 (or the student earns less than the average 22 credits), a warning is issued with intimation to the parent; if in the following semester the CGPA is still below 5.0 or the student cannot earn an average of 15 credits (R.10.1), he/she is relieved from the programme at the end of that semester.",
+      "supporting_pages": [
+        17
+      ],
+      "relevant_chunk_ids": [
+        53,
+        54
+      ],
+      "evidence": [
+        {
+          "quote": "A student should have a minimum CGPA of 5.0 (see R.26.2), calculated for the courses successfully completed at the end of each semester.",
+          "pages": [
+            17
+          ],
+          "chunk_ids": [
+            53
+          ]
+        },
+        {
+          "quote": "the student will be issued a warning under intimation to the parent.",
+          "pages": [
+            17
+          ],
+          "chunk_ids": [
+            53
+          ]
+        },
+        {
+          "quote": "In the following semester, if the CGPA is less than 5.0 or the student could not earn an average of 15 credits, as per R.10.1, he/she will be relieved from the programme at the end of the semester.",
+          "pages": [
+            17
+          ],
+          "chunk_ids": [
+            54
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        82
+      ],
+      "distractors": [
+        {
+          "quote": "secured a CGPA of 5.0 in passed subjects only.",
+          "pages": [
+            24
+          ],
+          "chunk_ids": [
+            82
+          ]
+        }
+      ],
+      "difficulty_reason": "'CGPA of 5.0' also appears in degree eligibility (R.29.1e) and in the 2014-15 course-repetition rule (R.25.1); only R.10.3 describes the warning-then-relieve procedure.",
+      "verified": true
+    },
+    {
+      "query_id": "KT-04",
+      "category": "keyword_trap",
+      "question": "How many credits must a student admitted in the 2013 batch earn for the award of the B.Tech degree?",
+      "reference_answer": "184 credits. The 180-credit figure applies to batches before 2013.",
+      "supporting_pages": [
+        9,
+        12
+      ],
+      "relevant_chunk_ids": [
+        24,
+        33
+      ],
+      "evidence": [
+        {
+          "quote": "designed to have a total of 180 credits (184 credits from 2013) for the award of the B.Tech degree.",
+          "pages": [
+            9
+          ],
+          "chunk_ids": [
+            24
+          ]
+        },
+        {
+          "quote": "The minimum number of credits to be earned for the award of the B.Tech. Degree is 180 (184 from 2013)",
+          "pages": [
+            12
+          ],
+          "chunk_ids": [
+            33
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [],
+      "distractors": [],
+      "difficulty_reason": "The wrong value (180) is printed right next to the right one; the answer depends on the parenthetical batch qualifier, which retrieval scores cannot distinguish.",
+      "verified": true
+    },
+    {
+      "query_id": "KT-05",
+      "category": "keyword_trap",
+      "question": "How many times can a student take the supplementary examination in a course?",
+      "reference_answer": "Only once; no second chance is given. If the student fails the supplementary examination, the course has to be repeated in a regular semester when it is offered.",
+      "supporting_pages": [
+        16
+      ],
+      "relevant_chunk_ids": [
+        49
+      ],
+      "evidence": [
+        {
+          "quote": "A student is eligible for only one Supplementary Examination in any course. No second chance is given.",
+          "pages": [
+            16
+          ],
+          "chunk_ids": [
+            49
+          ]
+        },
+        {
+          "quote": "In case a student fails in the Supplementary Examination he/she has to repeat the course in a regular semester, as and when it is offered.",
+          "pages": [
+            16
+          ],
+          "chunk_ids": [
+            49
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        70
+      ],
+      "distractors": [
+        {
+          "quote": "may permit the student to appear for a second make-up examination.",
+          "pages": [
+            21
+          ],
+          "chunk_ids": [
+            70
+          ]
+        }
+      ],
+      "difficulty_reason": "The make-up examination rules (R.20) use near-identical vocabulary ('examination', 'missed', 'second') and DO allow a second make-up in exceptional cases; mixing them up flips the answer.",
+      "verified": true
+    },
+    {
+      "query_id": "KT-06",
+      "category": "keyword_trap",
+      "question": "Who acts as Chairman of the Class Committee for a department's own courses, and who nominates them?",
+      "reference_answer": "One professor of the department concerned, preferably not associated with teaching the class, nominated by the Head of the Department concerned. (For the common courses of the first three semesters, the Chairman is instead a professor not associated with teaching the class, nominated by the Dean of Academic Courses.)",
+      "supporting_pages": [
+        13
+      ],
+      "relevant_chunk_ids": [
+        36
+      ],
+      "evidence": [
+        {
+          "quote": "one professor of the Department concerned, preferably not associated with teaching of the class, to be nominated by the Head of the Department concerned, to act as the Chairman of the Class Committee.",
+          "pages": [
+            13
+          ],
+          "chunk_ids": [
+            36
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        35
+      ],
+      "distractors": [
+        {
+          "quote": "One professor-not associated with teaching the particular class to be nominated by the Dean of Academic Courses to act as the Chairman of the Class Committee.",
+          "pages": [
+            13
+          ],
+          "chunk_ids": [
+            35,
+            36
+          ]
+        }
+      ],
+      "difficulty_reason": "R.4.2 (common courses) and R.4.3 (department courses) contain almost the same sentence; only the nominating authority differs (Dean vs Head of Department).",
+      "verified": true
+    },
+    {
+      "query_id": "EX-01",
+      "category": "exception",
+      "question": "Which students who have completed their first semester are not eligible to be considered for a change of branch?",
+      "reference_answer": "Engineering Design Dual Degree students. All other students who have successfully completed the first semester are eligible for consideration, subject to the availability of vacancies.",
+      "supporting_pages": [
+        14
+      ],
+      "relevant_chunk_ids": [
+        39
+      ],
+      "evidence": [
+        {
+          "quote": "All students who have successfully completed the first semester of the course, except Engineering Design Dual Degree students, will be eligible for consideration for change of branch, subject to the availability of vacancies.",
+          "pages": [
+            14
+          ],
+          "chunk_ids": [
+            39
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [],
+      "distractors": [
+        {
+          "quote": "Such change will be considered only at the end of the first semester.",
+          "pages": [
+            14
+          ],
+          "chunk_ids": [
+            39
+          ]
+        }
+      ],
+      "difficulty_reason": "The exception is a mid-sentence clause in R.5.3; other change-of-branch clauses (R.5.2, R.5.4-5.6) match the query just as well lexically.",
+      "verified": true
+    },
+    {
+      "query_id": "EX-02",
+      "category": "exception",
+      "question": "Can a dual degree student change to a different discipline or branch?",
+      "reference_answer": "They are not eligible for a branch/programme change to the 4-year B.Tech programme. However, they are eligible for a change of discipline within the same Department if it offers more than one discipline under their dual degree programme (from 2012, Applied Mechanics is treated as a discipline for AE/CE/EE/NA). Dual degree students other than Engineering Design students are also eligible for change of branch at the end of the first semester as per the Dual Degree Regulations.",
+      "supporting_pages": [
+        15
+      ],
+      "relevant_chunk_ids": [
+        42
+      ],
+      "evidence": [
+        {
+          "quote": "Dual degree students are not eligible for branch/ programme change to 4-year B.Tech programme.",
+          "pages": [
+            15
+          ],
+          "chunk_ids": [
+            42
+          ]
+        },
+        {
+          "quote": "However, they are eligible for change of discipline within the same Department, in case the Department offers more than one discipline under their dual degree programme.",
+          "pages": [
+            15
+          ],
+          "chunk_ids": [
+            42
+          ]
+        },
+        {
+          "quote": "From 2012 batch, Applied Mechanics will be treated as one of the discipline in the case of AE/CE/EE/NA Departments.",
+          "pages": [
+            15
+          ],
+          "chunk_ids": [
+            42
+          ]
+        },
+        {
+          "quote": "The Dual Degree students except Engineering Design students are also eligible for change of branch at the end of the first semester as per the Dual Degree Regulations.",
+          "pages": [
+            15
+          ],
+          "chunk_ids": [
+            42
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        41
+      ],
+      "distractors": [
+        {
+          "quote": "Change over from 4-year B.Tech programme to 5-year dual degree programme is permitted within the same Department",
+          "pages": [
+            14
+          ],
+          "chunk_ids": [
+            41
+          ]
+        }
+      ],
+      "difficulty_reason": "A prohibition followed by two exceptions. In the Task 3 runs, both pipelines answered a related question with only the prohibition, although this chunk was in the context.",
+      "verified": true
+    },
+    {
+      "query_id": "EX-03",
+      "category": "exception",
+      "question": "Must a student earn at least 15 credits in every semester, including the final one?",
+      "reference_answer": "A student must maintain an average of 15 credits per semester (including the first two semesters) to continue. However, in the final semester a student may earn less than 15 credits if that is sufficient to fulfil the requirements for the award of the degree.",
+      "supporting_pages": [
+        17
+      ],
+      "relevant_chunk_ids": [
+        53
+      ],
+      "evidence": [
+        {
+          "quote": "Thereafter, he/she must maintain an average of 15 credits per semester, including the first two semesters, to continue his/ her studies.",
+          "pages": [
+            17
+          ],
+          "chunk_ids": [
+            53
+          ]
+        },
+        {
+          "quote": "However, in the final semester, a student may earn less than 15 credits if it is sufficient for him/ her to fulfill the requirements for the award of the degree.",
+          "pages": [
+            17
+          ],
+          "chunk_ids": [
+            53
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        47
+      ],
+      "distractors": [
+        {
+          "quote": "The curriculum for any semester, except for the final semester will normally carry credits between 21 and 29.",
+          "pages": [
+            16
+          ],
+          "chunk_ids": [
+            47
+          ]
+        }
+      ],
+      "difficulty_reason": "The relaxation is a 'However' sentence after the general rule; R.7.1 (21-29 credits, also excepting the final semester) is a lexically similar distractor.",
+      "verified": true
+    },
+    {
+      "query_id": "EX-04",
+      "category": "exception",
+      "question": "Can a student repeat a course they have already passed in order to improve their CGPA?",
+      "reference_answer": "Generally no: a successfully completed course cannot be repeated. Exception: from academic year 2014-15, students who have taken all core and elective courses but still fail to get the minimum CGPA of 5 (and so are not eligible for the degree) are permitted to repeat core or elective courses to earn the minimum CGPA.",
+      "supporting_pages": [
+        23
+      ],
+      "relevant_chunk_ids": [
+        76
+      ],
+      "evidence": [
+        {
+          "quote": "A course successfully completed cannot be repeated.",
+          "pages": [
+            23
+          ],
+          "chunk_ids": [
+            76
+          ]
+        },
+        {
+          "quote": "However from academic year 2014-15 where students have taken all core and elective courses but still fail to get a minimum CGPA of 5",
+          "pages": [
+            23
+          ],
+          "chunk_ids": [
+            76
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        75
+      ],
+      "distractors": [
+        {
+          "quote": "A student who earns a U or W grade in a core course has to repeat it compulsorily when the course is offered next.",
+          "pages": [
+            22
+          ],
+          "chunk_ids": [
+            75
+          ]
+        }
+      ],
+      "difficulty_reason": "The general course-repetition rule (U/W grades, p. 22) is the obvious match; the passed-course prohibition and its 2014-15 exception continue on p. 23.",
+      "verified": true
+    },
+    {
+      "query_id": "EX-05",
+      "category": "exception",
+      "question": "Can attendance below 85% be condoned for a student who was hospitalised?",
+      "reference_answer": "Yes, for prolonged illness and/or hospitalisation with a medical certificate: the student must have more than 40% actual attendance, and the notional attendance (classes attended x 100 / (classes held in the semester minus classes held during the prolonged illness/hospitalisation)) must be at least 85%. Casual absenteeism and minor illnesses are not condoned.",
+      "supporting_pages": [
+        19
+      ],
+      "relevant_chunk_ids": [
+        61,
+        62
+      ],
+      "evidence": [
+        {
+          "quote": "For calculation of attendance in case of prolonged illness and/or hospitalization with medical certificate:",
+          "pages": [
+            19
+          ],
+          "chunk_ids": [
+            61
+          ]
+        },
+        {
+          "quote": "A student should have more than 40% attendance calculated as per (a) above to be eligible for condonation.",
+          "pages": [
+            19
+          ],
+          "chunk_ids": [
+            61
+          ]
+        },
+        {
+          "quote": "which should be ≥ 85% for condonation",
+          "pages": [
+            19
+          ],
+          "chunk_ids": [
+            62
+          ]
+        },
+        {
+          "quote": "(Total no. of classes held in the semester) - (No. of classes held during the days of prolonged illness and or hospitalization)",
+          "pages": [
+            19
+          ],
+          "chunk_ids": [
+            62
+          ]
+        },
+        {
+          "quote": "Such cases will not come under the purview of condonation of attendance.",
+          "pages": [
+            19
+          ],
+          "chunk_ids": [
+            61
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        59
+      ],
+      "distractors": [
+        {
+          "quote": "whatever may be the reason for the shortfall in attendance, will not be permitted to appear in the end-semester examination",
+          "pages": [
+            18
+          ],
+          "chunk_ids": [
+            59
+          ]
+        }
+      ],
+      "difficulty_reason": "R.14.2 says students below 85% are barred 'whatever may be the reason', which contradicts the condonation route in R.14.4(b); the general rule is more likely to rank first.",
+      "verified": true
+    },
+    {
+      "query_id": "EX-06",
+      "category": "exception",
+      "question": "Can a student who missed the make-up examination be given another one?",
+      "reference_answer": "Not normally. However, in exceptional cases of prolonged illness that make the student miss the make-up examination, the Chairman of the Senate, in consultation with the Dean of Academic Courses or with the approval of the Senate, may permit a second make-up examination.",
+      "supporting_pages": [
+        21
+      ],
+      "relevant_chunk_ids": [
+        70
+      ],
+      "evidence": [
+        {
+          "quote": "A student who misses this make-up examination will not normally be given another make-up examination.",
+          "pages": [
+            21
+          ],
+          "chunk_ids": [
+            70
+          ]
+        },
+        {
+          "quote": "However, in exceptional cases of prolonged illness resulting in the student missing a make-up examination, the Chairman of the Senate, in consultation with the Dean of Academic Courses or with approval of the Senate may permit the student to appear for a second make-up examination.",
+          "pages": [
+            21
+          ],
+          "chunk_ids": [
+            70
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        49
+      ],
+      "distractors": [
+        {
+          "quote": "A student is eligible for only one Supplementary Examination in any course. No second chance is given.",
+          "pages": [
+            16
+          ],
+          "chunk_ids": [
+            49
+          ]
+        }
+      ],
+      "difficulty_reason": "Mirror of KT-05: the supplementary-exam rule ('No second chance') is a strong lexical match with the opposite answer.",
+      "verified": true
+    },
+    {
+      "query_id": "NG-01",
+      "category": "negation_constraint",
+      "question": "Which students are not allowed to take the NCC programme?",
+      "reference_answer": "Foreign nationals and women students; the NCC programme is not available to them. (All students must take either NCC or NSO/NSS.)",
+      "supporting_pages": [
+        23
+      ],
+      "relevant_chunk_ids": [
+        78
+      ],
+      "evidence": [
+        {
+          "quote": "All students admitted to the B.Tech programme will have to take either NCC or NSO / NSS",
+          "pages": [
+            23
+          ],
+          "chunk_ids": [
+            78
+          ]
+        },
+        {
+          "quote": "NCC programme is not available for Foreign nationals and women students.",
+          "pages": [
+            23
+          ],
+          "chunk_ids": [
+            78
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [],
+      "distractors": [],
+      "difficulty_reason": "Negative restriction phrased as 'not available for'; many chunks mention NCC/NSO/NSS (attendance, grades X/Y, continuation rule R.10.2).",
+      "verified": true
+    },
+    {
+      "query_id": "NG-02",
+      "category": "negation_constraint",
+      "question": "Can a student who joined an IIT through JEE appear for JEE again the following year?",
+      "reference_answer": "No. Candidates who join any of the IITs, IT-BHU Varanasi or ISMU Dhanbad through JEE/JEE (Advanced) are NOT permitted to appear in subsequent JEE/JEE (Advanced) from the following year.",
+      "supporting_pages": [
+        8
+      ],
+      "relevant_chunk_ids": [
+        21
+      ],
+      "evidence": [
+        {
+          "quote": "will NOT be permitted to appear in subsequent JEE(s) / JEE (Advanced) from 2013 from the following year",
+          "pages": [
+            8
+          ],
+          "chunk_ids": [
+            21
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [],
+      "distractors": [
+        {
+          "quote": "A student can have only two attempts to write JEE / JEE (Advanced) from 2013.",
+          "pages": [
+            8
+          ],
+          "chunk_ids": [
+            21
+          ]
+        }
+      ],
+      "difficulty_reason": "The two-attempts rule in the same chunk suggests a second attempt is allowed; the answer hinges on the capitalised NOT in R.1.11.",
+      "verified": true
+    },
+    {
+      "query_id": "NG-03",
+      "category": "negation_constraint",
+      "question": "Is a student allowed to withdraw from a contact course?",
+      "reference_answer": "No. Withdrawal from a contact course is not permitted.",
+      "supporting_pages": [
+        17
+      ],
+      "relevant_chunk_ids": [
+        52
+      ],
+      "evidence": [
+        {
+          "quote": "Withdrawal from a contact course is not permitted.",
+          "pages": [
+            17
+          ],
+          "chunk_ids": [
+            52
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        48
+      ],
+      "distractors": [
+        {
+          "quote": "he/she may drop courses if the student maintains a minimum attendance grade G",
+          "pages": [
+            16
+          ],
+          "chunk_ids": [
+            48
+          ]
+        }
+      ],
+      "difficulty_reason": "One-line prohibition (R.9.6) at the top of p. 17; R.7.1 allows dropping ordinary courses, so a context without R.9.6 suggests 'yes'.",
+      "verified": true
+    },
+    {
+      "query_id": "NG-04",
+      "category": "negation_constraint",
+      "question": "Can a third-semester student register for an M.Tech course?",
+      "reference_answer": "No. Only students in the V or higher semesters are eligible to register for M.Tech/M.Sc. courses, and they must obtain the consent of the teacher offering the course.",
+      "supporting_pages": [
+        9
+      ],
+      "relevant_chunk_ids": [
+        26
+      ],
+      "evidence": [
+        {
+          "quote": "only students belonging to the V or higher semesters are eligible to register for M.Tech/M.Sc. courses, and every such student desiring to register for such a course must obtain the consent of the teacher offering the course.",
+          "pages": [
+            9
+          ],
+          "chunk_ids": [
+            26
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [],
+      "distractors": [],
+      "difficulty_reason": "Constraint expressed positively ('only ... V or higher'); the query's 'third semester' must be compared with a Roman numeral. The sentence sits at the end of a chunk that leads into Table-1.",
+      "verified": true
+    },
+    {
+      "query_id": "NG-05",
+      "category": "negation_constraint",
+      "question": "Is an attendance shortage caused by casual absenteeism condoned?",
+      "reference_answer": "No. For casual absenteeism no condonation of attendance is permissible; a student with less than 85% attendance is assigned a 'W' grade in that subject with 'P' as the attendance code.",
+      "supporting_pages": [
+        19
+      ],
+      "relevant_chunk_ids": [
+        60
+      ],
+      "evidence": [
+        {
+          "quote": "For cases of casual absenteeism, no condonation of attendance is permissible.",
+          "pages": [
+            19
+          ],
+          "chunk_ids": [
+            60
+          ]
+        },
+        {
+          "quote": "If a student has less than 85% attendance, he/she should be assigned \"W\" grade in that subject along with \"P\" as the attendance code.",
+          "pages": [
+            19
+          ],
+          "chunk_ids": [
+            60
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        61
+      ],
+      "distractors": [
+        {
+          "quote": "A student should have more than 40% attendance calculated as per (a) above to be eligible for condonation.",
+          "pages": [
+            19
+          ],
+          "chunk_ids": [
+            61
+          ]
+        }
+      ],
+      "difficulty_reason": "Condonation passages (which allow condonation for prolonged illness) are semantically close; Bi-Encoder embeddings may not separate 'no condonation' from 'eligible for condonation'.",
+      "verified": true
+    },
+    {
+      "query_id": "NG-06",
+      "category": "negation_constraint",
+      "question": "Which courses is a student not allowed to repeat?",
+      "reference_answer": "A course that has been successfully completed cannot be repeated. Exception: from academic year 2014-15, students who have taken all core and elective courses but still fail to reach the minimum CGPA of 5 (and so are not eligible for the degree) may repeat core or elective courses to earn the minimum CGPA.",
+      "supporting_pages": [
+        23
+      ],
+      "relevant_chunk_ids": [
+        76
+      ],
+      "evidence": [
+        {
+          "quote": "A course successfully completed cannot be repeated.",
+          "pages": [
+            23
+          ],
+          "chunk_ids": [
+            76
+          ]
+        },
+        {
+          "quote": "However from academic year 2014-15 where students have taken all core and elective courses but still fail to get a minimum CGPA of 5 and they are not eligible to get degree, these students are permitted to repeat the core or elective courses to earn the minimum CGPA.",
+          "pages": [
+            23
+          ],
+          "chunk_ids": [
+            76
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        25
+      ],
+      "distractors": [
+        {
+          "quote": "No withdrawal from any of the courses for which a student has registered will be allowed, except as per regulation 7.1.",
+          "pages": [
+            9
+          ],
+          "chunk_ids": [
+            25
+          ]
+        }
+      ],
+      "difficulty_reason": "The prohibition is one short sentence; R.25.1 (U/W courses must or may be repeated) and the 'No withdrawal ... will be allowed' registration clause share the words 'repeat', 'course' and 'not allowed' and look like answers.",
+      "verified": true
+    },
+    {
+      "query_id": "SY-01",
+      "category": "synonym_mismatch",
+      "question": "What happens to a student found guilty of harassing or bullying junior students?",
+      "reference_answer": "This is ragging: once a student's involvement in ragging is established, the student is dismissed from the Institution and will not be admitted into any other Institution. Ragging is a criminal, non-bailable offence, and collective punishment is possible if individuals cannot be identified.",
+      "supporting_pages": [
+        18
+      ],
+      "relevant_chunk_ids": [
+        56,
+        57
+      ],
+      "evidence": [
+        {
+          "quote": "Ragging of any dimension is a criminal and non-bailable offence in our country.",
+          "pages": [
+            18
+          ],
+          "chunk_ids": [
+            56,
+            57
+          ]
+        },
+        {
+          "quote": "Once the involvement of a student is established in ragging, the offending student will be dismissed from the Institution and will not be admitted into any other Institution.",
+          "pages": [
+            18
+          ],
+          "chunk_ids": [
+            57
+          ]
+        },
+        {
+          "quote": "Avenues also exist for collective punishment, if individuals can not be identified in this inhuman act.",
+          "pages": [
+            18
+          ],
+          "chunk_ids": [
+            57
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        55
+      ],
+      "distractors": [
+        {
+          "quote": "Any act of indiscipline of a student reported to the Dean, Academic Courses, will be referred to a Discipline and Welfare Committee",
+          "pages": [
+            18
+          ],
+          "chunk_ids": [
+            55
+          ]
+        }
+      ],
+      "difficulty_reason": "The query never uses the document's term 'ragging'; the general discipline clause R.13.2 is a plausible but incomplete match.",
+      "verified": true
+    },
+    {
+      "query_id": "SY-02",
+      "category": "synonym_mismatch",
+      "question": "For how long can a student take a break from studies for health reasons?",
+      "reference_answer": "The Dean of Academic Courses may permit a student to withdraw for a semester or longer for ill health or other valid reasons, but normally only for a maximum continuous period of two semesters. Semesters withdrawn on medical grounds are excluded from the 12-semester maximum duration.",
+      "supporting_pages": [
+        17
+      ],
+      "relevant_chunk_ids": [
+        54
+      ],
+      "evidence": [
+        {
+          "quote": "A student may be permitted by the Dean of Academic Courses to withdraw from the programme for a semester or longer for reasons of ill health or other valid reasons.",
+          "pages": [
+            17
+          ],
+          "chunk_ids": [
+            54
+          ]
+        },
+        {
+          "quote": "Normally, a student will be permitted to withdraw from the programme only for a maximum continuous period of two semesters.",
+          "pages": [
+            17
+          ],
+          "chunk_ids": [
+            54
+          ]
+        },
+        {
+          "quote": "excluding semesters withdrawn on medical grounds",
+          "pages": [
+            17
+          ],
+          "chunk_ids": [
+            54
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [],
+      "distractors": [],
+      "difficulty_reason": "'Take a break' vs the document's 'temporary withdrawal'; 'health' vs 'ill health / medical grounds'.",
+      "verified": true
+    },
+    {
+      "query_id": "SY-03",
+      "category": "synonym_mismatch",
+      "question": "How much time does a student have to dispute a grade they think is unfair?",
+      "reference_answer": "The student can contact the teacher concerned within three weeks from the commencement of the semester immediately following the announcement of results; if the teacher finds the case genuine, he/she may re-examine and forward a revised grade to the Dean of Academic Courses through the Chairman of the Class Committee.",
+      "supporting_pages": [
+        22
+      ],
+      "relevant_chunk_ids": [
+        74,
+        75
+      ],
+      "evidence": [
+        {
+          "quote": "In case any student feels aggrieved, he/she can contact the teacher concerned within three weeks from the commencement of the semester immediately following the announcement of the results.",
+          "pages": [
+            22
+          ],
+          "chunk_ids": [
+            74
+          ]
+        },
+        {
+          "quote": "If the teacher feels that the case is genuine, he/she may re-examine the case and forward a revised grade, if any, to the Dean of Academic Courses through the Chairman of the Class Committee",
+          "pages": [
+            22
+          ],
+          "chunk_ids": [
+            75
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [],
+      "distractors": [],
+      "difficulty_reason": "'Dispute a grade' vs 'feels aggrieved' / 're-examination of answer papers'; many grade-related chunks (grade table, grade card, awarding grades) compete.",
+      "verified": true
+    },
+    {
+      "query_id": "SY-04",
+      "category": "synonym_mismatch",
+      "question": "What share of students receive a need-based scholarship, and do they have to pay tuition fees?",
+      "reference_answer": "25% of the students admitted or 25% of the sanctioned strength, whichever is less, receive the Merit-Cum-Means (MCM) scholarship for the entire programme, and they are exempted from tuition fees. In addition, 10% of the students admitted or 10% of the sanctioned strength, whichever is less, are exempted from tuition fees.",
+      "supporting_pages": [
+        24
+      ],
+      "relevant_chunk_ids": [
+        80
+      ],
+      "evidence": [
+        {
+          "quote": "25% of the students admitted or 25% of the sanctioned strength, whichever is less, will be awarded Merit-Cum-Means (MCM) scholarship",
+          "pages": [
+            24
+          ],
+          "chunk_ids": [
+            80
+          ]
+        },
+        {
+          "quote": "These students are exempted from paying tuition fees.",
+          "pages": [
+            24
+          ],
+          "chunk_ids": [
+            80
+          ]
+        },
+        {
+          "quote": "In addition, 10% of the students admitted or 10% of the sanctioned strength, whichever is less, are exempted from payment of tuition fees",
+          "pages": [
+            24
+          ],
+          "chunk_ids": [
+            80
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        12
+      ],
+      "distractors": [
+        {
+          "quote": "The award of merit scholarships to the B.Tech/ B.Tech (Honours) students will be governed by the regulations framed by the Senate",
+          "pages": [
+            5
+          ],
+          "chunk_ids": [
+            12
+          ]
+        }
+      ],
+      "difficulty_reason": "'Need-based' corresponds only loosely to 'Merit-Cum-Means'; ordinance O.4 on merit scholarships is a keyword distractor without the numbers.",
+      "verified": true
+    },
+    {
+      "query_id": "SY-05",
+      "category": "synonym_mismatch",
+      "question": "If I spend a semester abroad on an exchange programme, do those credits and grades count at IIT Madras?",
+      "reference_answer": "The credits earned abroad count towards the minimum credits required for the degree. The IIT Madras transcript shows only the courses, credits and grades completed at IITM plus the total number of credits (without grades) earned at the other university, and the CGPA based on IITM credits alone is used for the award of prizes. (The document does not say anything further about how foreign grades affect the regular CGPA.)",
+      "supporting_pages": [
+        25
+      ],
+      "relevant_chunk_ids": [
+        83,
+        84
+      ],
+      "evidence": [
+        {
+          "quote": "IIT Madras transcripts will only indicate the courses, credits and grades completed at IITM and the total no. of credits (without grades) earned in other Universities in a particular semester.",
+          "pages": [
+            25
+          ],
+          "chunk_ids": [
+            83
+          ]
+        },
+        {
+          "quote": "The CGPA calculation based on credits earned/completed at IIT Madras alone is to be considered for award of prizes.",
+          "pages": [
+            25
+          ],
+          "chunk_ids": [
+            83,
+            84
+          ]
+        },
+        {
+          "quote": "The credits earned at Universities abroad will be taken into account for calculation of minimum required credits for the award of the degree.",
+          "pages": [
+            25
+          ],
+          "chunk_ids": [
+            84
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [],
+      "distractors": [],
+      "difficulty_reason": "'Exchange programme' / 'abroad' vs 'credit transfer'; the passage is an un-numbered section between R.29 and R.30, and a faithful answer must not overstate what the document says about CGPA.",
+      "verified": true
+    },
+    {
+      "query_id": "SY-06",
+      "category": "synonym_mismatch",
+      "question": "Can I sign up for the next semester if I still owe money to the hostel?",
+      "reference_answer": "No. A student is permitted to enroll only if he/she has cleared all dues to the Institute, Hostel, Library and NCC Unit up to the end of the previous semester (and is not debarred on disciplinary grounds).",
+      "supporting_pages": [
+        15
+      ],
+      "relevant_chunk_ids": [
+        43
+      ],
+      "evidence": [
+        {
+          "quote": "will be permitted to enroll only if he/she has cleared all dues to the Institute, Hostel, Library and the NCC Unit up to the end of the previous semester",
+          "pages": [
+            15
+          ],
+          "chunk_ids": [
+            43
+          ]
+        },
+        {
+          "quote": "provided he / she is not debarred from enrolment, on disciplinary grounds.",
+          "pages": [
+            15
+          ],
+          "chunk_ids": [
+            43
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        82
+      ],
+      "distractors": [
+        {
+          "quote": "no dues to the Institute, Hostels, Libraries, NCC / NSS / NSO etc.",
+          "pages": [
+            24
+          ],
+          "chunk_ids": [
+            82
+          ]
+        }
+      ],
+      "difficulty_reason": "'Sign up' / 'owe money' vs 'enrolment' / 'cleared all dues'; the degree-eligibility clause R.29.1(f) also mentions dues.",
+      "verified": true
+    },
+    {
+      "query_id": "DS-01",
+      "category": "document_specific",
+      "question": "For the 2011-2012 batches, how many CGPA credits are prescribed for free electives?",
+      "reference_answer": "0-9 CGPA credits, with a course-wise minimum credit requirement of 9 (Table-1 for 2011-2012 batches). For comparison, the 2010 table gives 6 (minimum 6) and the 2013-onwards table gives 6-9 (minimum 6).",
+      "supporting_pages": [
+        11
+      ],
+      "relevant_chunk_ids": [
+        29,
+        30
+      ],
+      "evidence": [
+        {
+          "quote": "(for 2011-2012 batches)",
+          "pages": [
+            11
+          ],
+          "chunk_ids": [
+            29
+          ]
+        },
+        {
+          "quote": "| 6. | FREE ELECTIVES |  | 0-9 |  | 9 |",
+          "pages": [
+            11
+          ],
+          "chunk_ids": [
+            30
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        28,
+        32
+      ],
+      "distractors": [
+        {
+          "quote": "| 6. | FREE ELECTIVES |  | 6 |  | 6 |",
+          "pages": [
+            10
+          ],
+          "chunk_ids": [
+            28
+          ]
+        },
+        {
+          "quote": "| 6. | FREE ELECTIVES |  | 6-9 |  | 6 |",
+          "pages": [
+            12
+          ],
+          "chunk_ids": [
+            32
+          ]
+        }
+      ],
+      "difficulty_reason": "Three near-identical tables (pp. 10-12). The FREE ELECTIVES row falls in the second half of each split table, a chunk that does not contain the batch caption.",
+      "verified": true
+    },
+    {
+      "query_id": "DS-02",
+      "category": "document_specific",
+      "question": "From the 2013 batch onwards, how many Humanities Pass/Fail (HPF) credits are required?",
+      "reference_answer": "4 non-CGPA credits under the Humanities Pass/Fail option (HPF) in the table for the 2013 batch onwards (the 2010 and 2011-2012 tables specify 2).",
+      "supporting_pages": [
+        12
+      ],
+      "relevant_chunk_ids": [
+        31
+      ],
+      "evidence": [
+        {
+          "quote": "(for 2013 batch onwards)",
+          "pages": [
+            12
+          ],
+          "chunk_ids": [
+            31
+          ]
+        },
+        {
+          "quote": "|  | Pass/Fail Option | HPF |  | 4 |  |",
+          "pages": [
+            12
+          ],
+          "chunk_ids": [
+            31
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        27,
+        29
+      ],
+      "distractors": [
+        {
+          "quote": "|  | Pass/Fail Option | HPF |  | 2 |  |",
+          "pages": [
+            10,
+            11
+          ],
+          "chunk_ids": [
+            27,
+            29
+          ]
+        }
+      ],
+      "difficulty_reason": "The three tables differ in a single cell; retrieval must pick the 2013 table out of three almost identical chunks.",
+      "verified": true
+    },
+    {
+      "query_id": "DS-03",
+      "category": "document_specific",
+      "question": "For a student of the 2010 batch, does an E grade make them ineligible for the B.Tech (Honours) degree?",
+      "reference_answer": "Yes. For the 2010 batch, students with an 'E', 'U' or 'W' grade in any course are not eligible for the B.Tech (Honours) degree; from the 2011 batch onwards only 'U' or 'W' grades disqualify.",
+      "supporting_pages": [
+        12
+      ],
+      "relevant_chunk_ids": [
+        33
+      ],
+      "evidence": [
+        {
+          "quote": "Students who have obtained \"E\" or \"U\" or \"W\" grade in any course are not eligible for B.Tech (Honours) degree.",
+          "pages": [
+            12
+          ],
+          "chunk_ids": [
+            33
+          ]
+        },
+        {
+          "quote": "From 2011 batch onwards In addition to B.Tech regulations specified above, the B.Tech (Honours) students must earn minimum of 12 additional PMT credits.",
+          "pages": [
+            12
+          ],
+          "chunk_ids": [
+            33
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        21
+      ],
+      "distractors": [
+        {
+          "quote": "Students who have obtained \"U\" or \"W\" grade in any course are not eligible for B.Tech (Honours) degree.",
+          "pages": [
+            8
+          ],
+          "chunk_ids": [
+            21
+          ]
+        }
+      ],
+      "difficulty_reason": "The 2010 and 2011+ variants are adjacent and nearly identical; R.1.12 also lists only U/W, so a model may answer 'no'.",
+      "verified": true
+    },
+    {
+      "query_id": "DS-04",
+      "category": "document_specific",
+      "question": "How are marks split between quizzes and the end-semester examination in the common courses of the first three semesters?",
+      "reference_answer": "Two quizzes of 20 marks each (40%) and the end-semester examination (60%).",
+      "supporting_pages": [
+        20
+      ],
+      "relevant_chunk_ids": [
+        64,
+        65
+      ],
+      "evidence": [
+        {
+          "quote": "For common courses of first three semesters: 2 Quizzes – 20 marks each End Semester Examination | 40% 60% |",
+          "pages": [
+            20
+          ],
+          "chunk_ids": [
+            64,
+            65
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [
+        66
+      ],
+      "distractors": [
+        {
+          "quote": "The weightage for theory courses of higher semesters of the B.Tech programme should not be below 40% each for both sessional assessment and end semester examination.",
+          "pages": [
+            20
+          ],
+          "chunk_ids": [
+            66
+          ]
+        }
+      ],
+      "difficulty_reason": "The values live in a table cell; the adjacent higher-semester rule also contains '40%' and 'end semester examination'.",
+      "verified": true
+    },
+    {
+      "query_id": "DS-05",
+      "category": "document_specific",
+      "question": "What attendance code does a student with 90% attendance in a course receive?",
+      "reference_answer": "'G' (Good), which covers attendance of 85 to 94%.",
+      "supporting_pages": [
+        18
+      ],
+      "relevant_chunk_ids": [
+        58
+      ],
+      "evidence": [
+        {
+          "quote": "| 85 to 94% | Good | G |",
+          "pages": [
+            18
+          ],
+          "chunk_ids": [
+            58
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [],
+      "distractors": [],
+      "difficulty_reason": "Requires reading a small table and mapping 90% into the 85-94% band; the many '85%' attendance chunks compete.",
+      "verified": true
+    },
+    {
+      "query_id": "C-01",
+      "category": "control",
+      "question": "How long is the end-semester examination in a lecture-based subject?",
+      "reference_answer": "Three hours; there is one end-semester examination of three hours in each lecture-based subject.",
+      "supporting_pages": [
+        19
+      ],
+      "relevant_chunk_ids": [
+        63
+      ],
+      "evidence": [
+        {
+          "quote": "There will be one end-semester examination of three hours duration in each lecture based subject.",
+          "pages": [
+            19
+          ],
+          "chunk_ids": [
+            63
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [],
+      "distractors": [],
+      "difficulty_reason": "Control: direct paraphrase of R.17.1.",
+      "verified": true
+    },
+    {
+      "query_id": "C-02",
+      "category": "control",
+      "question": "What is the medium of instruction for the B.Tech programme?",
+      "reference_answer": "English (for instruction, examinations and project reports).",
+      "supporting_pages": [
+        12
+      ],
+      "relevant_chunk_ids": [
+        34
+      ],
+      "evidence": [
+        {
+          "quote": "The medium of instruction, examination and project reports will be English.",
+          "pages": [
+            12
+          ],
+          "chunk_ids": [
+            34
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [],
+      "distractors": [],
+      "difficulty_reason": "Control: single-sentence rule R.2.9.",
+      "verified": true
+    },
+    {
+      "query_id": "C-03",
+      "category": "control",
+      "question": "How many grade points does an S grade carry?",
+      "reference_answer": "10 grade points.",
+      "supporting_pages": [
+        21
+      ],
+      "relevant_chunk_ids": [
+        71
+      ],
+      "evidence": [
+        {
+          "quote": "| S | 10 |  |",
+          "pages": [
+            21
+          ],
+          "chunk_ids": [
+            71
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [],
+      "distractors": [],
+      "difficulty_reason": "Control: direct table lookup (grade table R.21.1).",
+      "verified": true
+    },
+    {
+      "query_id": "C-04",
+      "category": "control",
+      "question": "How many credits must a student earn in the first semester to continue in the programme?",
+      "reference_answer": "Not less than 12 credits in the first semester (and 28 credits by the end of the second semester).",
+      "supporting_pages": [
+        17
+      ],
+      "relevant_chunk_ids": [
+        52
+      ],
+      "evidence": [
+        {
+          "quote": "A student should earn not less than 12 credits in the first semester, and 28 credits at the end of the second semester.",
+          "pages": [
+            17
+          ],
+          "chunk_ids": [
+            52
+          ]
+        }
+      ],
+      "distractor_chunk_ids": [],
+      "distractors": [],
+      "difficulty_reason": "Control: direct statement in R.10.1.",
+      "verified": true
+    }
+  ]
+}

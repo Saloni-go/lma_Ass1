@@ -1,0 +1,15 @@
+scope,component,n,mean_ms,median_ms,std_ms,p95_ms
+retrieval (33 questions x 5 repeats),"Query embedding (Bi-Encoder, 1 query)",165,10.217358181818183,9.9589,1.8799787326272657,13.858659999999997
+retrieval (33 questions x 5 repeats),FAISS top-10 search (85 vectors),165,0.06827151515151515,0.0691,0.019818259030071252,0.09631999999999992
+retrieval (33 questions x 5 repeats),FAISS id -> chunk lookup,165,0.011536969696969697,0.0113,0.0029952650487879632,0.015119999999999993
+retrieval (33 questions x 5 repeats),Pipeline 1: take top-3,165,0.0008654545454545456,0.0008,0.00032622275523182335,0.0013799999999999982
+retrieval (33 questions x 5 repeats),Cross-Encoder scoring (10 pairs),165,265.0370945454546,253.3399,50.41312157708432,341.88725999999986
+retrieval (33 questions x 5 repeats),Pipeline 2: sort by CE score + top-3,165,0.017983030303030303,0.0169,0.005656688510746612,0.030059999999999996
+retrieval (33 questions x 5 repeats),Shared retrieval (embed + search + lookup),165,10.297170303030304,10.0379,1.8863822137220385,13.934939999999997
+retrieval (33 questions x 5 repeats),Pipeline 1 retrieval side (total),165,10.298033939393939,10.0386,1.8864168581582208,13.935719999999998
+retrieval (33 questions x 5 repeats),Pipeline 2 retrieval side (total),165,275.35224424242426,263.9943,50.69042101408355,355.11715999999984
+retrieval (33 questions x 5 repeats),Additional re-ranking time (CE + sort),165,265.05507393939394,253.3569,50.41316943056996,341.90395999999987
+with generation (3 questions x 5 repeats),"Gemini generation, Answer 1 (P1 context)",15,4465.213333333333,4473.5,2217.3922489094725,8387.499999999998
+with generation (3 questions x 5 repeats),"Gemini generation, Answer 2 (P2 context)",15,5745.78,3256.3,6600.379922852926,17132.489999999987
+with generation (3 questions x 5 repeats),Pipeline 1 end-to-end,15,4495.86,4510.4,2214.413793374155,8401.249999999998
+with generation (3 questions x 5 repeats),Pipeline 2 end-to-end,15,6034.64,3504.7,6591.335563211536,17369.189999999988

@@ -1,0 +1,446 @@
+{
+  "created_utc": "2026-10-19T14:17:04+00:00",
+  "hardware": {
+    "cpu": "12th Gen Intel(R) Core(TM) i5-1235U",
+    "logical_cpus": 12,
+    "torch_threads": 10,
+    "ram_gb": 15.3,
+    "gpu": "none (CPU only)",
+    "os": "Linux-6.12.10-76061203-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "torch": "2.12.0+cu130",
+    "faiss": "1.15.1",
+    "sentence_transformers": "6.1.0"
+  },
+  "units": "milliseconds (ms)",
+  "repeats": 5,
+  "llm_model": "gemini-2.5-flash",
+  "retrieval_questions": 33,
+  "table": [
+    {
+      "scope": "retrieval (33 questions x 5 repeats)",
+      "component": "Query embedding (Bi-Encoder, 1 query)",
+      "key": "query_embed_ms",
+      "n": 165,
+      "mean": 10.217358181818183,
+      "median": 9.9589,
+      "std": 1.8799787326272657,
+      "min": 6.2933,
+      "max": 16.5829,
+      "p95": 13.858659999999997
+    },
+    {
+      "scope": "retrieval (33 questions x 5 repeats)",
+      "component": "FAISS top-10 search (85 vectors)",
+      "key": "faiss_search_ms",
+      "n": 165,
+      "mean": 0.06827151515151515,
+      "median": 0.0691,
+      "std": 0.019818259030071252,
+      "min": 0.0367,
+      "max": 0.1719,
+      "p95": 0.09631999999999992
+    },
+    {
+      "scope": "retrieval (33 questions x 5 repeats)",
+      "component": "FAISS id -> chunk lookup",
+      "key": "id_lookup_ms",
+      "n": 165,
+      "mean": 0.011536969696969697,
+      "median": 0.0113,
+      "std": 0.0029952650487879632,
+      "min": 0.0068,
+      "max": 0.0337,
+      "p95": 0.015119999999999993
+    },
+    {
+      "scope": "retrieval (33 questions x 5 repeats)",
+      "component": "Pipeline 1: take top-3",
+      "key": "p1_select_ms",
+      "n": 165,
+      "mean": 0.0008654545454545456,
+      "median": 0.0008,
+      "std": 0.00032622275523182335,
+      "min": 0.0004,
+      "max": 0.0029,
+      "p95": 0.0013799999999999982
+    },
+    {
+      "scope": "retrieval (33 questions x 5 repeats)",
+      "component": "Cross-Encoder scoring (10 pairs)",
+      "key": "ce_score_ms",
+      "n": 165,
+      "mean": 265.0370945454546,
+      "median": 253.3399,
+      "std": 50.41312157708432,
+      "min": 187.6218,
+      "max": 462.1258,
+      "p95": 341.88725999999986
+    },
+    {
+      "scope": "retrieval (33 questions x 5 repeats)",
+      "component": "Pipeline 2: sort by CE score + top-3",
+      "key": "sort_select_ms",
+      "n": 165,
+      "mean": 0.017983030303030303,
+      "median": 0.0169,
+      "std": 0.005656688510746612,
+      "min": 0.0116,
+      "max": 0.0507,
+      "p95": 0.030059999999999996
+    },
+    {
+      "scope": "retrieval (33 questions x 5 repeats)",
+      "component": "Shared retrieval (embed + search + lookup)",
+      "key": "shared_retrieval_ms",
+      "n": 165,
+      "mean": 10.297170303030304,
+      "median": 10.0379,
+      "std": 1.8863822137220385,
+      "min": 6.3501,
+      "max": 16.6624,
+      "p95": 13.934939999999997
+    },
+    {
+      "scope": "retrieval (33 questions x 5 repeats)",
+      "component": "Pipeline 1 retrieval side (total)",
+      "key": "p1_retrieval_ms",
+      "n": 165,
+      "mean": 10.298033939393939,
+      "median": 10.0386,
+      "std": 1.8864168581582208,
+      "min": 6.3506,
+      "max": 16.6632,
+      "p95": 13.935719999999998
+    },
+    {
+      "scope": "retrieval (33 questions x 5 repeats)",
+      "component": "Pipeline 2 retrieval side (total)",
+      "key": "p2_retrieval_ms",
+      "n": 165,
+      "mean": 275.35224424242426,
+      "median": 263.9943,
+      "std": 50.69042101408355,
+      "min": 196.7116,
+      "max": 473.8535,
+      "p95": 355.11715999999984
+    },
+    {
+      "scope": "retrieval (33 questions x 5 repeats)",
+      "component": "Additional re-ranking time (CE + sort)",
+      "key": "rerank_overhead_ms",
+      "n": 165,
+      "mean": 265.05507393939394,
+      "median": 253.3569,
+      "std": 50.41316943056996,
+      "min": 187.6387,
+      "max": 462.1432,
+      "p95": 341.90395999999987
+    },
+    {
+      "scope": "with generation (3 questions x 5 repeats)",
+      "component": "Gemini generation, Answer 1 (P1 context)",
+      "key": "gen1_ms",
+      "n": 15,
+      "mean": 4465.213333333333,
+      "median": 4473.5,
+      "std": 2217.3922489094725,
+      "min": 1843.2,
+      "max": 9211.4,
+      "p95": 8387.499999999998
+    },
+    {
+      "scope": "with generation (3 questions x 5 repeats)",
+      "component": "Gemini generation, Answer 2 (P2 context)",
+      "key": "gen2_ms",
+      "n": 15,
+      "mean": 5745.78,
+      "median": 3256.3,
+      "std": 6600.379922852926,
+      "min": 1148.3,
+      "max": 26325.8,
+      "p95": 17132.489999999987
+    },
+    {
+      "scope": "with generation (3 questions x 5 repeats)",
+      "component": "Pipeline 1 end-to-end",
+      "key": "p1_end_to_end_ms",
+      "n": 15,
+      "mean": 4495.86,
+      "median": 4510.4,
+      "std": 2214.413793374155,
+      "min": 1866.2,
+      "max": 9222.7,
+      "p95": 8401.249999999998
+    },
+    {
+      "scope": "with generation (3 questions x 5 repeats)",
+      "component": "Pipeline 2 end-to-end",
+      "key": "p2_end_to_end_ms",
+      "n": 15,
+      "mean": 6034.64,
+      "median": 3504.7,
+      "std": 6591.335563211536,
+      "min": 1495.2,
+      "max": 26611.5,
+      "p95": 17369.189999999988
+    }
+  ],
+  "rerank_overhead_mean_ms": 265.05507393939394,
+  "retrieval_slowdown_mean_ratio": 26.738331400239037,
+  "retrieval_slowdown_median_ratio": 26.29792002868926,
+  "end_to_end_slowdown_mean_ratio": 1.3422659958272725,
+  "end_to_end_slowdown_median_ratio": 0.7770264278112806,
+  "rerank_share_of_p2_end_to_end": 0.043922267764008115,
+  "generation_attempts": {
+    "completed_paired_runs": 15,
+    "planned_paired_runs": 15,
+    "api_attempts_total": 37,
+    "api_attempts_ok": 31,
+    "api_attempts_failed": 6,
+    "failed_attempts": [
+      {
+        "query_id": "C-01",
+        "repeat": "2",
+        "answer": "2",
+        "attempt": "1",
+        "error": "ClientError 429: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/gener"
+      },
+      {
+        "query_id": "C-01",
+        "repeat": "4",
+        "answer": "1",
+        "attempt": "1",
+        "error": "ClientError 429: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/gener"
+      },
+      {
+        "query_id": "C-01",
+        "repeat": "4",
+        "answer": "1",
+        "attempt": "2",
+        "error": "ClientError 429: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/gener"
+      },
+      {
+        "query_id": "C-01",
+        "repeat": "4",
+        "answer": "1",
+        "attempt": "3",
+        "error": "ClientError 429: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/gener"
+      },
+      {
+        "query_id": "C-01",
+        "repeat": "4",
+        "answer": "2",
+        "attempt": "1",
+        "error": "ClientError 429: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/gener"
+      },
+      {
+        "query_id": "KT-02",
+        "repeat": "5",
+        "answer": "1",
+        "attempt": "1",
+        "error": "ClientError 429: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/gener"
+      }
+    ],
+    "backend": [
+      "Vertex AI (project=lma-ass1, location=global)"
+    ],
+    "settings_identical_across_pipelines": true,
+    "note": "failed attempts are never counted as measurements; latency = successful request only"
+  },
+  "tokens": {
+    "answer1_input": {
+      "n": 15,
+      "mean": 692.6666666666666,
+      "median": 592.0,
+      "std": 164.48259424487387,
+      "min": 569.0,
+      "max": 917.0,
+      "p95": 917.0
+    },
+    "answer1_output": {
+      "n": 15,
+      "mean": 94.66666666666667,
+      "median": 92.0,
+      "std": 57.579344841539765,
+      "min": 27.0,
+      "max": 175.0,
+      "p95": 163.1
+    },
+    "answer1_thinking": {
+      "n": 15,
+      "mean": 493.4,
+      "median": 492.0,
+      "std": 201.82871096905063,
+      "min": 131.0,
+      "max": 755.0,
+      "p95": 742.4
+    },
+    "answer2_input": {
+      "n": 15,
+      "mean": 741.0,
+      "median": 738.0,
+      "std": 175.38325380231066,
+      "min": 535.0,
+      "max": 950.0,
+      "p95": 950.0
+    },
+    "answer2_output": {
+      "n": 15,
+      "mean": 120.13333333333334,
+      "median": 149.0,
+      "std": 76.80947362204247,
+      "min": 26.0,
+      "max": 242.0,
+      "p95": 233.6
+    },
+    "answer2_thinking": {
+      "n": 15,
+      "mean": 336.0,
+      "median": 367.0,
+      "std": 201.6662731204346,
+      "min": 81.0,
+      "max": 824.0,
+      "p95": 632.8999999999997
+    }
+  },
+  "cost_estimate_usd": {
+    "successful_calls": 30,
+    "input_tokens": 21505,
+    "output_plus_thinking_tokens": 15663,
+    "prices_per_1M_usd": {
+      "input": 0.3,
+      "output": 2.5
+    },
+    "estimated_cost_usd": 0.04561,
+    "per_answer_usd": 0.00152,
+    "note": "estimate from recorded token counts x list prices; excludes failed attempts (normally not billed) and the single test requests"
+  },
+  "scaling": {
+    "cross_encoder_vs_pairs_ms": {
+      "1": {
+        "n": 25,
+        "mean": 31.014883359748637,
+        "median": 30.80855900043389,
+        "std": 2.4995459579585457,
+        "min": 25.92090199686936,
+        "max": 35.46344099959242,
+        "p95": 34.21977020043414
+      },
+      "5": {
+        "n": 25,
+        "mean": 102.70090576028451,
+        "median": 101.71807499864371,
+        "std": 6.515916256823302,
+        "min": 89.7847960004583,
+        "max": 114.92500099848257,
+        "p95": 112.99308420057059
+      },
+      "10": {
+        "n": 25,
+        "mean": 232.44040139950812,
+        "median": 232.04819799866527,
+        "std": 14.207754255684126,
+        "min": 210.54167699912796,
+        "max": 262.69027200032724,
+        "p95": 253.09115440031746
+      },
+      "20": {
+        "n": 25,
+        "mean": 565.3593589198135,
+        "median": 544.5941010002571,
+        "std": 62.33661881558321,
+        "min": 475.5732330013416,
+        "max": 679.085298001155,
+        "p95": 651.9032922005863
+      },
+      "40": {
+        "n": 25,
+        "mean": 1307.2578930798045,
+        "median": 1196.9940119997773,
+        "std": 219.90608070763366,
+        "min": 1105.8062349984539,
+        "max": 1815.0717409989738,
+        "p95": 1706.3765130005777
+      },
+      "85": {
+        "n": 25,
+        "mean": 2694.947897439997,
+        "median": 2676.779762001388,
+        "std": 84.78942352700261,
+        "min": 2516.848158000357,
+        "max": 2865.884497001389,
+        "p95": 2824.485488998471
+      }
+    },
+    "cross_encoder_linear_fit_ms": {
+      "per_pair": 31.965977912131894,
+      "intercept": -60.59662280901197,
+      "fit_on": "median ms vs n_pairs, measured n = 1..85"
+    },
+    "cross_encoder_full_corpus_extrapolation_ms": {
+      "1000": 31905.381289322882,
+      "10000": 319599.18249850994,
+      "100000": 3196537.1945903804,
+      "1000000": 31965917.315509085
+    },
+    "faiss_vs_index_size_ms": {
+      "85": {
+        "n": 25,
+        "mean": 0.038200959825189784,
+        "median": 0.0369890003639739,
+        "std": 0.003335205429464997,
+        "min": 0.03633799860836007,
+        "max": 0.051577000704128295,
+        "p95": 0.043483400804689154
+      },
+      "1000 (synthetic)": {
+        "n": 25,
+        "mean": 0.054687480587745085,
+        "median": 0.05338600021786988,
+        "std": 0.002512978781243099,
+        "min": 0.052322000556159765,
+        "max": 0.06095900243963115,
+        "p95": 0.059848600358236574
+      },
+      "10000 (synthetic)": {
+        "n": 25,
+        "mean": 0.6273131600755733,
+        "median": 0.570839001738932,
+        "std": 0.13673075787729863,
+        "min": 0.49360599950887263,
+        "max": 0.9972650004783645,
+        "p95": 0.8779539995884987
+      },
+      "100000 (synthetic)": {
+        "n": 25,
+        "mean": 9.822832599893445,
+        "median": 9.801930998946773,
+        "std": 1.3345713434613424,
+        "min": 7.0079370016173925,
+        "max": 12.543141001515323,
+        "p95": 12.067177600692956
+      },
+      "500000 (synthetic)": {
+        "n": 25,
+        "mean": 53.30367659989861,
+        "median": 51.86483400029829,
+        "std": 6.546362905236501,
+        "min": 42.656868001358816,
+        "max": 74.0019469994877,
+        "p95": 65.46808059865724
+      }
+    },
+    "bi_encoder_corpus_embedding": {
+      "n_chunks": 85,
+      "n": 3,
+      "mean": 2198.2847539984505,
+      "median": 2162.2428279988526,
+      "std": 111.13696477600313,
+      "min": 2109.6419479981705,
+      "max": 2322.9694859983283,
+      "p95": 2306.8968201983807,
+      "per_chunk_ms": 25.43815091763356
+    }
+  }
+}
