@@ -7,7 +7,7 @@ Two retrieval pipelines over the same chunked PDF corpus:
 
 Both pipelines use Gemini 2.5 Flash (`google-genai`) with one identical prompt template and identical settings.
 
-All the code is in one notebook: **`RAG_Baseline_vs_Reranking.ipynb`**. Each step is explained in a Markdown cell and commented in the code.
+All the code is in one notebook: **`main.ipynb`**. Each step is explained in a Markdown cell and commented in the code.
 
 ## Quick start
 
@@ -16,13 +16,13 @@ cd rag-assignment
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env          # add Gemini credentials (see "Gemini credentials")
-jupyter notebook RAG_Baseline_vs_Reranking.ipynb   # run all cells from the project folder
+jupyter notebook main.ipynb   # run all cells from the project folder
 ```
 
 To execute it without opening Jupyter:
 
 ```bash
-PATH=.venv/bin:$PATH jupyter nbconvert --to notebook --execute --inplace RAG_Baseline_vs_Reranking.ipynb
+PATH=.venv/bin:$PATH jupyter nbconvert --to notebook --execute --inplace main.ipynb
 ```
 
 ## What the notebook contains
@@ -105,7 +105,7 @@ Every file in `data/processed/`, `data/evaluation/` and `results/` is produced b
 
 ```
 rag-assignment/
-├── RAG_Baseline_vs_Reranking.ipynb      # all the code, commented and executed
+├── main.ipynb                           # all the code, commented and executed
 ├── README.md
 ├── requirements.txt                     # Python dependencies
 ├── .env.example                         # template for the Gemini credentials (.env itself is git-ignored)
