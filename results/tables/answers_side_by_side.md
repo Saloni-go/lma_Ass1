@@ -1,6 +1,6 @@
 # Generated answers: baseline (Answer 1) vs re-ranked (Answer 2)
 
-Actual Gemini 2.5 Flash outputs from Stage 5 (`results/stress_test/generation_results.json`), same prompt template and settings for both answers; only the 3 context chunks differ. Verdicts are a manual review against the verified reference answer and the exact context (`src/stress_report.py`).
+Actual Gemini 2.5 Flash outputs from Stage 5 (`results/stress_test/generation_results.json`), same prompt template and settings for both answers; only the 3 context chunks differ. Verdicts are a manual review against the verified reference answer and the exact context (`MANUAL_REVIEW` in the notebook, section 7).
 
 ## KT-02 (keyword_trap): What CGPA does a student need in order to opt for the B.Tech (Honours) programme, and when can they opt?
 

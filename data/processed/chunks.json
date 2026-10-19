@@ -16,7 +16,7 @@
     "splitter": "langchain_text_splitters.RecursiveCharacterTextSplitter",
     "extract_tables": true,
     "page_numbering": "1-based PDF page index (printed page number = PDF page - 1)",
-    "created_utc": "2026-10-19T13:59:50+00:00"
+    "created_utc": "2026-10-19T16:50:00+00:00"
   },
   "chunks": [
     {

@@ -1,6 +1,6 @@
 # Latency benchmark and scaling analysis
 
-All numbers are measured with `time.perf_counter()` by `src/benchmark_latency.py`. Raw data is in this folder; charts are in `results/figures/latency_breakdown.png` and `results/figures/latency_scaling.png`. Units are milliseconds unless stated otherwise.
+All numbers are measured with `time.perf_counter()` by the latency benchmark (re-checked in notebook §8). Raw data is in this folder; charts are in `results/figures/latency_breakdown.png` and `results/figures/latency_scaling.png`. Units are milliseconds unless stated otherwise.
 
 ## Setup
 
@@ -88,7 +88,7 @@ The scaling measurements are in `scaling_measurements.json` and the right-hand c
   - 15 paired runs over 3 questions. Gemini latency includes network and server queueing, which we cannot control, and varies strongly between identical requests. The end-to-end comparison between pipelines is therefore not statistically resolved.
   - Vertex AI hit transient `429` capacity limits. Retried calls report only the successful request's latency, not the waiting time.
   - Answer 1 and Answer 2 for a pair were sent one after the other, so the two answers share network conditions but are not simultaneous.
-- **Earlier free-tier attempt not counted.** Its one completed pair came from a different backend (Gemini Developer API), so it is not comparable. It is kept as `archived_freetier_generation_attempt.csv`.
+- **Earlier free-tier attempt not counted.** Its one completed pair came from a different backend (Gemini Developer API), so it is not comparable and was discarded.
 - **Scaling caveats.**
   - FAISS timings above 85 vectors use synthetic random vectors, which is fine for exact search, whose cost depends only on N and d.
   - Cross-encoder cost beyond 85 pairs is a linear extrapolation.

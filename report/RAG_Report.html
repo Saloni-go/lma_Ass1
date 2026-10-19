@@ -4,75 +4,72 @@
 <meta charset="utf-8">
 <title>RAG Re-Ranking Report</title>
 <style>
-  @page { size: A4; margin: 15mm 15mm 15mm 15mm; }
-  :root { --ink:#1b1b1a; --ink2:#52514e; --rule:#d9d8d3; --tint:#f4f3ef; }
+  @page { size: A4; margin: 10mm 11mm 10mm 11mm; }
+  :root { --ink:#000; --ink2:#333; --rule:#999; }
   body { background:#fff; color:var(--ink); font-family:"DejaVu Serif", Georgia, serif; font-size:9.6pt; line-height:1.36; margin:0; }
-  h1 { font-family:"DejaVu Sans", Arial, sans-serif; font-size:15.5pt; margin:0 0 2pt; }
-  h2 { font-family:"DejaVu Sans", Arial, sans-serif; font-size:11.5pt; margin:11pt 0 4pt; border-bottom:1px solid var(--rule); padding-bottom:2pt; break-after:avoid; }
-  h3 { font-family:"DejaVu Sans", Arial, sans-serif; font-size:9.8pt; margin:7pt 0 2pt; break-after:avoid; }
-  p { margin:0 0 5pt; text-align:justify; }
-  ul { margin:0 0 5pt 0; padding-left:14pt; } li { margin-bottom:1.5pt; }
-  .sub { color:var(--ink2); font-size:9pt; margin-bottom:6pt; }
-  table { border-collapse:collapse; width:100%; margin:3pt 0 6pt; font-size:8.3pt; break-inside:avoid; }
-  th, td { border-bottom:1px solid var(--rule); padding:2pt 4pt; text-align:left; vertical-align:top; }
-  th { font-family:"DejaVu Sans", Arial, sans-serif; background:var(--tint); font-weight:600; }
-  td.n, th.n { text-align:right; font-variant-numeric:tabular-nums; }
-  figure { margin:4pt 0 6pt; break-inside:avoid; text-align:center; }
+  h1 { font-family:"DejaVu Sans", Arial, sans-serif; font-size:15.5pt; margin:0 0 1pt; }
+  h2 { font-family:"DejaVu Sans", Arial, sans-serif; font-size:11.5pt; margin:8pt 0 3pt; break-after:avoid; }
+  h3 { font-family:"DejaVu Sans", Arial, sans-serif; font-size:9.8pt; margin:5pt 0 1pt; break-after:avoid; }
+  p { margin:0 0 4pt; text-align:justify; }
+  ul { margin:0 0 4pt 0; padding-left:14pt; } li { margin-bottom:1pt; }
+  .title2 { font-family:"DejaVu Sans", Arial, sans-serif; font-size:12pt; margin:0 0 1pt; }
+  a { color:inherit; }
+  .center { text-align:center; }
+  .link { font-size:9.5pt; margin-bottom:1pt; }
+  .author { text-align:right; font-size:9.5pt; margin-bottom:2pt; }
+  table { border-collapse:collapse; width:100%; margin:2pt 0 5pt; font-size:8.5pt; }
+  tr { break-inside:avoid; }
+  th, td { border:1px solid #000; padding:1pt 4pt; text-align:left; vertical-align:top; }
+  th { font-weight:bold; }
+  td.n, th.n { text-align:right; }
+  figure { margin:3pt 0 4pt; break-inside:avoid; text-align:center; }
   figure img { max-width:100%; }
   figcaption { font-size:8pt; color:var(--ink2); margin-top:1pt; text-align:left; }
-  .quote { font-size:8.4pt; background:var(--tint); border-left:3px solid var(--rule); padding:3pt 6pt; margin:2pt 0 5pt; }
-  .quote b { font-family:"DejaVu Sans", Arial, sans-serif; font-size:8pt; }
-  .box { border:1px solid var(--rule); padding:4pt 8pt; margin:4pt 0 7pt; font-size:8.7pt; break-inside:avoid; }
   code { font-family:"DejaVu Sans Mono", monospace; font-size:8.1pt; }
 </style>
 </head>
 <body>
-<h1>Baseline RAG vs. Cross-Encoder Re-Ranking</h1>
-<div class="sub">Two-stage retrieval on the IIT Madras B.Tech Ordinances &amp; Regulations · Shravani K (2023115009) · Code: <code>rag-assignment/</code></div>
+<div class="center">
+<h1>Language Models and Agents</h1>
+<div class="title2">Assignment 1 (RAG)</div>
+<div class="link">GitHub link: <a href="https://github.com/Saloni-go/lma_Ass1.git">https://github.com/Saloni-go/lma_Ass1.git</a></div>
+</div>
+<div class="author">Saloni Goyal<br>2023115001</div>
 
-<h2>0. Setup and evaluation</h2>
-<p>The knowledge source is one 25-page PDF: the IIT Madras <i>Ordinances and Regulations for B.Tech / B.Tech (Honours)</i>, 2010–2014 batches. It suits a stress test because it has three near-identical credit tables for different batches, rules with "however"/"except" clauses, prohibitions, and one internal contradiction. Text was extracted with PyMuPDF (tables kept as Markdown rows, captions such as "(for 2013 batch onwards)" kept attached to their table) and split with LangChain's <code>RecursiveCharacterTextSplitter</code> into <b>85 chunks</b> of up to 1000 characters with 200 overlap, so a clause usually stays together with its exception. Both pipelines use exactly this corpus.</p>
+<h2>Setup and Evaluation</h2>
+<p>For this assignment, I used a 25-page PDF containing the IIT Madras Ordinances and Regulations for B.Tech and B.Tech (Honours), covering the 2010–2014 batches. I chose this document because it contains similar credit tables for different batches and rules with exceptions, making it useful for testing retrieval errors.</p>
+<p>I extracted the text using PyMuPDF, preserving the tables and their headings, and used LangChain's <code>RecursiveCharacterTextSplitter</code> to create 85 chunks of up to 1000 characters with a 200-character overlap.</p>
 <table>
 <tr><th>Component</th><th>Choice</th></tr>
-<tr><td>Bi-Encoder + vector store</td><td><code>all-MiniLM-L6-v2</code> (384-d, L2-normalised), FAISS <code>IndexFlatIP</code> (inner product = cosine), top-10</td></tr>
-<tr><td>Cross-Encoder</td><td><code>cross-encoder/ms-marco-MiniLM-L-6-v2</code>, scores the same 10 (query, chunk) pairs</td></tr>
-<tr><td>LLM</td><td>Gemini 2.5 Flash via Vertex AI; temperature 0, top-p 1, seed 42; one prompt template for both pipelines</td></tr>
-<tr><td>Hardware</td><td>Intel i5-1235U laptop CPU, 15.3 GB RAM, no GPU</td></tr>
+<tr><td>Bi-Encoder + Vector Store</td><td>all-MiniLM-L6-v2, FAISS IndexFlatIP, top 10</td></tr>
+<tr><td>Cross-Encoder</td><td>cross-encoder/ms-marco-MiniLM-L-6-v2</td></tr>
+<tr><td>LLM</td><td>Gemini 2.5 Flash via Vertex AI, temperature 0, top-p 1, seed 42</td></tr>
 </table>
-<p><b>Pipeline 1</b> sends the top-3 cosine results to Gemini (Answer 1). <b>Pipeline 2</b> re-scores the <i>same</i> top-10 with the Cross-Encoder and sends its new top-3 (Answer 2). The vector search runs once per query, and automated checks confirmed that the top-10, model, settings and prompt text were identical, so only the three context chunks differed.</p>
-<p><b>Evaluation set.</b> 33 questions, each written for one failure type: 6 keyword traps, 6 exceptions, 6 negations, 6 synonym mismatches, 5 document-specific cases and 4 easy controls. The supporting sentences were copied verbatim from the PDF, and the chunks containing them were marked relevant. Answers were read against a reference answer and labelled <i>correct</i>, <i>partially correct</i> (a condition missing) or <i>insufficient context</i> (the model said the context did not answer).</p>
-<div class="box">
-<b>Recall@3</b>: share of relevant chunks in the top-3 sent to the LLM. <b>Hit@3</b>: at least one relevant chunk in the top-3. <b>MRR@10</b>: 1 / rank of the first relevant chunk (0 if none in top-10). <b>Evidence coverage@3</b>: share of evidence quotes present in the top-3. <b>Rescue</b>: a relevant chunk outside the baseline top-3 but inside the top-10 that the Cross-Encoder moves into the top-3; a <b>regression</b> is the reverse.
-</div>
+<p>In Pipeline 1, I passed the top 3 chunks retrieved by the Bi-Encoder to Gemini to generate Answer 1. In Pipeline 2, I re-ranked the same top 10 chunks using the Cross-Encoder and passed the new top 3 to Gemini to generate Answer 2. Both pipelines used the same chunks, LLM and prompt to ensure a fair comparison.</p>
+<p>For evaluation, I used 33 questions covering keyword traps, exceptions, negations, synonym mismatches, document-specific cases and easy control questions. The 33 questions included 6 keyword traps, 6 exceptions, 6 negations, 6 synonym mismatches, 5 document-specific questions, and 4 easy controls. One of the negation questions (NG-06) was added after a separate retrieval-only screening of 24 negation phrasings; the other 23 screened phrasings are not part of the evaluation set. I identified the relevant chunks using supporting text from the PDF and compared the generated answers with reference answers, classifying them as correct, partially correct or insufficient context.</p>
+<p>I measured retrieval performance using Recall@3, Hit@3, MRR@10 and Evidence Coverage@3 to evaluate how well relevant information was retrieved and ranked. I also checked for <b>rescues</b>, where re-ranking brought relevant chunks into the top 3, and <b>regressions</b>, where relevant chunks were pushed out of the top 3.</p>
 
-<h2>1. Architecture: Bi-Encoder vs. Cross-Encoder</h2>
-<p>A <b>Bi-Encoder</b> encodes the query and each chunk <i>separately</i> into one vector, and relevance is the cosine between them. Since a chunk's vector does not depend on the query, all chunks are embedded once offline (85 chunks ≈ 2.2 s), and a query costs one embedding (≈ 10 ms) plus a vector search (0.07 ms). The cost is that each text is compressed into a single vector before the two meet, so the model measures overall topical similarity and cannot check whether a specific word in the query is answered by a specific phrase in the chunk.</p>
-<p>A <b>Cross-Encoder</b> feeds query and chunk together, <code>[CLS] query [SEP] chunk</code>, through the transformer. Self-attention lets every query token attend to every chunk token, so it can tell "opt for Honours" apart from "maintain CGPA 8.5 for the award". Its output is an unbounded relevance logit, so only <i>ranks</i> can be compared with the cosine. Nothing can be precomputed: each pair needs its own forward pass at query time.</p>
-<p>This explains the failure types in the assignment. When a whole chunk is averaged into one vector, short words such as "not", "except" or "2013" barely change it, so "a course cannot be repeated" and "a course must be repeated" end up close together, as do three tables that differ in one cell. A Cross-Encoder reads both texts jointly and can check that the exact prohibition or batch is present.</p>
-<table>
-<tr><th></th><th>Bi-Encoder</th><th>Cross-Encoder</th></tr>
-<tr><td>Input / interaction</td><td>encoded separately; one cosine at the end</td><td>encoded together; token-level self-attention</td></tr>
-<tr><td>Precompute chunks?</td><td>yes, once, offline</td><td>no, every pair at query time</td></tr>
-<tr><td>Cost per query (here)</td><td>≈ 10 ms total</td><td>≈ 25–30 ms per candidate pair</td></tr>
-<tr><td>Score / best use</td><td>cosine in [−1, 1]; fast recall over the whole collection</td><td>unbounded logit; precise ordering of a short list</td></tr>
-</table>
-<p>KT-02 ("What CGPA is needed to <i>opt</i> for B.Tech (Honours), and when?") shows the difference. Chunk 84 (R.30.1, keeping CGPA 8.5 to be <i>awarded</i> Honours) shares almost all keywords with the true answer, chunk 21 (R.1.12), and outranks it by cosine. The Cross-Encoder reverses this:</p>
+<h2>Architecture: Bi-Encoder vs. Cross-Encoder</h2>
+<p>A <b>Bi-Encoder</b> converts the query and document chunks into separate embeddings and compares them using cosine similarity. Since the chunk embeddings can be generated beforehand, retrieval is fast. However, representing each chunk using a single vector can sometimes cause the model to miss details like negations, exceptions, or differences between similar rules.</p>
+<p>A <b>Cross-Encoder</b> processes the query and chunk together, allowing it to compare them more closely using token-level attention. This helps it identify chunks that actually answer the question rather than just having similar keywords. However, each query-chunk pair needs to be processed at query time, making it slower.</p>
+<p>For example, in KT-02, I asked about the CGPA required to opt for B.Tech (Honours) and when a student can opt for it. The Bi-Encoder ranked chunk 84, which discusses the CGPA needed to receive the degree, above chunk 21, which contains the actual eligibility rule. After re-ranking, the Cross-Encoder moved chunk 21 from rank 4 to rank 1, showing how re-ranking can help distinguish between similar but different rules.</p>
 <table>
 <tr><th>Chunk</th><th>Content</th><th class="n">Cosine</th><th class="n">Base rank</th><th class="n">CE logit</th><th class="n">New rank</th></tr>
 <tr><td>78</td><td>NCC / NSO rules (mentions Honours)</td><td class="n">0.750</td><td class="n">1</td><td class="n">2.37</td><td class="n">3</td></tr>
 <tr><td>84</td><td>R.30.1: maintain CGPA 8.5 for the <i>award</i> (distractor)</td><td class="n">0.723</td><td class="n">2</td><td class="n">1.96</td><td class="n">5</td></tr>
 <tr><td>33</td><td>Honours credit requirements</td><td class="n">0.706</td><td class="n">3</td><td class="n">1.83</td><td class="n">6</td></tr>
-<tr><td><b>21</b></td><td><b>R.1.12: CGPA ≥ 8.5 after sem. 3, opt during sem. 4</b></td><td class="n">0.673</td><td class="n">4</td><td class="n">4.33</td><td class="n">1</td></tr>
+<tr><td>21</td><td>R.1.12: CGPA ≥ 8.5 after sem. 3, opt during sem. 4</td><td class="n">0.673</td><td class="n">4</td><td class="n">4.33</td><td class="n">1</td></tr>
 <tr><td>12</td><td>O.5: opt "at the end of the fourth semester"</td><td class="n">0.638</td><td class="n">8</td><td class="n">4.14</td><td class="n">2</td></tr>
 </table>
 
-<h2>2. Retrieval results and rank-shift analysis</h2>
+<h2>Retrieval results and rank-shift analysis</h2>
 <table>
-<tr><th>Pipeline (33 questions)</th><th class="n">Recall@3</th><th class="n">Hit@3</th><th class="n">MRR@10</th><th class="n">Evidence coverage@3</th></tr>
-<tr><td>Baseline (Bi-Encoder top-3)</td><td class="n">0.818</td><td class="n">0.848</td><td class="n">0.801</td><td class="n">0.836</td></tr>
-<tr><td>Re-ranked (Cross-Encoder top-3)</td><td class="n"><b>0.879</b></td><td class="n"><b>0.909</b></td><td class="n"><b>0.863</b></td><td class="n"><b>0.894</b></td></tr>
+<tr><th>Pipeline</th><th class="n">Recall@3</th><th class="n">Hit@3</th><th class="n">MRR@10</th><th class="n">Evidence Coverage@3</th></tr>
+<tr><td>Baseline</td><td class="n">0.818</td><td class="n">0.848</td><td class="n">0.801</td><td class="n">0.836</td></tr>
+<tr><td>Re-ranked</td><td class="n">0.879</td><td class="n">0.909</td><td class="n">0.863</td><td class="n">0.894</td></tr>
 </table>
-<p>Recall@10 (0.939) is the same for both pipelines because they share the candidate list. Per question, 7 improved, 22 were unchanged and 4 worsened, but only 4 improvements changed which evidence reached the LLM (the rest were moves inside the top-3 or from #9 to #8). The meaningful result is <b>4 rescues and 2 regressions</b>:</p>
+<p>The results show that re-ranking improved all four retrieval metrics. Recall@3 increased from 0.818 to 0.879, while Hit@3 increased from 0.848 to 0.909. Recall@10 remained the same at 0.939 because both pipelines used the same initial top 10 chunks.</p>
+<p>Across the 33 questions, 7 improved, 22 remained unchanged, and 4 worsened based on Evidence Coverage@3 and MRR@10. A question counted as improved or worsened if its Evidence Coverage@3 changed, or, when coverage stayed the same, if its MRR@10 changed; this does not by itself reflect changes in the generated answers. However, only some of these changes affected the actual top-3 evidence. I identified 4 rescues, where relevant chunks moved into the top 3, and 2 regressions, where relevant chunks moved out. These cases are summarized in the table below and discussed in the following sections.</p>
 <table>
 <tr><th>Case</th><th>Failure type</th><th>Relevant chunk</th><th class="n">Bi rank</th><th class="n">CE rank</th><th>Top-3 before → after</th><th>Answer 1 → Answer 2</th></tr>
 <tr><td>KT-02</td><td>Keyword trap</td><td>21 (R.1.12)</td><td class="n">4</td><td class="n">1</td><td>[78, 84, 33] → [21, 12, 78]</td><td>declined → correct</td></tr>
@@ -82,30 +79,36 @@
 <tr><td>SY-03</td><td>Synonym (regression)</td><td>75 / 74</td><td class="n">1 / 2</td><td class="n">3 / 4</td><td>[75, 74, 59] → [48, 72, 75]</td><td>correct → declined</td></tr>
 <tr><td>DS-05</td><td>Table lookup (regression)</td><td>58</td><td class="n">3</td><td class="n">5</td><td>[60, 61, 58] → [60, 59, 61]</td><td>correct → declined</td></tr>
 </table>
-<figure><img src="../results/figures/rank_shifts_relevant_chunks.png" style="width:58%">
-<figcaption>Figure 1. Rank of each relevant chunk in the shared top-10, before and after re-ranking. The shaded band is the top-3 sent to Gemini.</figcaption></figure>
+<figure><img src="../results/figures/rank_shifts_relevant_chunks.png" style="width:50%">
+<figcaption>Figure 1. Rank changes of relevant chunks before and after re-ranking. The shaded area represents the top 3 chunks passed to Gemini.</figcaption></figure>
 
-<h3>Keyword trap: KT-02</h3>
-<p>The baseline filled two slots with chunks that repeat "B.Tech (Honours)" and "CGPA 8.5" but describe the award rule, so Gemini answered the wrong rule and admitted the question was not covered:</p>
-<div class="quote"><b>Answer 1:</b> "To be awarded the B.Tech (Honours) degree, students must maintain an average CGPA of 8.5 [Chunk 84] … The provided context does not specify when a student can opt for the B.Tech (Honours) programme …"<br>
-<b>Answer 2:</b> "A student needs a CGPA of 8.5 and above at the end of their third semester to opt for the B.Tech (Honours) programme [Chunk 21] … They can opt for this programme during the fourth semester [Chunk 21]."</div>
-<p>Re-ranking also promoted chunk 12 (O.5, #8 → #2), which says "at the <i>end</i> of the fourth semester" and conflicts with R.1.12's "during". In two of five runs Answer 2 reported both clauses, exposing a real inconsistency in the document.</p>
+<h3>Keyword Trap: KT-02</h3>
+<p>This question asked about the CGPA and timing required to opt for B.Tech (Honours). The Bi-Encoder retrieved chunks about receiving the degree rather than opting for it.</p>
+<p><b>Answer 1:</b> "To be awarded the B.Tech (Honours) degree, students must maintain an average CGPA of 8.5 [Chunk 84] … The provided context does not specify when a student can opt …"</p>
+<p><b>Answer 2:</b> "A student needs a CGPA of 8.5 and above at the end of their third semester … [Chunk 21] … They can opt … during the fourth semester [Chunk 21]."</p>
+<p>Re-ranking moved the correct chunk from rank 4 to rank 1, allowing Gemini to answer correctly. However, another chunk mentioned opting <i>at the end</i> of the fourth semester. Gemini mentioned both versions in 2 out of 5 runs, suggesting a possible inconsistency in the document.</p>
 
 <h3>Exception: EX-05</h3>
-<p>"Can attendance below 85% be condoned for a hospitalised student?" The rule has two conditions: actual attendance above 40% <i>and</i> "notional" attendance (excluding illness days) of at least 85%. The second sits in chunk 62, ranked #5 by cosine; the attendance-code table took the third slot. Answer 1 gave only the 40% condition, a confident but incomplete rule that would wrongly approve a student meeting just the first condition. This is the most dangerous failure in the set because the answer looks complete. With chunk 62 at #2, Answer 2 stated that "this notional percentage must be ≥ 85% for condonation to be granted".</p>
+<p>This question asked whether attendance below 85% could be condoned for a hospitalised student. The rule requires actual attendance above 40% and notional attendance of at least 85% after excluding illness days.</p>
+<p>The Bi-Encoder ranked the chunk containing the second condition fifth, so Answer 1 mentioned only the 40% requirement. After re-ranking, that chunk moved to rank 2, and Answer 2 included both conditions. This shows how missing even one important condition can make an answer incomplete.</p>
 
 <h3>Negation: NG-06</h3>
-<p>"Which courses is a student not allowed to repeat?" The answer is one sentence in chunk 76 ("A course successfully completed cannot be repeated", plus a 2014-15 exception for students below CGPA 5). The bi-encoder ranked first chunk 25, which contains an unrelated negation ("No withdrawal … will be allowed"), followed by U/W repetition rules and the (n − 4) registration rule. The Cross-Encoder gave chunk 25 a logit of −0.26 and moved chunk 76 from #4 to #1 (logit 7.29). Answer 1, seeing only U/W rules, concluded that "there are no courses explicitly stated as non-repeatable": true of its context, but the opposite of the real rule. Answer 2 gave the prohibition and its exception. This case came from screening 24 negation phrasings on retrieval; NG-01 to NG-05, written in advance, did not need rescuing.</p>
+<p>This question asked which courses a student cannot repeat. The rule states that successfully completed courses cannot be repeated, with an exception from 2014–15 for certain students below CGPA 5.</p>
+<p>The Bi-Encoder ranked unrelated restrictions higher, leaving the correct chunk at rank 4. Answer 1 incorrectly stated that no such restriction was mentioned. Re-ranking moved the correct chunk to rank 1, and Answer 2 included the rule and its exception. I found this case after testing 24 negation phrasings, since the original questions did not show this failure.</p>
 
-<h3>Document-specific: DS-02</h3>
-<p>The three credit tables (2010, 2011–12, 2013+) differ in a few cells. For "HPF credits from 2013", the cosine top-3 held a text paragraph and two table halves without the HPF row; the correct table head (chunk 31) was #7. Answer 1 said HPF was not mentioned. With chunk 31 at #1, Answer 2 answered "4 HPF credits" and did not confuse it with the 2011–12 value (2), which was also in its context.</p>
+<h3>Document-Specific: DS-02</h3>
+<p>This question asked about HPF credits for the 2013 batch onwards. Since the document contains similar credit tables for different batches, the Bi-Encoder ranked the correct table seventh, and Answer 1 could not answer.</p>
+<p>The Cross-Encoder moved it to rank 1, allowing Answer 2 to correctly identify <b>4 HPF credits</b>, rather than the earlier batch's requirement of 2.</p>
 
-<h3>Where re-ranking hurt</h3>
-<p>In <b>SY-03</b> the user says "dispute a grade" while the document says "feels aggrieved … contact the teacher within three weeks". The Cross-Encoder gave every candidate a strongly negative logit (−5.4 to −10.7), so its ordering was near noise, and chunk 74 with "three weeks" fell to #4. In <b>DS-05</b> the answer ("G" for 90% attendance) is in a small table of bare numbers and codes (chunk 58), and prose about the 85% rule was ranked above it. Both fit a known weakness: the model was trained on MS MARCO web passages and handles fluent prose better than tables or paraphrased legal wording. In both cases Answer 2 declined instead of guessing.</p>
+<h3>Where Re-ranking Hurt</h3>
+<p>Re-ranking also caused two failures. In SY-03, the question used "dispute a grade", while the document used "feels aggrieved" and mentioned contacting the teacher within three weeks. The relevant chunk dropped to rank 4, so Answer 2 could not answer.</p>
+<p>In DS-05, the correct answer ("G" for 90% attendance) was in a table, but the Cross-Encoder ranked other attendance passages higher. Answer 2 again could not answer. This suggests the model may struggle with short tables or differently worded rules, although I did not test this separately.</p>
 
-<div class="box"><b>Answer 1 vs. Answer 2.</b> In every rescue the critical chunk sat at rank 4–7. The baseline <b>never hallucinated</b>: it either <b>omitted an essential clause</b> (EX-05) or <b>answered a neighbouring rule and then declined</b> (KT-02, NG-06, DS-02). The prompt's instruction to say when evidence is missing likely turned would-be fabrications into refusals, so the practical risk was omission. With the re-ranked context all four answers were correct. One citation slip was found (NG-06 Answer 2 cites p. 22 for a clause on p. 23 of a two-page chunk). <b>Stability:</b> each of the six cases was answered 5 times per pipeline (60 calls); the verdict was identical in all five runs for every case, and an automatic key-fact check agreed with every manual verdict.</div>
+<h3>Comparing Answer 1 and Answer 2</h3>
+<p>In all four rescue cases, relevant chunks moved from ranks 4–7 into the top 3. Answer 1 was incomplete or incorrect, while Answer 2 was correct in all four cases.</p>
+<p>I tested each of the six cases five times per pipeline (60 LLM calls). The correctness classification remained consistent across runs. I also found one citation error in NG-06, where Answer 2 cited page 22 instead of page 23.</p>
 
-<h2>3. Latency profiling</h2>
+<h2>Latency profiling</h2>
 <p>Components were timed with <code>time.perf_counter()</code> after warm-up: retrieval on 33 questions × 5 repeats, generation on 15 paired runs. Model loading and indexing are excluded; 6 rate-limited API attempts were retried and not counted.</p>
 <table>
 <tr><th>Component</th><th class="n">n</th><th class="n">Mean (ms)</th><th class="n">Median (ms)</th></tr>
@@ -113,25 +116,27 @@
 <tr><td>FAISS top-10 search (85 vectors)</td><td class="n">165</td><td class="n">0.07</td><td class="n">0.07</td></tr>
 <tr><td>Cross-Encoder scoring (10 pairs)</td><td class="n">165</td><td class="n">265.0</td><td class="n">253.3</td></tr>
 <tr><td>Sort by CE score + top-3</td><td class="n">165</td><td class="n">0.02</td><td class="n">0.02</td></tr>
-<tr><td><b>Pipeline 1 retrieval side</b></td><td class="n">165</td><td class="n"><b>10.3</b></td><td class="n"><b>10.0</b></td></tr>
-<tr><td><b>Pipeline 2 retrieval side</b></td><td class="n">165</td><td class="n"><b>275.4</b></td><td class="n"><b>264.0</b></td></tr>
+<tr><td>Pipeline 1 retrieval side</td><td class="n">165</td><td class="n">10.3</td><td class="n">10.0</td></tr>
+<tr><td>Pipeline 2 retrieval side</td><td class="n">165</td><td class="n">275.4</td><td class="n">264.0</td></tr>
 <tr><td>Gemini generation, Answer 1 / Answer 2</td><td class="n">15</td><td class="n">4465 / 5746</td><td class="n">4474 / 3256</td></tr>
-<tr><td><b>Pipeline 1 / Pipeline 2 end-to-end</b></td><td class="n">15</td><td class="n"><b>4496 / 6035</b></td><td class="n"><b>4510 / 3505</b></td></tr>
+<tr><td>Pipeline 1 / Pipeline 2 end-to-end</td><td class="n">15</td><td class="n">4496 / 6035</td><td class="n">4510 / 3505</td></tr>
 </table>
-<p>Re-ranking adds about <b>265 ms</b> per query, making the retrieval side roughly <b>27× slower</b>; almost all of it is the ten Cross-Encoder forward passes. End to end, Gemini's 3–4.5 s dominates and re-ranking is under 5% of Pipeline 2's total. The end-to-end ratios point in opposite directions (P2 faster by median, slower by mean) because one Answer 2 call took 26 s and Answer 1 alone ranged 1.8–9.2 s; network variance is far larger than the re-ranking cost, so the end-to-end difference is not statistically resolved. A GPU would shrink the Cross-Encoder step; a larger candidate pool would grow it linearly.</p>
+<p>Re-ranking adds about <b>265 ms</b> per query, making the retrieval side roughly <b>27× slower</b>. Almost all of this extra time came from the Cross-Encoder scoring the ten query-chunk pairs. End to end, Gemini's 3–4.5 s dominates and re-ranking is under 5% of Pipeline 2's total. The end-to-end ratios point in opposite directions (P2 faster by median, slower by mean) because one Answer 2 call took 26 s and Answer 1 alone ranged 1.8–9.2 s; network variance is far larger than the re-ranking cost, so the end-to-end difference is not statistically resolved. A GPU would shrink the Cross-Encoder step; a larger candidate pool would grow it linearly.</p>
 
-<h2>4. Scaling: why not run the Cross-Encoder over everything?</h2>
-<p>The Cross-Encoder needs one forward pass per (query, chunk) pair, and none of it can be cached because each pass depends on the query. Measured here, cost grows linearly: about 31 ms for 1 pair, 232 ms for 10, and <b>2.68 s for all 85 chunks</b>, already close to a whole Gemini call. Extrapolating (≈ 32 ms per pair) gives about <b>32 s per query for 1,000 chunks, 5 min for 10,000 and 53 min for 100,000</b>. The Bi-Encoder moves the expensive work offline: an exact FAISS search over 100,000 synthetic vectors still took only <b>9.8 ms</b>, and approximate indexes (IVF, HNSW) scale further. At 100,000 chunks, two-stage retrieval would cost ≈ 10 ms embedding + 10 ms search + 253 ms re-ranking ≈ 0.27 s per query.</p>
-<figure><img src="../results/figures/latency_scaling.png" style="width:78%">
-<figcaption>Figure 2. Left: Cross-Encoder time vs number of pairs (measured up to 85, the whole corpus). Right: FAISS exact search vs index size (synthetic vectors above 85).</figcaption></figure>
-<p>So the cheap Bi-Encoder narrows the collection to a few plausible candidates, and the precise Cross-Encoder spends its cost only where it changes the answer. The catch is that re-ranking can only reorder what the first stage found: in C-04 the relevant sentence is the last line of a chunk about contact courses, it never reached the top-10, and both pipelines failed. Recall@10 (0.939) is the ceiling for the whole system, so chunking and k matter as much as the re-ranker.</p>
+<h2>Scaling: Why Not Run the Cross-Encoder on Everything?</h2>
+<p>The Cross-Encoder needs to process every query-chunk pair, so its processing time increases with the number of chunks. In my experiment, scoring 1 pair took around 31 ms, 10 pairs took 232 ms, and all 85 chunks took 2.68 seconds, which is already close to the time taken by a Gemini call. Using the measured processing time (around 32 ms per pair) as a rough estimate, scoring 1,000 chunks would take around 32 seconds, 10,000 chunks around 5 minutes, and 100,000 chunks nearly 53 minutes per query on the same CPU.</p>
+<p>The Bi-Encoder is faster because the document embeddings are computed beforehand. Even an exact FAISS search over 100,000 synthetic vectors took only 9.8 ms. Approximate indexes like IVF and HNSW can improve scaling further. For 100,000 chunks, the estimated time for two-stage retrieval is <b>10 ms for query embedding + 10 ms for FAISS search + 253 ms for re-ranking = approximately 0.27 seconds per query</b>.</p>
+<figure><img src="../results/figures/latency_scaling.png" style="width:68%">
+<figcaption><b>Figure 2.</b> Left: Cross-Encoder processing time for different numbers of pairs (measured up to 85). Right: FAISS search time for different index sizes (synthetic vectors used beyond 85).</figcaption></figure>
+<p>This is why I used the Bi-Encoder to retrieve the top 10 chunks and the Cross-Encoder to re-rank only those candidates, instead of scoring the entire collection.</p>
+<p>However, re-ranking can only work with chunks retrieved in the first stage. For example, in C-04, the relevant sentence was at the end of a chunk about contact courses, but that chunk did not appear in the initial top 10, so both pipelines failed. Recall@10 was 0.939, meaning some relevant evidence was still missed during initial retrieval and could not be recovered through re-ranking.</p>
 
-<h2>5. Limitations and conclusion</h2>
+<h2>Limitations and conclusion</h2>
 <ul>
 <li><b>Small evaluation.</b> 33 questions on one document show a pattern, not statistical significance, and the negation rescue was found by a targeted search.</li>
 <li><b>Retrieval ≠ answer quality.</b> In SY-03 the re-ranked top-3 still held a relevant chunk, yet the answer failed because the deciding sentence was in the other one; metrics alone would miss this.</li>
 <li><b>Labels and timing.</b> Relevance labels are evidence-quote chunks, verdicts are one reviewer's judgement (cross-checked automatically), and timings come from one CPU laptop with network-dependent Gemini latency.</li>
 </ul>
-<p><b>Conclusion.</b> Cross-Encoder re-ranking fixed the failure types it was designed for: a keyword distractor, an exception clause, a negated rule and a near-duplicate table were all rescued from ranks 4–7, and each answer went from declining or omitting a condition to correct. It also caused two regressions, on table data and paraphrased wording, and could not help when evidence was outside the top-10. At about 0.27 s per query on a CPU, it is cheap next to LLM generation, while scoring the whole collection would grow linearly and quickly become impractical. Re-ranking a small candidate set is a good trade-off for precision-critical documents like regulations, provided first-stage recall is monitored.</p>
+<p><b>Conclusion.</b> In this experiment, Cross-Encoder re-ranking helped with the failure types it was meant to address: a keyword distractor, an exception clause, a negated rule and a near-duplicate table were all rescued from ranks 4–7, and each answer went from declining or omitting a condition to correct. It also caused two regressions, on table data and paraphrased wording, and could not help when evidence was outside the top-10. At about 0.27 s per query on a CPU, it is cheap next to LLM generation, while scoring the whole collection would grow linearly and quickly become impractical. Re-ranking a small candidate set is a good trade-off for precision-critical documents like regulations, provided first-stage recall is monitored.</p>
 </body>
 </html>

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "created_utc": "2026-10-19T14:00:31+00:00",
+    "created_utc": "2026-10-19T16:50:33+00:00",
     "source_pdf": "document.pdf",
     "corpus_fingerprint": "037b86edb2eec9674c3357fa9da058e7fca183abb480dd0f668b2218f6bb5a18",
     "bi_encoder": "sentence-transformers/all-MiniLM-L6-v2",
@@ -1019,8 +1019,8 @@
   "limitations": [
     "33 questions, one PDF, one retrieval run per pipeline: the counts are indicative, not statistically significant. NG-06 was added after a retrieval-only screen of 24 negation phrasings (results/stress_test/negation_screen.json); 1 of the 3 screen hits survived checking, so the negation rescue was searched for, not found by chance.",
     "Answers were generated 5 times per pipeline for the six reviewed cases (60 Gemini calls, all on Vertex AI, the same backend as the latency benchmark). The verdict was the same in all 5 runs for every case; only the wording changed. Five runs show the pattern is stable, but cannot rule out rarer outcomes.",
-    "Earlier single-run answers from the Gemini Developer API are kept in archived_developer_api_generation_results.json for reference only; they showed the same verdict pattern and are not used in the results.",
-    "Answer verdicts are a single reviewer's judgement against the verified reference answers, not an independent annotation. The automatic key-fact check (regexes in src/stress_repeats.py) agreed with every verdict, but it only tests whether key facts are mentioned.",
+    "Earlier single-run answers from the Gemini Developer API (a different backend) showed the same verdict pattern; they are not used in the results.",
+    "Answer verdicts are a single reviewer's judgement against the verified reference answers, not an independent annotation. The automatic key-fact check (regexes stored in generation_repeats.json) agreed with every verdict, but it only tests whether key facts are mentioned.",
     "Relevance labels are the chunks containing the evidence quotes; a chunk that answers the question with different wording would not count as relevant.",
     "C-04 (control) failed for both pipelines: the 12-credit rule is the last sentence of chunk 52, which is mostly about contact courses, and chunk 52 is not in the top-10. Re-ranking cannot recover chunks outside the candidate pool (a chunking issue, not a ranking issue).",
     "DS-01 (free-elective credits, 2011-2012): the relevant table tail (chunk 30) stays at #8-#9; the table half without its batch caption is hard for both models. Recorded as 'improved (rank only)', which is not a meaningful gain."
@@ -1032,7 +1032,7 @@
     "Repeat table headers / batch captions in every table chunk, or chunk tables row-wise, and re-measure DS-01, DS-02 and DS-05."
   ],
   "repeat_runs": {
-    "description": "5 generations per pipeline per case on one backend; verdicts are manual, the key-fact check is automatic (src/stress_repeats.py)",
+    "description": "5 generations per pipeline per case on one backend; verdicts are manual, the key-fact check is automatic (patterns in generation_repeats.json)",
     "key_facts": {
       "KT-02": {
         "CGPA 8.5": [
